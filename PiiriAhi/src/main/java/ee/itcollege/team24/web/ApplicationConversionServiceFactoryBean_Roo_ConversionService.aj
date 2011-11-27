@@ -4,6 +4,7 @@
 package ee.itcollege.team24.web;
 
 import ee.itcollege.team24.entities.Objekt;
+import ee.itcollege.team24.entities.Piiriloik;
 import ee.itcollege.team24.entities.Piirivalvur;
 import ee.itcollege.team24.entities.Vaeosa;
 import java.lang.String;
@@ -14,6 +15,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(new ObjektConverter());
+        registry.addConverter(new PiiriloikConverter());
         registry.addConverter(new PiirivalvurConverter());
         registry.addConverter(new VaeosaConverter());
     }
@@ -26,6 +28,13 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.ObjektConverter implements Converter<Objekt, String> {
         public String convert(Objekt objekt) {
             return new StringBuilder().append(objekt.getObjekt_ID()).append(" ").append(objekt.getNimetus()).toString();
+        }
+        
+    }
+    
+    static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.PiiriloikConverter implements Converter<Piiriloik, String> {
+        public String convert(Piiriloik piiriloik) {
+            return new StringBuilder().append(piiriloik.getPiiriloik_ID()).append(" ").append(piiriloik.getNimetus()).toString();
         }
         
     }
