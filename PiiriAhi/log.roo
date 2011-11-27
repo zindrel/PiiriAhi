@@ -10,3 +10,4 @@ field string --fieldName eesnimed --notNull
 field string --fieldName perekonnanimi --notNull
 web mvc setup
 web mvc all --package ~.web
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-27 13:15:38
