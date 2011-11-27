@@ -11,5 +11,9 @@
             <menu:item id="i_vaeosa_new" messageCode="global_menu_new" url="/vaeosas?form" z="FAVHgwavmIl9dgzX+VpD/UnJl6o="/>
             <menu:item id="i_vaeosa_list" messageCode="global_menu_list" url="/vaeosas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="xmlNM27KfbjGn72iRw7P1QBf3Ww="/>
         </menu:category>
+        <menu:category id="c_objekt" z="rjkh6O+TVNXzCjedLp6PFqZolxI=">
+            <menu:item id="i_objekt_new" messageCode="global_menu_new" url="/objekts?form" z="eBl8qE0jAB9Ygiu3upBZTum4iDs="/>
+            <menu:item id="i_objekt_list" messageCode="global_menu_list" url="/objekts?page=1&amp;size=${empty param.size ? 10 : param.size}" z="yMhHoW41esUSFoV8U0HE/swwewU="/>
+        </menu:category>
     </menu:menu>
 </div>
