@@ -38,7 +38,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.ObjektConverter implements Converter<Objekt, String> {
         public String convert(Objekt objekt) {
-            return new StringBuilder().append(objekt.getObjekt_ID()).append(" ").append(objekt.getNimetus()).toString();
+            return new StringBuilder().append(objekt.getNimetus()).toString();
         }
         
     }

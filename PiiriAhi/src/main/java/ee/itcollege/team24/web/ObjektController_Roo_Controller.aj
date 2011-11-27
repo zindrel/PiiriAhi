@@ -31,7 +31,7 @@ privileged aspect ObjektController_Roo_Controller {
         }
         uiModel.asMap().clear();
         objekt.persist();
-        return "redirect:/objekts/" + encodeUrlPathSegment(objekt.getId().toString(), httpServletRequest);
+        return "redirect:/objekts/" + encodeUrlPathSegment(objekt.getObjekt_ID().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
@@ -40,10 +40,10 @@ privileged aspect ObjektController_Roo_Controller {
         return "objekts/create";
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String ObjektController.show(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("objekt", Objekt.findObjekt(id));
-        uiModel.addAttribute("itemId", id);
+    @RequestMapping(value = "/{objekt_ID}", method = RequestMethod.GET)
+    public String ObjektController.show(@PathVariable("objekt_ID") Long objekt_ID, Model uiModel) {
+        uiModel.addAttribute("objekt", Objekt.findObjekt(objekt_ID));
+        uiModel.addAttribute("itemId", objekt_ID);
         return "objekts/show";
     }
     
@@ -68,18 +68,18 @@ privileged aspect ObjektController_Roo_Controller {
         }
         uiModel.asMap().clear();
         objekt.merge();
-        return "redirect:/objekts/" + encodeUrlPathSegment(objekt.getId().toString(), httpServletRequest);
+        return "redirect:/objekts/" + encodeUrlPathSegment(objekt.getObjekt_ID().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String ObjektController.updateForm(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("objekt", Objekt.findObjekt(id));
+    @RequestMapping(value = "/{objekt_ID}", params = "form", method = RequestMethod.GET)
+    public String ObjektController.updateForm(@PathVariable("objekt_ID") Long objekt_ID, Model uiModel) {
+        uiModel.addAttribute("objekt", Objekt.findObjekt(objekt_ID));
         return "objekts/update";
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String ObjektController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Objekt.findObjekt(id).remove();
+    @RequestMapping(value = "/{objekt_ID}", method = RequestMethod.DELETE)
+    public String ObjektController.delete(@PathVariable("objekt_ID") Long objekt_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Objekt.findObjekt(objekt_ID).remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());

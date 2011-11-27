@@ -8,38 +8,19 @@ import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Objekt_Roo_Entity {
     
-    declare @type: Objekt: @Entity;
-    
     @PersistenceContext
     transient EntityManager Objekt.entityManager;
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long Objekt.id;
     
     @Version
     @Column(name = "version")
     private Integer Objekt.version;
-    
-    public Long Objekt.getId() {
-        return this.id;
-    }
-    
-    public void Objekt.setId(Long id) {
-        this.id = id;
-    }
     
     public Integer Objekt.getVersion() {
         return this.version;
@@ -61,7 +42,7 @@ privileged aspect Objekt_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Objekt attached = Objekt.findObjekt(this.id);
+            Objekt attached = Objekt.findObjekt(this.objekt_ID);
             this.entityManager.remove(attached);
         }
     }
@@ -100,9 +81,9 @@ privileged aspect Objekt_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Objekt o", Objekt.class).getResultList();
     }
     
-    public static Objekt Objekt.findObjekt(Long id) {
-        if (id == null) return null;
-        return entityManager().find(Objekt.class, id);
+    public static Objekt Objekt.findObjekt(Long objekt_ID) {
+        if (objekt_ID == null) return null;
+        return entityManager().find(Objekt.class, objekt_ID);
     }
     
     public static List<Objekt> Objekt.findObjektEntries(int firstResult, int maxResults) {

@@ -9,7 +9,6 @@ privileged aspect Objekt_Roo_ToString {
     
     public String Objekt.toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Id: ").append(getId()).append(", ");
         sb.append("Nimetus: ").append(getNimetus()).append(", ");
         sb.append("Objekt_ID: ").append(getObjekt_ID()).append(", ");
         sb.append("Version: ").append(getVersion());
