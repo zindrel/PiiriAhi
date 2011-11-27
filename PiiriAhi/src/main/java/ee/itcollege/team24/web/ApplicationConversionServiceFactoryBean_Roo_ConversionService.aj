@@ -3,6 +3,7 @@
 
 package ee.itcollege.team24.web;
 
+import ee.itcollege.team24.entities.IntsidendiLiik;
 import ee.itcollege.team24.entities.Objekt;
 import ee.itcollege.team24.entities.Piiriloik;
 import ee.itcollege.team24.entities.Piiririkkuja;
@@ -15,6 +16,7 @@ import org.springframework.format.FormatterRegistry;
 privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService {
     
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
+        registry.addConverter(new IntsidendiLiikConverter());
         registry.addConverter(new ObjektConverter());
         registry.addConverter(new PiiriloikConverter());
         registry.addConverter(new PiiririkkujaConverter());
@@ -25,6 +27,13 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {
         super.afterPropertiesSet();
         installLabelConverters(getObject());
+    }
+    
+    static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.IntsidendiLiikConverter implements Converter<IntsidendiLiik, String> {
+        public String convert(IntsidendiLiik intsidendiLiik) {
+            return new StringBuilder().append(intsidendiLiik.getNimetus()).toString();
+        }
+        
     }
     
     static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.ObjektConverter implements Converter<Objekt, String> {

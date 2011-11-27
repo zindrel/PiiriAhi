@@ -23,5 +23,9 @@
             <menu:item id="i_piiririkkuja_new" messageCode="global_menu_new" url="/piiririkkujas?form" z="SCaVFfGzCq9PMaYCiefQM+0Hir8="/>
             <menu:item id="i_piiririkkuja_list" messageCode="global_menu_list" url="/piiririkkujas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="ZtbTlYCoTxzaDW+jM5SusvFZgK8="/>
         </menu:category>
+        <menu:category id="c_intsidendiliik" z="5sFVQws8nDxUQTwy8b2OF4yOuJk=">
+            <menu:item id="i_intsidendiliik_new" messageCode="global_menu_new" url="/intsidendiliiks?form" z="bisLYTttGHOJhpb6iPYuVsXvH6Q="/>
+            <menu:item id="i_intsidendiliik_list" messageCode="global_menu_list" url="/intsidendiliiks?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Soe3eFPh8EjS9q1wA0v6lbxicEA="/>
+        </menu:category>
     </menu:menu>
 </div>
