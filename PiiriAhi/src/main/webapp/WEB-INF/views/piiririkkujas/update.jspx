@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_ee_itcollege_team24_entities_Piiririkkuja" modelAttribute="piiririkkuja" path="/piiririkkujas" versionField="Version" z="JHH+75RSPvHIUwEDLGt90DzNl94=">
+        <field:input field="piiririkkuja_ID" id="c_ee_itcollege_team24_entities_Piiririkkuja_piiririkkuja_ID" required="true" z="bL4EdlUtmAWYE2U/nY496tAdS2I="/>
+        <field:input field="eesnimi" id="c_ee_itcollege_team24_entities_Piiririkkuja_eesnimi" required="true" z="ud2321vmWo19Zu2lH/2hcnMN/sk="/>
+        <field:input field="perek_nimi" id="c_ee_itcollege_team24_entities_Piiririkkuja_perek_nimi" required="true" z="H2MQ2yotTFdJFUDdLJf42ZJfiQM="/>
+    </form:update>
+</div>

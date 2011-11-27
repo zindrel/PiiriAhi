@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_itcollege_team24_entities_Piiririkkuja" items="${piiririkkujas}" z="PKvs5pgXznp0a6K6AX9heOHl7Io=">
+        <table:table data="${piiririkkujas}" id="l_ee_itcollege_team24_entities_Piiririkkuja" path="/piiririkkujas" z="a53VU9O/zHT9+PzYEwDulClgnL0=">
+            <table:column id="c_ee_itcollege_team24_entities_Piiririkkuja_piiririkkuja_ID" property="piiririkkuja_ID" z="RmigAfbnHB2aVr+jqi/va5qyeb8="/>
+            <table:column id="c_ee_itcollege_team24_entities_Piiririkkuja_eesnimi" property="eesnimi" z="V1UjefTrPljjV7/dDUil4+x2zF8="/>
+            <table:column id="c_ee_itcollege_team24_entities_Piiririkkuja_perek_nimi" property="perek_nimi" z="6NeVkY14co2rkHNwM/ntAaehJgQ="/>
+        </table:table>
+    </page:list>
+</div>

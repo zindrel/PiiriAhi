@@ -5,6 +5,7 @@ package ee.itcollege.team24.web;
 
 import ee.itcollege.team24.entities.Objekt;
 import ee.itcollege.team24.entities.Piiriloik;
+import ee.itcollege.team24.entities.Piiririkkuja;
 import ee.itcollege.team24.entities.Piirivalvur;
 import ee.itcollege.team24.entities.Vaeosa;
 import java.lang.String;
@@ -16,6 +17,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(new ObjektConverter());
         registry.addConverter(new PiiriloikConverter());
+        registry.addConverter(new PiiririkkujaConverter());
         registry.addConverter(new PiirivalvurConverter());
         registry.addConverter(new VaeosaConverter());
     }
@@ -35,6 +37,13 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.PiiriloikConverter implements Converter<Piiriloik, String> {
         public String convert(Piiriloik piiriloik) {
             return new StringBuilder().append(piiriloik.getPiiriloik_ID()).append(" ").append(piiriloik.getNimetus()).toString();
+        }
+        
+    }
+    
+    static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.PiiririkkujaConverter implements Converter<Piiririkkuja, String> {
+        public String convert(Piiririkkuja piiririkkuja) {
+            return new StringBuilder().append(piiririkkuja.getPiiririkkuja_ID()).append(" ").append(piiririkkuja.getEesnimi()).append(" ").append(piiririkkuja.getPerek_nimi()).toString();
         }
         
     }

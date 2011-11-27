@@ -19,5 +19,9 @@
             <menu:item id="i_piiriloik_new" messageCode="global_menu_new" url="/piiriloiks?form" z="ASXtPkBwQsEIDr9VmWdhkICO72k="/>
             <menu:item id="i_piiriloik_list" messageCode="global_menu_list" url="/piiriloiks?page=1&amp;size=${empty param.size ? 10 : param.size}" z="1aNF7PGqbswkfIuw3fVpMrLzk+4="/>
         </menu:category>
+        <menu:category id="c_piiririkkuja" z="JMlBoa5Zk33SRu+AsyTwMO+66T0=">
+            <menu:item id="i_piiririkkuja_new" messageCode="global_menu_new" url="/piiririkkujas?form" z="SCaVFfGzCq9PMaYCiefQM+0Hir8="/>
+            <menu:item id="i_piiririkkuja_list" messageCode="global_menu_list" url="/piiririkkujas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="ZtbTlYCoTxzaDW+jM5SusvFZgK8="/>
+        </menu:category>
     </menu:menu>
 </div>

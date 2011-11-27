@@ -12,3 +12,28 @@ web mvc setup
 web mvc all --package ~.web
 // Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-27 13:15:38
 // Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-11-27 13:43:42
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-27 14:18:57
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-11-27 14:20:13
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-27 14:23:09
+entity --class ~.entities.Vaeosa
+field number --fieldName vaeosa_ID --type int --notNull
+field string --fieldName nimetus --notNull
+web mvc all --package ~.web
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-11-27 14:34:18
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-11-27 14:39:11
+// [failed] entity --class ~.entities.Piiriloik
+// [failed] field number --fieldName piiriloik_ID --type int --notNull
+entity --class ~.entities.Piiriloik
+field number --fieldName piiriloik_ID --type int --notNull
+field string --fieldName kood --notNull
+field string --fieldName nimetus --notNull
+field string --fieldName GPS_koordinaadid --notNull
+field string --fieldName kommentaar --notNull
+field string --fieldName avaja --notNull
+field date --fieldName avatud --type java.util.Calendar --notNull
+field string --fieldName muutja --notNull
+field date --fieldName muudetud --type java.util.Calendar --notNull
+field string --fieldName sulgeja --notNull
+field date --fieldName suletud --type java.util.Calendar --notNull
+web mvc all --package ~.web
+web mvc all --package ~.web
