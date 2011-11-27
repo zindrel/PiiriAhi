@@ -4,6 +4,7 @@
 package ee.itcollege.team24.web;
 
 import ee.itcollege.team24.entities.Piirivalvur;
+import ee.itcollege.team24.entities.Vaeosa;
 import java.lang.String;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
@@ -12,6 +13,7 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(new PiirivalvurConverter());
+        registry.addConverter(new VaeosaConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {
@@ -22,6 +24,13 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.PiirivalvurConverter implements Converter<Piirivalvur, String> {
         public String convert(Piirivalvur piirivalvur) {
             return new StringBuilder().append(piirivalvur.getPiirivalvur_ID()).append(" ").append(piirivalvur.getEesnimed()).append(" ").append(piirivalvur.getPerekonnanimi()).toString();
+        }
+        
+    }
+    
+    static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.VaeosaConverter implements Converter<Vaeosa, String> {
+        public String convert(Vaeosa vaeosa) {
+            return new StringBuilder().append(vaeosa.getVaeosa_ID()).append(" ").append(vaeosa.getNimetus()).toString();
         }
         
     }

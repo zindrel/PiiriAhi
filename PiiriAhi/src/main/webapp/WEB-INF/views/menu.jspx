@@ -7,5 +7,9 @@
             <menu:item id="i_piirivalvur_new" messageCode="global_menu_new" url="/piirivalvurs?form" z="HRvdB2pvoLqTAPhuPDRzOsT/HpE="/>
             <menu:item id="i_piirivalvur_list" messageCode="global_menu_list" url="/piirivalvurs?page=1&amp;size=${empty param.size ? 10 : param.size}" z="sy0TKZS9L9wBaTTNXcAXixPtYHw="/>
         </menu:category>
+        <menu:category id="c_vaeosa" z="UjcvY5sFG0mXjkNoVhTf6XRReXA=">
+            <menu:item id="i_vaeosa_new" messageCode="global_menu_new" url="/vaeosas?form" z="FAVHgwavmIl9dgzX+VpD/UnJl6o="/>
+            <menu:item id="i_vaeosa_list" messageCode="global_menu_list" url="/vaeosas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="xmlNM27KfbjGn72iRw7P1QBf3Ww="/>
+        </menu:category>
     </menu:menu>
 </div>
