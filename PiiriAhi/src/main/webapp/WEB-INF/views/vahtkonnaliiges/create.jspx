@@ -3,8 +3,8 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_itcollege_team24_entities_VahtkonnaLiige" modelAttribute="vahtkonnaLiige" path="/vahtkonnaliiges" render="${empty dependencies}" z="+ekMpO7TtByXoKFpqNrUOvzCeoc=">
-        <field:datetime dateTimePattern="${vahtkonnaLiige_alates_date_format}" field="alates" id="c_ee_itcollege_team24_entities_VahtkonnaLiige_alates" z="ZkaHulWOJPfaT/ZZMjqmjbGEi8o="/>
-        <field:datetime dateTimePattern="${vahtkonnaLiige_kuni_date_format}" field="kuni" id="c_ee_itcollege_team24_entities_VahtkonnaLiige_kuni" z="AVMUoBvBIHyJVgiF8J8R7NKn3ZQ="/>
+        <field:datetime dateTimePattern="${vahtkonnaLiige_alates_date_format}" field="alates" id="c_ee_itcollege_team24_entities_VahtkonnaLiige_alates" required="true" z="VWJCYZYPHVggbbmmGljIHDl8WBc="/>
+        <field:datetime dateTimePattern="${vahtkonnaLiige_kuni_date_format}" field="kuni" id="c_ee_itcollege_team24_entities_VahtkonnaLiige_kuni" required="true" z="DN2shRyU7XmHNs3pg+ZEjuH3hhg="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_team24_entities_VahtkonnaLiige" render="${not empty dependencies}" z="BQEgAmSWrQPyDP6l0gNgMKt8R5g="/>
 </div>

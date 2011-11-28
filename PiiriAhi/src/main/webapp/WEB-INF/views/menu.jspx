@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" id="menu" version="2.0">
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:menu="urn:jsptagdir:/WEB-INF/tags/menu" 
+     xmlns:sec="http://www.springframework.org/security/tags" id="menu" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <menu:menu id="_menu" z="nZaf43BjUg1iM0v70HJVEsXDopc=">
+    
+      <sec:authorize access="hasRole('ROLE_ADMIN')">
+      
         <menu:category id="c_piirivalvur" z="sGXZ4GwwZtbGylRvbUXZI4kvKZs=">
             <menu:item id="i_piirivalvur_new" messageCode="global_menu_new" url="/piirivalvurs?form" z="HRvdB2pvoLqTAPhuPDRzOsT/HpE="/>
             <menu:item id="i_piirivalvur_list" messageCode="global_menu_list" url="/piirivalvurs?page=1&amp;size=${empty param.size ? 10 : param.size}" z="sy0TKZS9L9wBaTTNXcAXixPtYHw="/>
@@ -27,10 +31,6 @@
             <menu:item id="i_intsidendiliik_new" messageCode="global_menu_new" url="/intsidendiliiks?form" z="bisLYTttGHOJhpb6iPYuVsXvH6Q="/>
             <menu:item id="i_intsidendiliik_list" messageCode="global_menu_list" url="/intsidendiliiks?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Soe3eFPh8EjS9q1wA0v6lbxicEA="/>
         </menu:category>
-        <menu:category id="c_intsident" z="kwTJaHl5VF4ahaSorWL0R46/LTM=">
-            <menu:item id="i_intsident_new" messageCode="global_menu_new" url="/intsidents?form" z="PoAgtQFn6iVS32mKUjyI3kM2khc="/>
-            <menu:item id="i_intsident_list" messageCode="global_menu_list" url="/intsidents?page=1&amp;size=${empty param.size ? 10 : param.size}" z="kHeRRwTb9AVfs3A2YRAPSkAX64k="/>
-        </menu:category>
         <menu:category id="c_piirivalvurintsidendis" z="2A4RHnMmWNYYoZXEgP1sX8rkiK4=">
             <menu:item id="i_piirivalvurintsidendis_new" messageCode="global_menu_new" url="/piirivalvurintsidendises?form" z="AAKwsf36eJIHNL9x8Ln1LAgzVbc="/>
             <menu:item id="i_piirivalvurintsidendis_list" messageCode="global_menu_list" url="/piirivalvurintsidendises?page=1&amp;size=${empty param.size ? 10 : param.size}" z="g+B0jbR1/i5TfIkJhG1YCfPBqrY="/>
@@ -54,6 +54,13 @@
         <menu:category id="c_vahtkondintsidendis" z="MLLyNPlDqnkcOGrsw9EO8JDlx7I=">
             <menu:item id="i_vahtkondintsidendis_new" messageCode="global_menu_new" url="/vahtkondintsidendises?form" z="jtqXO+WOaS/id6UHWPrtpIqFYAo="/>
             <menu:item id="i_vahtkondintsidendis_list" messageCode="global_menu_list" url="/vahtkondintsidendises?page=1&amp;size=${empty param.size ? 10 : param.size}" z="YUVDehSbLKNZA/UUy/ICnl3mNLg="/>
+        </menu:category>
+      
+      </sec:authorize>
+        
+        <menu:category id="c_intsident" z="kwTJaHl5VF4ahaSorWL0R46/LTM=">
+            <menu:item id="i_intsident_new" messageCode="global_menu_new" url="/intsidents?form" z="PoAgtQFn6iVS32mKUjyI3kM2khc="/>
+            <menu:item id="i_intsident_list" messageCode="global_menu_list" url="/intsidents?page=1&amp;size=${empty param.size ? 10 : param.size}" z="kHeRRwTb9AVfs3A2YRAPSkAX64k="/>
         </menu:category>
     </menu:menu>
 </div>

@@ -10,12 +10,12 @@
         <field:datetime dateTimePattern="${intsident_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_team24_entities_Intsident_muudetud" required="true" z="C9HLFrwHJ6I2/c2Aj1lfU9WlfEc="/>
         <field:textarea field="sulgeja" id="c_ee_itcollege_team24_entities_Intsident_sulgeja" z="FFHDn3Jdcp97vv4PTpx7etqcJKo="/>
         <field:datetime dateTimePattern="${intsident_suletud_date_format}" field="suletud" id="c_ee_itcollege_team24_entities_Intsident_suletud" required="true" z="l2PC0NNNnQINMz5BWVv2ToBLymc="/>
-        <field:input field="kood" id="c_ee_itcollege_team24_entities_Intsident_kood" z="khQhZs9JgyTHhKM1Yo0EtW0DtkU="/>
-        <field:input field="nimetus" id="c_ee_itcollege_team24_entities_Intsident_nimetus" z="cG61LqQ+Rm92w2HD16YqTh6trfc="/>
-        <field:datetime dateTimePattern="${intsident_toimumise_algus_date_format}" field="toimumise_algus" id="c_ee_itcollege_team24_entities_Intsident_toimumise_algus" z="sESQjFpzRy+8Ej+hkV7HBfjC0OI="/>
-        <field:datetime dateTimePattern="${intsident_toimumise_lopp_date_format}" field="toimumise_lopp" id="c_ee_itcollege_team24_entities_Intsident_toimumise_lopp" z="PYqP/lr4w6OuFwtk+HgBUKWBKJ0="/>
-        <field:input field="GPS_longituud" id="c_ee_itcollege_team24_entities_Intsident_GPS_longituud" validationMessageCode="field_invalid_number" z="hihG9/uxaV99wVFkAsy4KBsS5+E="/>
-        <field:input field="GPS_latituud" id="c_ee_itcollege_team24_entities_Intsident_GPS_latituud" validationMessageCode="field_invalid_number" z="0897d5Ar8j2uYCjKREp0Xyc8nX8="/>
-        <field:input field="kirjeldus" id="c_ee_itcollege_team24_entities_Intsident_kirjeldus" z="D83fvDDSNA92I2gYOLSgs0mIBco="/>
+        <field:input field="kood" id="c_ee_itcollege_team24_entities_Intsident_kood" max="20" min="1" required="true" z="YiHnSsMzcw2HlffxVPZqdjWA/pI="/>
+        <field:textarea field="nimetus" id="c_ee_itcollege_team24_entities_Intsident_nimetus" required="true" z="NfhvTnJ4qVhGsKnCPIFeENxvoUE="/>
+        <field:datetime dateTimePattern="${intsident_toimumise_algus_date_format}" field="toimumise_algus" id="c_ee_itcollege_team24_entities_Intsident_toimumise_algus" required="true" z="8Yj97SQx4Ilqo+HEJyM+UpWDWD4="/>
+        <field:datetime dateTimePattern="${intsident_toimumise_lopp_date_format}" field="toimumise_lopp" id="c_ee_itcollege_team24_entities_Intsident_toimumise_lopp" required="true" z="QKpdrQvDG5ZVr7iNr/m5bs+EWeI="/>
+        <field:input decimalMax="180.0" decimalMin="0.0" field="GPS_longituud" id="c_ee_itcollege_team24_entities_Intsident_GPS_longituud" required="true" validationMessageCode="field_invalid_number" z="7TMIejHun8GBjzJ6Sc+YMGT2YL0="/>
+        <field:input decimalMax="90.0" decimalMin="0.0" field="GPS_latituud" id="c_ee_itcollege_team24_entities_Intsident_GPS_latituud" required="true" validationMessageCode="field_invalid_number" z="/9HW3tKvSl16BnAsay+za4rdtG0="/>
+        <field:textarea field="kirjeldus" id="c_ee_itcollege_team24_entities_Intsident_kirjeldus" required="true" z="SZMr2FlLwHgKkfy+rGUJuR7c0c8="/>
     </form:update>
 </div>
