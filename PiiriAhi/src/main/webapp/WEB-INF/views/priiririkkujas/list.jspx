@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <page:list id="pl_ee_itcollege_team24_entities_Piiririkkuja" items="${piiririkkujas}" z="PKvs5pgXznp0a6K6AX9heOHl7Io=">
-        <table:table data="${piiririkkujas}" id="l_ee_itcollege_team24_entities_Piiririkkuja" path="/piiririkkujas" typeIdFieldName="piiririkkuja_ID" z="NsPH4wk/shnCCjrk2scQZez23pE=">
+        <table:table data="${piiririkkujas}" id="l_ee_itcollege_team24_entities_Piiririkkuja" path="/priiririkkujas" typeIdFieldName="piiririkkuja_ID" z="/r4bgeZGalHcKw2aXKYJHBvj3QE=">
             <table:column id="c_ee_itcollege_team24_entities_Piiririkkuja_eesnimi" property="eesnimi" z="V1UjefTrPljjV7/dDUil4+x2zF8="/>
             <table:column id="c_ee_itcollege_team24_entities_Piiririkkuja_perek_nimi" property="perek_nimi" z="6NeVkY14co2rkHNwM/ntAaehJgQ="/>
         </table:table>

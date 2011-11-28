@@ -8,38 +8,19 @@ import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Vaeosa_Roo_Entity {
     
-    declare @type: Vaeosa: @Entity;
-    
     @PersistenceContext
     transient EntityManager Vaeosa.entityManager;
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long Vaeosa.id;
     
     @Version
     @Column(name = "version")
     private Integer Vaeosa.version;
-    
-    public Long Vaeosa.getId() {
-        return this.id;
-    }
-    
-    public void Vaeosa.setId(Long id) {
-        this.id = id;
-    }
     
     public Integer Vaeosa.getVersion() {
         return this.version;
@@ -61,7 +42,7 @@ privileged aspect Vaeosa_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Vaeosa attached = Vaeosa.findVaeosa(this.id);
+            Vaeosa attached = Vaeosa.findVaeosa(this.vaeosa_ID);
             this.entityManager.remove(attached);
         }
     }
@@ -100,9 +81,9 @@ privileged aspect Vaeosa_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Vaeosa o", Vaeosa.class).getResultList();
     }
     
-    public static Vaeosa Vaeosa.findVaeosa(Long id) {
-        if (id == null) return null;
-        return entityManager().find(Vaeosa.class, id);
+    public static Vaeosa Vaeosa.findVaeosa(Long vaeosa_ID) {
+        if (vaeosa_ID == null) return null;
+        return entityManager().find(Vaeosa.class, vaeosa_ID);
     }
     
     public static List<Vaeosa> Vaeosa.findVaeosaEntries(int firstResult, int maxResults) {

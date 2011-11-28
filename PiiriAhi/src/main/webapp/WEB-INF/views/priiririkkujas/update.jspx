@@ -2,7 +2,7 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_ee_itcollege_team24_entities_Piiririkkuja" idField="piiririkkuja_ID" modelAttribute="piiririkkuja" path="/piiririkkujas" versionField="Version" z="AkjRJsWuNfvvbhHq5Ch/qCCDA2Q=">
+    <form:update id="fu_ee_itcollege_team24_entities_Piiririkkuja" idField="piiririkkuja_ID" modelAttribute="piiririkkuja" path="/priiririkkujas" versionField="Version" z="gArfR7+T2qrvz/4SKzlhfPwnV0w=">
         <field:input field="eesnimi" id="c_ee_itcollege_team24_entities_Piiririkkuja_eesnimi" z="ai2xLYXPkZm/kNYGidbJmTS50cQ="/>
         <field:input field="perek_nimi" id="c_ee_itcollege_team24_entities_Piiririkkuja_perek_nimi" z="bjfChD+ckEpLOWS65hWS0fH19sA="/>
     </form:update>

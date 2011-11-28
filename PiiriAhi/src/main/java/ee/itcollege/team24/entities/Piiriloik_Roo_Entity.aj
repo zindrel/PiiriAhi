@@ -8,38 +8,19 @@ import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Piiriloik_Roo_Entity {
     
-    declare @type: Piiriloik: @Entity;
-    
     @PersistenceContext
     transient EntityManager Piiriloik.entityManager;
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long Piiriloik.id;
     
     @Version
     @Column(name = "version")
     private Integer Piiriloik.version;
-    
-    public Long Piiriloik.getId() {
-        return this.id;
-    }
-    
-    public void Piiriloik.setId(Long id) {
-        this.id = id;
-    }
     
     public Integer Piiriloik.getVersion() {
         return this.version;
@@ -61,7 +42,7 @@ privileged aspect Piiriloik_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Piiriloik attached = Piiriloik.findPiiriloik(this.id);
+            Piiriloik attached = Piiriloik.findPiiriloik(this.piiriloik_ID);
             this.entityManager.remove(attached);
         }
     }
@@ -100,9 +81,9 @@ privileged aspect Piiriloik_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Piiriloik o", Piiriloik.class).getResultList();
     }
     
-    public static Piiriloik Piiriloik.findPiiriloik(Long id) {
-        if (id == null) return null;
-        return entityManager().find(Piiriloik.class, id);
+    public static Piiriloik Piiriloik.findPiiriloik(Long piiriloik_ID) {
+        if (piiriloik_ID == null) return null;
+        return entityManager().find(Piiriloik.class, piiriloik_ID);
     }
     
     public static List<Piiriloik> Piiriloik.findPiiriloikEntries(int firstResult, int maxResults) {

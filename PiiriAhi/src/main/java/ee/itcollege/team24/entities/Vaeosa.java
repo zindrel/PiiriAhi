@@ -1,18 +1,51 @@
 package ee.itcollege.team24.entities;
 
-import org.springframework.roo.addon.entity.RooEntity;
-import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.tostring.RooToString;
-import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
-@RooJavaBean
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
+/**
+ * Entity implementation class for Entity: Vaeosa
+ *
+ */
+@Entity
+@Table(name="Vaeosa")
 @RooToString
 @RooEntity
-public class Vaeosa {
+public class Vaeosa implements Serializable {
 
-    @NotNull
-    private int vaeosa_ID;
+	   
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long vaeosa_ID;
+	
+	private String nimetus;
+	
+	private static final long serialVersionUID = 1L;
 
-    @NotNull
-    private String nimetus;
+	public Vaeosa() {
+		super();
+	}   
+	public Long getVaeosa_ID() {
+		return this.vaeosa_ID;
+	}
+
+	public void setVaeosa_ID(Long vaeosa_ID) {
+		this.vaeosa_ID = vaeosa_ID;
+	}   
+	public String getNimetus() {
+		return this.nimetus;
+	}
+
+	public void setNimetus(String nimetus) {
+		this.nimetus = nimetus;
+	}
+   
 }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="priiririkkujas/list">
+        <put-attribute name="body" value="/WEB-INF/views/priiririkkujas/list.jspx"/>
+    </definition>
+<definition extends="default" name="priiririkkujas/show">
+        <put-attribute name="body" value="/WEB-INF/views/priiririkkujas/show.jspx"/>
+    </definition>
+<definition extends="default" name="priiririkkujas/create">
+        <put-attribute name="body" value="/WEB-INF/views/priiririkkujas/create.jspx"/>
+    </definition>
+<definition extends="default" name="priiririkkujas/update">
+        <put-attribute name="body" value="/WEB-INF/views/priiririkkujas/update.jspx"/>
+    </definition>
+</tiles-definitions>

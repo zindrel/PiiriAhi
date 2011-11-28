@@ -3,8 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_itcollege_team24_entities_Piiriloik" modelAttribute="piiriloik" path="/piiriloiks" render="${empty dependencies}" z="0A5hMSGsg0fMXAD0p52GHAQWvDM=">
-        <field:input field="piiriloik_ID" id="c_ee_itcollege_team24_entities_Piiriloik_piiriloik_ID" required="true" z="p5HRt83Vml/XA3RCcDKUeSshQEc="/>
-        <field:input field="nimetus" id="c_ee_itcollege_team24_entities_Piiriloik_nimetus" required="true" z="yiiwWKkNGaKurIvNXjZaYZHFGXc="/>
+        <field:input field="nimetus" id="c_ee_itcollege_team24_entities_Piiriloik_nimetus" z="22sWstAMUmh5Jfl9ovBo5dOB3IQ="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_team24_entities_Piiriloik" render="${not empty dependencies}" z="4iveZ1uWMF5zljRG2rOO8mwTyxU="/>
 </div>

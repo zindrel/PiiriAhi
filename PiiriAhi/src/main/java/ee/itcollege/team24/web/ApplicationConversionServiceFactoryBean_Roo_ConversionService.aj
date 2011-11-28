@@ -45,28 +45,28 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.PiiriloikConverter implements Converter<Piiriloik, String> {
         public String convert(Piiriloik piiriloik) {
-            return new StringBuilder().append(piiriloik.getPiiriloik_ID()).append(" ").append(piiriloik.getNimetus()).toString();
+            return new StringBuilder().append(piiriloik.getNimetus()).toString();
         }
         
     }
     
     static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.PiiririkkujaConverter implements Converter<Piiririkkuja, String> {
         public String convert(Piiririkkuja piiririkkuja) {
-            return new StringBuilder().append(piiririkkuja.getPiiririkkuja_ID()).append(" ").append(piiririkkuja.getEesnimi()).append(" ").append(piiririkkuja.getPerek_nimi()).toString();
+            return new StringBuilder().append(piiririkkuja.getEesnimi()).append(" ").append(piiririkkuja.getPerek_nimi()).toString();
         }
         
     }
     
     static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.PiirivalvurConverter implements Converter<Piirivalvur, String> {
         public String convert(Piirivalvur piirivalvur) {
-            return new StringBuilder().append(piirivalvur.getPiirivalvur_ID()).append(" ").append(piirivalvur.getEesnimed()).append(" ").append(piirivalvur.getPerekonnanimi()).toString();
+            return new StringBuilder().append(piirivalvur.getEesnimed()).append(" ").append(piirivalvur.getPerekonnanimi()).toString();
         }
         
     }
     
     static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.VaeosaConverter implements Converter<Vaeosa, String> {
         public String convert(Vaeosa vaeosa) {
-            return new StringBuilder().append(vaeosa.getVaeosa_ID()).append(" ").append(vaeosa.getNimetus()).toString();
+            return new StringBuilder().append(vaeosa.getNimetus()).toString();
         }
         
     }

@@ -8,38 +8,19 @@ import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Piirivalvur_Roo_Entity {
     
-    declare @type: Piirivalvur: @Entity;
-    
     @PersistenceContext
     transient EntityManager Piirivalvur.entityManager;
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long Piirivalvur.id;
     
     @Version
     @Column(name = "version")
     private Integer Piirivalvur.version;
-    
-    public Long Piirivalvur.getId() {
-        return this.id;
-    }
-    
-    public void Piirivalvur.setId(Long id) {
-        this.id = id;
-    }
     
     public Integer Piirivalvur.getVersion() {
         return this.version;
@@ -61,7 +42,7 @@ privileged aspect Piirivalvur_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Piirivalvur attached = Piirivalvur.findPiirivalvur(this.id);
+            Piirivalvur attached = Piirivalvur.findPiirivalvur(this.piirivalvur_ID);
             this.entityManager.remove(attached);
         }
     }
@@ -100,9 +81,9 @@ privileged aspect Piirivalvur_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Piirivalvur o", Piirivalvur.class).getResultList();
     }
     
-    public static Piirivalvur Piirivalvur.findPiirivalvur(Long id) {
-        if (id == null) return null;
-        return entityManager().find(Piirivalvur.class, id);
+    public static Piirivalvur Piirivalvur.findPiirivalvur(Long piirivalvur_ID) {
+        if (piirivalvur_ID == null) return null;
+        return entityManager().find(Piirivalvur.class, piirivalvur_ID);
     }
     
     public static List<Piirivalvur> Piirivalvur.findPiirivalvurEntries(int firstResult, int maxResults) {

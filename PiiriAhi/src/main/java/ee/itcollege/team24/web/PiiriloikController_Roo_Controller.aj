@@ -31,7 +31,7 @@ privileged aspect PiiriloikController_Roo_Controller {
         }
         uiModel.asMap().clear();
         piiriloik.persist();
-        return "redirect:/piiriloiks/" + encodeUrlPathSegment(piiriloik.getId().toString(), httpServletRequest);
+        return "redirect:/piiriloiks/" + encodeUrlPathSegment(piiriloik.getPiiriloik_ID().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
@@ -40,10 +40,10 @@ privileged aspect PiiriloikController_Roo_Controller {
         return "piiriloiks/create";
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String PiiriloikController.show(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("piiriloik", Piiriloik.findPiiriloik(id));
-        uiModel.addAttribute("itemId", id);
+    @RequestMapping(value = "/{piiriloik_ID}", method = RequestMethod.GET)
+    public String PiiriloikController.show(@PathVariable("piiriloik_ID") Long piiriloik_ID, Model uiModel) {
+        uiModel.addAttribute("piiriloik", Piiriloik.findPiiriloik(piiriloik_ID));
+        uiModel.addAttribute("itemId", piiriloik_ID);
         return "piiriloiks/show";
     }
     
@@ -68,18 +68,18 @@ privileged aspect PiiriloikController_Roo_Controller {
         }
         uiModel.asMap().clear();
         piiriloik.merge();
-        return "redirect:/piiriloiks/" + encodeUrlPathSegment(piiriloik.getId().toString(), httpServletRequest);
+        return "redirect:/piiriloiks/" + encodeUrlPathSegment(piiriloik.getPiiriloik_ID().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String PiiriloikController.updateForm(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("piiriloik", Piiriloik.findPiiriloik(id));
+    @RequestMapping(value = "/{piiriloik_ID}", params = "form", method = RequestMethod.GET)
+    public String PiiriloikController.updateForm(@PathVariable("piiriloik_ID") Long piiriloik_ID, Model uiModel) {
+        uiModel.addAttribute("piiriloik", Piiriloik.findPiiriloik(piiriloik_ID));
         return "piiriloiks/update";
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String PiiriloikController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Piiriloik.findPiiriloik(id).remove();
+    @RequestMapping(value = "/{piiriloik_ID}", method = RequestMethod.DELETE)
+    public String PiiriloikController.delete(@PathVariable("piiriloik_ID") Long piiriloik_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Piiriloik.findPiiriloik(piiriloik_ID).remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());

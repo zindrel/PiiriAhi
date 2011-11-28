@@ -2,8 +2,7 @@
 <div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
-    <form:update id="fu_ee_itcollege_team24_entities_Vaeosa" modelAttribute="vaeosa" path="/vaeosas" versionField="Version" z="yorOqdEjp+G1WN61kiErDJD/whk=">
-        <field:input field="vaeosa_ID" id="c_ee_itcollege_team24_entities_Vaeosa_vaeosa_ID" required="true" z="cOsiqcapExyn2R81ZNKW0o3WGZc="/>
-        <field:input field="nimetus" id="c_ee_itcollege_team24_entities_Vaeosa_nimetus" required="true" z="Hqe+pQ+AGmOpln2DMX7CyReyBQ0="/>
+    <form:update id="fu_ee_itcollege_team24_entities_Vaeosa" idField="vaeosa_ID" modelAttribute="vaeosa" path="/vaeosas" versionField="Version" z="nWhKGDNv49ZplNhrSu40aH9haVo=">
+        <field:input field="nimetus" id="c_ee_itcollege_team24_entities_Vaeosa_nimetus" z="D6covzDOP5/i24HOEz990bL5eL8="/>
     </form:update>
 </div>

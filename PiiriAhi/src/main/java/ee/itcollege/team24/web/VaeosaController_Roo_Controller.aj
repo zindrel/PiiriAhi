@@ -31,7 +31,7 @@ privileged aspect VaeosaController_Roo_Controller {
         }
         uiModel.asMap().clear();
         vaeosa.persist();
-        return "redirect:/vaeosas/" + encodeUrlPathSegment(vaeosa.getId().toString(), httpServletRequest);
+        return "redirect:/vaeosas/" + encodeUrlPathSegment(vaeosa.getVaeosa_ID().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
@@ -40,10 +40,10 @@ privileged aspect VaeosaController_Roo_Controller {
         return "vaeosas/create";
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String VaeosaController.show(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("vaeosa", Vaeosa.findVaeosa(id));
-        uiModel.addAttribute("itemId", id);
+    @RequestMapping(value = "/{vaeosa_ID}", method = RequestMethod.GET)
+    public String VaeosaController.show(@PathVariable("vaeosa_ID") Long vaeosa_ID, Model uiModel) {
+        uiModel.addAttribute("vaeosa", Vaeosa.findVaeosa(vaeosa_ID));
+        uiModel.addAttribute("itemId", vaeosa_ID);
         return "vaeosas/show";
     }
     
@@ -68,18 +68,18 @@ privileged aspect VaeosaController_Roo_Controller {
         }
         uiModel.asMap().clear();
         vaeosa.merge();
-        return "redirect:/vaeosas/" + encodeUrlPathSegment(vaeosa.getId().toString(), httpServletRequest);
+        return "redirect:/vaeosas/" + encodeUrlPathSegment(vaeosa.getVaeosa_ID().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String VaeosaController.updateForm(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("vaeosa", Vaeosa.findVaeosa(id));
+    @RequestMapping(value = "/{vaeosa_ID}", params = "form", method = RequestMethod.GET)
+    public String VaeosaController.updateForm(@PathVariable("vaeosa_ID") Long vaeosa_ID, Model uiModel) {
+        uiModel.addAttribute("vaeosa", Vaeosa.findVaeosa(vaeosa_ID));
         return "vaeosas/update";
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String VaeosaController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Vaeosa.findVaeosa(id).remove();
+    @RequestMapping(value = "/{vaeosa_ID}", method = RequestMethod.DELETE)
+    public String VaeosaController.delete(@PathVariable("vaeosa_ID") Long vaeosa_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Vaeosa.findVaeosa(vaeosa_ID).remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());

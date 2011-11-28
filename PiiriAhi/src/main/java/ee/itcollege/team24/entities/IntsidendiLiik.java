@@ -25,7 +25,9 @@ public class IntsidendiLiik implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long intsidendi_liik_ID;
+	
 	private String nimetus;
+	
 	private static final long serialVersionUID = 1L;
 
 	public IntsidendiLiik() {

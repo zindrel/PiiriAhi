@@ -10,7 +10,6 @@ privileged aspect Piirivalvur_Roo_ToString {
     public String Piirivalvur.toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Eesnimed: ").append(getEesnimed()).append(", ");
-        sb.append("Id: ").append(getId()).append(", ");
         sb.append("Perekonnanimi: ").append(getPerekonnanimi()).append(", ");
         sb.append("Piirivalvur_ID: ").append(getPiirivalvur_ID()).append(", ");
         sb.append("Version: ").append(getVersion());

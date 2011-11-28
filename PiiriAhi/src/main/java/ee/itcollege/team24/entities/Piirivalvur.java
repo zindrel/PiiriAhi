@@ -1,21 +1,58 @@
 package ee.itcollege.team24.entities;
 
-import org.springframework.roo.addon.entity.RooEntity;
-import org.springframework.roo.addon.javabean.RooJavaBean;
-import org.springframework.roo.addon.tostring.RooToString;
-import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
-@RooJavaBean
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+import org.springframework.roo.addon.entity.RooEntity;
+import org.springframework.roo.addon.tostring.RooToString;
+
+/**
+ * Entity implementation class for Entity: Piirivalvur
+ *
+ */
+@Entity
 @RooToString
 @RooEntity
-public class Piirivalvur {
+public class Piirivalvur implements Serializable {
 
-    @NotNull
-    private int piirivalvur_ID;
+	   
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long piirivalvur_ID;
+	
+	private String eesnimed;
+	
+	private String perekonnanimi;
+	
+	private static final long serialVersionUID = 1L;
 
-    @NotNull
-    private String eesnimed;
+	public Piirivalvur() {
+		super();
+	}   
+	public Long getPiirivalvur_ID() {
+		return this.piirivalvur_ID;
+	}
 
-    @NotNull
-    private String perekonnanimi;
+	public void setPiirivalvur_ID(Long piirivalvur_ID) {
+		this.piirivalvur_ID = piirivalvur_ID;
+	}   
+	public String getEesnimed() {
+		return this.eesnimed;
+	}
+
+	public void setEesnimed(String eesnimed) {
+		this.eesnimed = eesnimed;
+	}   
+	public String getPerekonnanimi() {
+		return this.perekonnanimi;
+	}
+
+	public void setPerekonnanimi(String perekonnanimi) {
+		this.perekonnanimi = perekonnanimi;
+	}
+   
 }

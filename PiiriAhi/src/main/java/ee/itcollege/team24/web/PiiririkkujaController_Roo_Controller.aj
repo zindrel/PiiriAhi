@@ -31,7 +31,7 @@ privileged aspect PiiririkkujaController_Roo_Controller {
         }
         uiModel.asMap().clear();
         piiririkkuja.persist();
-        return "redirect:/piiririkkujas/" + encodeUrlPathSegment(piiririkkuja.getId().toString(), httpServletRequest);
+        return "redirect:/piiririkkujas/" + encodeUrlPathSegment(piiririkkuja.getPiiririkkuja_ID().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
@@ -40,10 +40,10 @@ privileged aspect PiiririkkujaController_Roo_Controller {
         return "piiririkkujas/create";
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String PiiririkkujaController.show(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("piiririkkuja", Piiririkkuja.findPiiririkkuja(id));
-        uiModel.addAttribute("itemId", id);
+    @RequestMapping(value = "/{piiririkkuja_ID}", method = RequestMethod.GET)
+    public String PiiririkkujaController.show(@PathVariable("piiririkkuja_ID") Long piiririkkuja_ID, Model uiModel) {
+        uiModel.addAttribute("piiririkkuja", Piiririkkuja.findPiiririkkuja(piiririkkuja_ID));
+        uiModel.addAttribute("itemId", piiririkkuja_ID);
         return "piiririkkujas/show";
     }
     
@@ -68,18 +68,18 @@ privileged aspect PiiririkkujaController_Roo_Controller {
         }
         uiModel.asMap().clear();
         piiririkkuja.merge();
-        return "redirect:/piiririkkujas/" + encodeUrlPathSegment(piiririkkuja.getId().toString(), httpServletRequest);
+        return "redirect:/piiririkkujas/" + encodeUrlPathSegment(piiririkkuja.getPiiririkkuja_ID().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String PiiririkkujaController.updateForm(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("piiririkkuja", Piiririkkuja.findPiiririkkuja(id));
+    @RequestMapping(value = "/{piiririkkuja_ID}", params = "form", method = RequestMethod.GET)
+    public String PiiririkkujaController.updateForm(@PathVariable("piiririkkuja_ID") Long piiririkkuja_ID, Model uiModel) {
+        uiModel.addAttribute("piiririkkuja", Piiririkkuja.findPiiririkkuja(piiririkkuja_ID));
         return "piiririkkujas/update";
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String PiiririkkujaController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Piiririkkuja.findPiiririkkuja(id).remove();
+    @RequestMapping(value = "/{piiririkkuja_ID}", method = RequestMethod.DELETE)
+    public String PiiririkkujaController.delete(@PathVariable("piiririkkuja_ID") Long piiririkkuja_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Piiririkkuja.findPiiririkkuja(piiririkkuja_ID).remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());

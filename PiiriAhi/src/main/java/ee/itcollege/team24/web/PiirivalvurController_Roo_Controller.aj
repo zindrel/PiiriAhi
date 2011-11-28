@@ -31,7 +31,7 @@ privileged aspect PiirivalvurController_Roo_Controller {
         }
         uiModel.asMap().clear();
         piirivalvur.persist();
-        return "redirect:/piirivalvurs/" + encodeUrlPathSegment(piirivalvur.getId().toString(), httpServletRequest);
+        return "redirect:/piirivalvurs/" + encodeUrlPathSegment(piirivalvur.getPiirivalvur_ID().toString(), httpServletRequest);
     }
     
     @RequestMapping(params = "form", method = RequestMethod.GET)
@@ -40,10 +40,10 @@ privileged aspect PiirivalvurController_Roo_Controller {
         return "piirivalvurs/create";
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public String PiirivalvurController.show(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("piirivalvur", Piirivalvur.findPiirivalvur(id));
-        uiModel.addAttribute("itemId", id);
+    @RequestMapping(value = "/{piirivalvur_ID}", method = RequestMethod.GET)
+    public String PiirivalvurController.show(@PathVariable("piirivalvur_ID") Long piirivalvur_ID, Model uiModel) {
+        uiModel.addAttribute("piirivalvur", Piirivalvur.findPiirivalvur(piirivalvur_ID));
+        uiModel.addAttribute("itemId", piirivalvur_ID);
         return "piirivalvurs/show";
     }
     
@@ -68,18 +68,18 @@ privileged aspect PiirivalvurController_Roo_Controller {
         }
         uiModel.asMap().clear();
         piirivalvur.merge();
-        return "redirect:/piirivalvurs/" + encodeUrlPathSegment(piirivalvur.getId().toString(), httpServletRequest);
+        return "redirect:/piirivalvurs/" + encodeUrlPathSegment(piirivalvur.getPiirivalvur_ID().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{id}", params = "form", method = RequestMethod.GET)
-    public String PiirivalvurController.updateForm(@PathVariable("id") Long id, Model uiModel) {
-        uiModel.addAttribute("piirivalvur", Piirivalvur.findPiirivalvur(id));
+    @RequestMapping(value = "/{piirivalvur_ID}", params = "form", method = RequestMethod.GET)
+    public String PiirivalvurController.updateForm(@PathVariable("piirivalvur_ID") Long piirivalvur_ID, Model uiModel) {
+        uiModel.addAttribute("piirivalvur", Piirivalvur.findPiirivalvur(piirivalvur_ID));
         return "piirivalvurs/update";
     }
     
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String PiirivalvurController.delete(@PathVariable("id") Long id, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
-        Piirivalvur.findPiirivalvur(id).remove();
+    @RequestMapping(value = "/{piirivalvur_ID}", method = RequestMethod.DELETE)
+    public String PiirivalvurController.delete(@PathVariable("piirivalvur_ID") Long piirivalvur_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
+        Piirivalvur.findPiirivalvur(piirivalvur_ID).remove();
         uiModel.asMap().clear();
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());

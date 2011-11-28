@@ -8,38 +8,19 @@ import java.lang.Integer;
 import java.lang.Long;
 import java.util.List;
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.EntityManager;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Version;
 import org.springframework.transaction.annotation.Transactional;
 
 privileged aspect Piiririkkuja_Roo_Entity {
     
-    declare @type: Piiririkkuja: @Entity;
-    
     @PersistenceContext
     transient EntityManager Piiririkkuja.entityManager;
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long Piiririkkuja.id;
     
     @Version
     @Column(name = "version")
     private Integer Piiririkkuja.version;
-    
-    public Long Piiririkkuja.getId() {
-        return this.id;
-    }
-    
-    public void Piiririkkuja.setId(Long id) {
-        this.id = id;
-    }
     
     public Integer Piiririkkuja.getVersion() {
         return this.version;
@@ -61,7 +42,7 @@ privileged aspect Piiririkkuja_Roo_Entity {
         if (this.entityManager.contains(this)) {
             this.entityManager.remove(this);
         } else {
-            Piiririkkuja attached = Piiririkkuja.findPiiririkkuja(this.id);
+            Piiririkkuja attached = Piiririkkuja.findPiiririkkuja(this.piiririkkuja_ID);
             this.entityManager.remove(attached);
         }
     }
@@ -100,9 +81,9 @@ privileged aspect Piiririkkuja_Roo_Entity {
         return entityManager().createQuery("SELECT o FROM Piiririkkuja o", Piiririkkuja.class).getResultList();
     }
     
-    public static Piiririkkuja Piiririkkuja.findPiiririkkuja(Long id) {
-        if (id == null) return null;
-        return entityManager().find(Piiririkkuja.class, id);
+    public static Piiririkkuja Piiririkkuja.findPiiririkkuja(Long piiririkkuja_ID) {
+        if (piiririkkuja_ID == null) return null;
+        return entityManager().find(Piiririkkuja.class, piiririkkuja_ID);
     }
     
     public static List<Piiririkkuja> Piiririkkuja.findPiiririkkujaEntries(int firstResult, int maxResults) {
