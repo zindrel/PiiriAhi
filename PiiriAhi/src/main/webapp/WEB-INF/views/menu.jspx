@@ -27,9 +27,5 @@
             <menu:item id="i_intsidendiliik_new" messageCode="global_menu_new" url="/intsidendiliiks?form" z="bisLYTttGHOJhpb6iPYuVsXvH6Q="/>
             <menu:item id="i_intsidendiliik_list" messageCode="global_menu_list" url="/intsidendiliiks?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Soe3eFPh8EjS9q1wA0v6lbxicEA="/>
         </menu:category>
-        <menu:category id="c_priiririkkuja" z="fOScyHQS/q/o8uSOQG4tYIjAGpM=">
-            <menu:item id="i_priiririkkuja_new" messageCode="global_menu_new" url="/priiririkkujas?form" z="J0bzEGoisvv/cbEUvofGoixTu7g="/>
-            <menu:item id="i_priiririkkuja_list" messageCode="global_menu_list" url="/priiririkkujas?page=1&amp;size=${empty param.size ? 10 : param.size}" z="pJG6u+G1mjGSg3O+kxjDl0l1IoA="/>
-        </menu:category>
     </menu:menu>
 </div>

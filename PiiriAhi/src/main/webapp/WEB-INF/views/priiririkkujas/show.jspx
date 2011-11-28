@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
-    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
-    <jsp:output omit-xml-declaration="yes"/>
-    <page:show id="ps_ee_itcollege_team24_entities_Piiririkkuja" object="${piiririkkuja}" path="/priiririkkujas" z="tgDkZF+mp5aKBfY+9jqTA1LEAcc=">
-        <field:display field="eesnimi" id="s_ee_itcollege_team24_entities_Piiririkkuja_eesnimi" object="${piiririkkuja}" z="d9nHXxb/TVdsfz/EWhGQcVor2jc="/>
-        <field:display field="perek_nimi" id="s_ee_itcollege_team24_entities_Piiririkkuja_perek_nimi" object="${piiririkkuja}" z="W5+bqliJXtcoXYaFTggJD3ikScE="/>
-    </page:show>
-</div>
