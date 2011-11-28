@@ -2,6 +2,7 @@ package ee.itcollege.team24.entities;
 
 import java.util.Calendar;
 
+import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -12,6 +13,7 @@ import org.springframework.format.annotation.DateTimeFormat;
  *
  */
 
+@MappedSuperclass
 public class BaseHistoryEntity {
 	
 	@Size(max = 150)
