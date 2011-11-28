@@ -27,6 +27,7 @@ privileged aspect VahtkonnaLiigeController_Roo_Controller {
     public String VahtkonnaLiigeController.create(@Valid VahtkonnaLiige vahtkonnaLiige, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("vahtkonnaLiige", vahtkonnaLiige);
+            addDateTimeFormatPatterns(uiModel);
             return "vahtkonnaliiges/create";
         }
         uiModel.asMap().clear();
@@ -37,11 +38,13 @@ privileged aspect VahtkonnaLiigeController_Roo_Controller {
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String VahtkonnaLiigeController.createForm(Model uiModel) {
         uiModel.addAttribute("vahtkonnaLiige", new VahtkonnaLiige());
+        addDateTimeFormatPatterns(uiModel);
         return "vahtkonnaliiges/create";
     }
     
     @RequestMapping(value = "/{vahtkonna_liige_ID}", method = RequestMethod.GET)
     public String VahtkonnaLiigeController.show(@PathVariable("vahtkonna_liige_ID") Long vahtkonna_liige_ID, Model uiModel) {
+        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("vahtkonnaliige", VahtkonnaLiige.findVahtkonnaLiige(vahtkonna_liige_ID));
         uiModel.addAttribute("itemId", vahtkonna_liige_ID);
         return "vahtkonnaliiges/show";
@@ -57,6 +60,7 @@ privileged aspect VahtkonnaLiigeController_Roo_Controller {
         } else {
             uiModel.addAttribute("vahtkonnaliiges", VahtkonnaLiige.findAllVahtkonnaLiiges());
         }
+        addDateTimeFormatPatterns(uiModel);
         return "vahtkonnaliiges/list";
     }
     
@@ -64,6 +68,7 @@ privileged aspect VahtkonnaLiigeController_Roo_Controller {
     public String VahtkonnaLiigeController.update(@Valid VahtkonnaLiige vahtkonnaLiige, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("vahtkonnaLiige", vahtkonnaLiige);
+            addDateTimeFormatPatterns(uiModel);
             return "vahtkonnaliiges/update";
         }
         uiModel.asMap().clear();
@@ -74,6 +79,7 @@ privileged aspect VahtkonnaLiigeController_Roo_Controller {
     @RequestMapping(value = "/{vahtkonna_liige_ID}", params = "form", method = RequestMethod.GET)
     public String VahtkonnaLiigeController.updateForm(@PathVariable("vahtkonna_liige_ID") Long vahtkonna_liige_ID, Model uiModel) {
         uiModel.addAttribute("vahtkonnaLiige", VahtkonnaLiige.findVahtkonnaLiige(vahtkonna_liige_ID));
+        addDateTimeFormatPatterns(uiModel);
         return "vahtkonnaliiges/update";
     }
     
@@ -89,6 +95,11 @@ privileged aspect VahtkonnaLiigeController_Roo_Controller {
     @ModelAttribute("vahtkonnaliiges")
     public Collection<VahtkonnaLiige> VahtkonnaLiigeController.populateVahtkonnaLiiges() {
         return VahtkonnaLiige.findAllVahtkonnaLiiges();
+    }
+    
+    void VahtkonnaLiigeController.addDateTimeFormatPatterns(Model uiModel) {
+        uiModel.addAttribute("vahtkonnaLiige_alates_date_format", "dd.MM.yyyy");
+        uiModel.addAttribute("vahtkonnaLiige_kuni_date_format", "dd.MM.yyyy");
     }
     
     String VahtkonnaLiigeController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

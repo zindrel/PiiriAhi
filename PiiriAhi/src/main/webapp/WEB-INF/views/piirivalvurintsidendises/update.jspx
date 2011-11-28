@@ -3,13 +3,13 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ee_itcollege_team24_entities_PiirivalvurIntsidendis" idField="piirivalvur_intsidendis_ID" modelAttribute="piirivalvurIntsidendis" path="/piirivalvurintsidendises" versionField="Version" z="rsJVZtE3hrlR4dd46kMKVNbnPVg=">
-        <field:input field="kommentaar" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_kommentaar" z="XshnGuRZQsxyL7af8k5U4kyJtJw="/>
-        <field:input field="avaja" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_avaja" z="5VvYSwN2n4qEsVh1zKq7dJND/Qs="/>
-        <field:datetime dateTimePattern="${piirivalvurIntsidendis_avatud_date_format}" field="avatud" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_avatud" z="k+0TO+3vz1rdVui2dK3JqD8YyUQ="/>
-        <field:input field="muutja" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_muutja" z="CNfxlS05w3R1JgPNm6jeKwNihu0="/>
-        <field:datetime dateTimePattern="${piirivalvurIntsidendis_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_muudetud" z="lyAuOtrUccdLZT4m7R8u5rC+hqk="/>
-        <field:input field="sulgeja" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_sulgeja" z="+mjsIW+DA6SbHrJbu/ChHu+M/Iw="/>
-        <field:datetime dateTimePattern="${piirivalvurIntsidendis_suletud_date_format}" field="suletud" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_suletud" z="KxIqxaPzsmJ/q6OVQToL0iBzhog="/>
+        <field:textarea field="kommentaar" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_kommentaar" z="8raAQwquOzzdhRwITqtkYQbTytU="/>
+        <field:textarea field="avaja" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_avaja" required="true" z="BCxY9223V4tS7dgNwRLGIoDqgXA="/>
+        <field:datetime dateTimePattern="${piirivalvurIntsidendis_avatud_date_format}" field="avatud" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_avatud" required="true" z="+asGxlhvGk+3oHKdh/dRyYn8Ixc="/>
+        <field:textarea field="muutja" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_muutja" required="true" z="YHBtHGTXeb6LqejRVgwtpcWk7Zo="/>
+        <field:datetime dateTimePattern="${piirivalvurIntsidendis_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_muudetud" required="true" z="RuFWnPoyBkjUj/n5pt3BmhAQJRQ="/>
+        <field:textarea field="sulgeja" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_sulgeja" z="3G2sxpND0Y3cb2hRyh4fEO64vY4="/>
+        <field:datetime dateTimePattern="${piirivalvurIntsidendis_suletud_date_format}" field="suletud" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_suletud" required="true" z="qvhpIjSf+N/bEDp/yc6GO9d5oDE="/>
         <field:datetime dateTimePattern="${piirivalvurIntsidendis_alates_date_format}" field="alates" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_alates" z="m+ht4fk30v+prUPQjrwBiayDZ5I="/>
         <field:datetime dateTimePattern="${piirivalvurIntsidendis_kuni_date_format}" field="kuni" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_kuni" z="7aUp2tmTDdXfZjSAdWYqvijg5TQ="/>
         <field:input field="kirjeldus" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_kirjeldus" z="jhc1wq/SPN/Ge6xh/WnOpevJN58="/>

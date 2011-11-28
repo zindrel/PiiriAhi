@@ -27,6 +27,7 @@ privileged aspect IsikIntsidendisController_Roo_Controller {
     public String IsikIntsidendisController.create(@Valid IsikIntsidendis isikIntsidendis, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("isikIntsidendis", isikIntsidendis);
+            addDateTimeFormatPatterns(uiModel);
             return "isikintsidendises/create";
         }
         uiModel.asMap().clear();
@@ -37,11 +38,13 @@ privileged aspect IsikIntsidendisController_Roo_Controller {
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String IsikIntsidendisController.createForm(Model uiModel) {
         uiModel.addAttribute("isikIntsidendis", new IsikIntsidendis());
+        addDateTimeFormatPatterns(uiModel);
         return "isikintsidendises/create";
     }
     
     @RequestMapping(value = "/{isik_intsidendis_ID}", method = RequestMethod.GET)
     public String IsikIntsidendisController.show(@PathVariable("isik_intsidendis_ID") Long isik_intsidendis_ID, Model uiModel) {
+        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("isikintsidendis", IsikIntsidendis.findIsikIntsidendis(isik_intsidendis_ID));
         uiModel.addAttribute("itemId", isik_intsidendis_ID);
         return "isikintsidendises/show";
@@ -57,6 +60,7 @@ privileged aspect IsikIntsidendisController_Roo_Controller {
         } else {
             uiModel.addAttribute("isikintsidendises", IsikIntsidendis.findAllIsikIntsidendises());
         }
+        addDateTimeFormatPatterns(uiModel);
         return "isikintsidendises/list";
     }
     
@@ -64,6 +68,7 @@ privileged aspect IsikIntsidendisController_Roo_Controller {
     public String IsikIntsidendisController.update(@Valid IsikIntsidendis isikIntsidendis, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("isikIntsidendis", isikIntsidendis);
+            addDateTimeFormatPatterns(uiModel);
             return "isikintsidendises/update";
         }
         uiModel.asMap().clear();
@@ -74,6 +79,7 @@ privileged aspect IsikIntsidendisController_Roo_Controller {
     @RequestMapping(value = "/{isik_intsidendis_ID}", params = "form", method = RequestMethod.GET)
     public String IsikIntsidendisController.updateForm(@PathVariable("isik_intsidendis_ID") Long isik_intsidendis_ID, Model uiModel) {
         uiModel.addAttribute("isikIntsidendis", IsikIntsidendis.findIsikIntsidendis(isik_intsidendis_ID));
+        addDateTimeFormatPatterns(uiModel);
         return "isikintsidendises/update";
     }
     
@@ -89,6 +95,14 @@ privileged aspect IsikIntsidendisController_Roo_Controller {
     @ModelAttribute("isikintsidendises")
     public Collection<IsikIntsidendis> IsikIntsidendisController.populateIsikIntsidendises() {
         return IsikIntsidendis.findAllIsikIntsidendises();
+    }
+    
+    void IsikIntsidendisController.addDateTimeFormatPatterns(Model uiModel) {
+        uiModel.addAttribute("isikIntsidendis_avatud_date_format", "dd.MM.yyyy");
+        uiModel.addAttribute("isikIntsidendis_muudetud_date_format", "dd.MM.yyyy");
+        uiModel.addAttribute("isikIntsidendis_suletud_date_format", "dd.MM.yyyy");
+        uiModel.addAttribute("isikIntsidendis_alates_date_format", "dd.MM.yyyy");
+        uiModel.addAttribute("isikIntsidendis_kuni_date_format", "dd.MM.yyyy");
     }
     
     String IsikIntsidendisController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

@@ -27,6 +27,7 @@ privileged aspect VahtkondIntsidendisController_Roo_Controller {
     public String VahtkondIntsidendisController.create(@Valid VahtkondIntsidendis vahtkondIntsidendis, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("vahtkondIntsidendis", vahtkondIntsidendis);
+            addDateTimeFormatPatterns(uiModel);
             return "vahtkondintsidendises/create";
         }
         uiModel.asMap().clear();
@@ -37,11 +38,13 @@ privileged aspect VahtkondIntsidendisController_Roo_Controller {
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String VahtkondIntsidendisController.createForm(Model uiModel) {
         uiModel.addAttribute("vahtkondIntsidendis", new VahtkondIntsidendis());
+        addDateTimeFormatPatterns(uiModel);
         return "vahtkondintsidendises/create";
     }
     
     @RequestMapping(value = "/{vahtkond_intsidendis_ID}", method = RequestMethod.GET)
     public String VahtkondIntsidendisController.show(@PathVariable("vahtkond_intsidendis_ID") Long vahtkond_intsidendis_ID, Model uiModel) {
+        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("vahtkondintsidendis", VahtkondIntsidendis.findVahtkondIntsidendis(vahtkond_intsidendis_ID));
         uiModel.addAttribute("itemId", vahtkond_intsidendis_ID);
         return "vahtkondintsidendises/show";
@@ -57,6 +60,7 @@ privileged aspect VahtkondIntsidendisController_Roo_Controller {
         } else {
             uiModel.addAttribute("vahtkondintsidendises", VahtkondIntsidendis.findAllVahtkondIntsidendises());
         }
+        addDateTimeFormatPatterns(uiModel);
         return "vahtkondintsidendises/list";
     }
     
@@ -64,6 +68,7 @@ privileged aspect VahtkondIntsidendisController_Roo_Controller {
     public String VahtkondIntsidendisController.update(@Valid VahtkondIntsidendis vahtkondIntsidendis, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("vahtkondIntsidendis", vahtkondIntsidendis);
+            addDateTimeFormatPatterns(uiModel);
             return "vahtkondintsidendises/update";
         }
         uiModel.asMap().clear();
@@ -74,6 +79,7 @@ privileged aspect VahtkondIntsidendisController_Roo_Controller {
     @RequestMapping(value = "/{vahtkond_intsidendis_ID}", params = "form", method = RequestMethod.GET)
     public String VahtkondIntsidendisController.updateForm(@PathVariable("vahtkond_intsidendis_ID") Long vahtkond_intsidendis_ID, Model uiModel) {
         uiModel.addAttribute("vahtkondIntsidendis", VahtkondIntsidendis.findVahtkondIntsidendis(vahtkond_intsidendis_ID));
+        addDateTimeFormatPatterns(uiModel);
         return "vahtkondintsidendises/update";
     }
     
@@ -89,6 +95,14 @@ privileged aspect VahtkondIntsidendisController_Roo_Controller {
     @ModelAttribute("vahtkondintsidendises")
     public Collection<VahtkondIntsidendis> VahtkondIntsidendisController.populateVahtkondIntsidendises() {
         return VahtkondIntsidendis.findAllVahtkondIntsidendises();
+    }
+    
+    void VahtkondIntsidendisController.addDateTimeFormatPatterns(Model uiModel) {
+        uiModel.addAttribute("vahtkondIntsidendis_avatud_date_format", "dd.MM.yyyy");
+        uiModel.addAttribute("vahtkondIntsidendis_muudetud_date_format", "dd.MM.yyyy");
+        uiModel.addAttribute("vahtkondIntsidendis_suletud_date_format", "dd.MM.yyyy");
+        uiModel.addAttribute("vahtkondIntsidendis_alates_date_format", "dd.MM.yyyy");
+        uiModel.addAttribute("vahtkondIntsidendis_kuni_date_format", "dd.MM.yyyy");
     }
     
     String VahtkondIntsidendisController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

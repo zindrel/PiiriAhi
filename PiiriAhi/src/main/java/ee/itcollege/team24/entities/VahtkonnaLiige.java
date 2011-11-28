@@ -8,7 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
 
@@ -27,8 +29,12 @@ public class VahtkonnaLiige implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long vahtkonna_liige_ID;
 	
+	@DateTimeFormat(pattern="dd.MM.yyyy")
+	@NotNull
 	private Calendar alates;
 	
+	@DateTimeFormat(pattern="dd.MM.yyyy")
+	@NotNull
 	private Calendar kuni;
 	
 	private static final long serialVersionUID = 1L;

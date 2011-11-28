@@ -2,6 +2,11 @@ package ee.itcollege.team24.entities;
 
 import java.util.Calendar;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
 /**
  * Base class for all entities that require modification history
  *
@@ -9,12 +14,30 @@ import java.util.Calendar;
 
 public class BaseHistoryEntity {
 	
+	@Size(max = 150)
 	private String kommentaar;
+	
+	@Size(min = 1, max = 32)
+	@NotNull
 	private String avaja;
+	
+	@DateTimeFormat(pattern="dd.MM.yyyy")
+	@NotNull
 	private Calendar avatud;
+	
+	@Size(min = 1, max = 32)
+	@NotNull
 	private String muutja;
+	
+	@DateTimeFormat(pattern="dd.MM.yyyy")
+	@NotNull
 	private Calendar muudetud;
+	
+	@Size(max = 32)
 	private String sulgeja;
+	
+	@DateTimeFormat(pattern="dd.MM.yyyy")
+	@NotNull
 	private Calendar suletud;
 	
 	public String getKommentaar() {

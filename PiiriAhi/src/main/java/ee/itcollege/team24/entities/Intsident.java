@@ -8,7 +8,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.DecimalMax;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
 
@@ -27,18 +33,34 @@ public class Intsident extends BaseHistoryEntity implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long intsident_ID;
 	
+	@Size(min = 1, max = 20)
+	@NotNull
 	private String kood;
 	
+	@Size(min = 1, max = 100)
+	@NotNull
 	private String nimetus;
 	
+	@DateTimeFormat(pattern="dd.MM.yyyy")
+	@NotNull
 	private Calendar toimumise_algus;
 	
+	@DateTimeFormat(pattern="dd.MM.yyyy")
+	@NotNull
 	private Calendar toimumise_lopp;
 	
+	@Digits(integer = 4, fraction = 5)
+	@DecimalMax("180.0")
+	@DecimalMin("0.0")
 	private Double GPS_longituud;
 	
+	@Digits(integer = 4, fraction = 5)
+	@DecimalMax("90.0")
+	@DecimalMin("0.0")
 	private Double GPS_latituud;
 	
+	@Size(min = 1, max = 150)
+	@NotNull
 	private String kirjeldus;
 	
 	private static final long serialVersionUID = 1L;

@@ -8,7 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
 
@@ -27,10 +30,16 @@ public class IsikIntsidendis extends BaseHistoryEntity implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long isik_intsidendis_ID;
 	
+	@DateTimeFormat(pattern="dd.MM.yyyy")
+	@NotNull
 	private Calendar alates;
 	
+	@DateTimeFormat(pattern="dd.MM.yyyy")
+	@NotNull
 	private Calendar kuni;
 	
+	@Size(min = 1, max = 150)
+	@NotNull
 	private String kirjeldus;
 	
 	private static final long serialVersionUID = 1L;

@@ -3,13 +3,13 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_itcollege_team24_entities_ObjektIntsidendis" modelAttribute="objektIntsidendis" path="/objektintsidendises" render="${empty dependencies}" z="DBLDEzdgmNNNW08TpynxYMdoKjE=">
-        <field:input field="kommentaar" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_kommentaar" z="389Uhb6CecE0WWL6TWOg7F+paAA="/>
-        <field:input field="avaja" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_avaja" z="SfSgwzgHoRsK/ovIGx0VYuFJNAw="/>
-        <field:datetime dateTimePattern="${objektIntsidendis_avatud_date_format}" field="avatud" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_avatud" z="Oa1vsMIQobGdhO7buTZ1qvf1tuU="/>
-        <field:input field="muutja" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_muutja" z="/4PyJyGOpjCVbkltbpPDTKgH1FM="/>
-        <field:datetime dateTimePattern="${objektIntsidendis_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_muudetud" z="A1o1NbNSOLYu5qqvKRWwWSN5X1U="/>
-        <field:input field="sulgeja" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_sulgeja" z="oBqd0jLd8Nbc27nQGueAw6ACfow="/>
-        <field:datetime dateTimePattern="${objektIntsidendis_suletud_date_format}" field="suletud" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_suletud" z="yuCcTJtPihb8VlFsQPsIw+wgXXE="/>
+        <field:textarea field="kommentaar" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_kommentaar" z="KndqB+jvM006XhdzYIFqfr/FUxg="/>
+        <field:textarea field="avaja" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_avaja" required="true" z="Ob1EFkO08KHHcW+2axaZaB4c79U="/>
+        <field:datetime dateTimePattern="${objektIntsidendis_avatud_date_format}" field="avatud" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_avatud" required="true" z="G3HWk5B+whFJkVMUUcAuiU1JtRA="/>
+        <field:textarea field="muutja" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_muutja" required="true" z="UlM1WbboE79Env50o2q2E4AJINY="/>
+        <field:datetime dateTimePattern="${objektIntsidendis_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_muudetud" required="true" z="uQg3hW5XOW6s67DjIjD4Lmnk4vE="/>
+        <field:textarea field="sulgeja" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_sulgeja" z="eoQZ3FedmrkjqhUy0N5DJE2TG0U="/>
+        <field:datetime dateTimePattern="${objektIntsidendis_suletud_date_format}" field="suletud" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_suletud" required="true" z="+0z1na2wlvOYw6B6cOUHPKTXaaU="/>
         <field:datetime dateTimePattern="${objektIntsidendis_alates_date_format}" field="alates" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_alates" z="PFl/1BhYICHoQVknFH9tt35wOBk="/>
         <field:datetime dateTimePattern="${objektIntsidendis_kuni_date_format}" field="kuni" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_kuni" z="phcjbqjwrSmZ57pG+rWzi9g8zMQ="/>
         <field:input field="kirjeldus" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_kirjeldus" z="jFhAps2g8LopB/QN2rLQ+8Sb1Ik="/>

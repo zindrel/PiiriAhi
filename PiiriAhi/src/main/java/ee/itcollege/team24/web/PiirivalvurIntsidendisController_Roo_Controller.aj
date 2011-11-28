@@ -27,6 +27,7 @@ privileged aspect PiirivalvurIntsidendisController_Roo_Controller {
     public String PiirivalvurIntsidendisController.create(@Valid PiirivalvurIntsidendis piirivalvurIntsidendis, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("piirivalvurIntsidendis", piirivalvurIntsidendis);
+            addDateTimeFormatPatterns(uiModel);
             return "piirivalvurintsidendises/create";
         }
         uiModel.asMap().clear();
@@ -37,11 +38,13 @@ privileged aspect PiirivalvurIntsidendisController_Roo_Controller {
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String PiirivalvurIntsidendisController.createForm(Model uiModel) {
         uiModel.addAttribute("piirivalvurIntsidendis", new PiirivalvurIntsidendis());
+        addDateTimeFormatPatterns(uiModel);
         return "piirivalvurintsidendises/create";
     }
     
     @RequestMapping(value = "/{piirivalvur_intsidendis_ID}", method = RequestMethod.GET)
     public String PiirivalvurIntsidendisController.show(@PathVariable("piirivalvur_intsidendis_ID") Long piirivalvur_intsidendis_ID, Model uiModel) {
+        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("piirivalvurintsidendis", PiirivalvurIntsidendis.findPiirivalvurIntsidendis(piirivalvur_intsidendis_ID));
         uiModel.addAttribute("itemId", piirivalvur_intsidendis_ID);
         return "piirivalvurintsidendises/show";
@@ -57,6 +60,7 @@ privileged aspect PiirivalvurIntsidendisController_Roo_Controller {
         } else {
             uiModel.addAttribute("piirivalvurintsidendises", PiirivalvurIntsidendis.findAllPiirivalvurIntsidendises());
         }
+        addDateTimeFormatPatterns(uiModel);
         return "piirivalvurintsidendises/list";
     }
     
@@ -64,6 +68,7 @@ privileged aspect PiirivalvurIntsidendisController_Roo_Controller {
     public String PiirivalvurIntsidendisController.update(@Valid PiirivalvurIntsidendis piirivalvurIntsidendis, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("piirivalvurIntsidendis", piirivalvurIntsidendis);
+            addDateTimeFormatPatterns(uiModel);
             return "piirivalvurintsidendises/update";
         }
         uiModel.asMap().clear();
@@ -74,6 +79,7 @@ privileged aspect PiirivalvurIntsidendisController_Roo_Controller {
     @RequestMapping(value = "/{piirivalvur_intsidendis_ID}", params = "form", method = RequestMethod.GET)
     public String PiirivalvurIntsidendisController.updateForm(@PathVariable("piirivalvur_intsidendis_ID") Long piirivalvur_intsidendis_ID, Model uiModel) {
         uiModel.addAttribute("piirivalvurIntsidendis", PiirivalvurIntsidendis.findPiirivalvurIntsidendis(piirivalvur_intsidendis_ID));
+        addDateTimeFormatPatterns(uiModel);
         return "piirivalvurintsidendises/update";
     }
     
@@ -89,6 +95,14 @@ privileged aspect PiirivalvurIntsidendisController_Roo_Controller {
     @ModelAttribute("piirivalvurintsidendises")
     public Collection<PiirivalvurIntsidendis> PiirivalvurIntsidendisController.populatePiirivalvurIntsidendises() {
         return PiirivalvurIntsidendis.findAllPiirivalvurIntsidendises();
+    }
+    
+    void PiirivalvurIntsidendisController.addDateTimeFormatPatterns(Model uiModel) {
+        uiModel.addAttribute("piirivalvurIntsidendis_avatud_date_format", "dd.MM.yyyy");
+        uiModel.addAttribute("piirivalvurIntsidendis_muudetud_date_format", "dd.MM.yyyy");
+        uiModel.addAttribute("piirivalvurIntsidendis_suletud_date_format", "dd.MM.yyyy");
+        uiModel.addAttribute("piirivalvurIntsidendis_alates_date_format", "dd.MM.yyyy");
+        uiModel.addAttribute("piirivalvurIntsidendis_kuni_date_format", "dd.MM.yyyy");
     }
     
     String PiirivalvurIntsidendisController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

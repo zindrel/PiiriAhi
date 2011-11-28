@@ -27,6 +27,7 @@ privileged aspect IntsidentController_Roo_Controller {
     public String IntsidentController.create(@Valid Intsident intsident, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("intsident", intsident);
+            addDateTimeFormatPatterns(uiModel);
             return "intsidents/create";
         }
         uiModel.asMap().clear();
@@ -37,11 +38,13 @@ privileged aspect IntsidentController_Roo_Controller {
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String IntsidentController.createForm(Model uiModel) {
         uiModel.addAttribute("intsident", new Intsident());
+        addDateTimeFormatPatterns(uiModel);
         return "intsidents/create";
     }
     
     @RequestMapping(value = "/{intsident_ID}", method = RequestMethod.GET)
     public String IntsidentController.show(@PathVariable("intsident_ID") Long intsident_ID, Model uiModel) {
+        addDateTimeFormatPatterns(uiModel);
         uiModel.addAttribute("intsident", Intsident.findIntsident(intsident_ID));
         uiModel.addAttribute("itemId", intsident_ID);
         return "intsidents/show";
@@ -57,6 +60,7 @@ privileged aspect IntsidentController_Roo_Controller {
         } else {
             uiModel.addAttribute("intsidents", Intsident.findAllIntsidents());
         }
+        addDateTimeFormatPatterns(uiModel);
         return "intsidents/list";
     }
     
@@ -64,6 +68,7 @@ privileged aspect IntsidentController_Roo_Controller {
     public String IntsidentController.update(@Valid Intsident intsident, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("intsident", intsident);
+            addDateTimeFormatPatterns(uiModel);
             return "intsidents/update";
         }
         uiModel.asMap().clear();
@@ -74,6 +79,7 @@ privileged aspect IntsidentController_Roo_Controller {
     @RequestMapping(value = "/{intsident_ID}", params = "form", method = RequestMethod.GET)
     public String IntsidentController.updateForm(@PathVariable("intsident_ID") Long intsident_ID, Model uiModel) {
         uiModel.addAttribute("intsident", Intsident.findIntsident(intsident_ID));
+        addDateTimeFormatPatterns(uiModel);
         return "intsidents/update";
     }
     
@@ -89,6 +95,14 @@ privileged aspect IntsidentController_Roo_Controller {
     @ModelAttribute("intsidents")
     public Collection<Intsident> IntsidentController.populateIntsidents() {
         return Intsident.findAllIntsidents();
+    }
+    
+    void IntsidentController.addDateTimeFormatPatterns(Model uiModel) {
+        uiModel.addAttribute("intsident_avatud_date_format", "dd.MM.yyyy");
+        uiModel.addAttribute("intsident_muudetud_date_format", "dd.MM.yyyy");
+        uiModel.addAttribute("intsident_suletud_date_format", "dd.MM.yyyy");
+        uiModel.addAttribute("intsident_toimumise_algus_date_format", "dd.MM.yyyy");
+        uiModel.addAttribute("intsident_toimumise_lopp_date_format", "dd.MM.yyyy");
     }
     
     String IntsidentController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {
