@@ -7,16 +7,18 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
 
 /**
- * Entity implementation class for Entity: Priiririkkuja
+ * Entity implementation class for Entity: Piiririkkuja
  *
  */
 @Entity
-@Table(name="Priiririkkuja")
+@Table(name="Piiririkkuja")
 @RooToString
 @RooEntity
 public class Piiririkkuja implements Serializable {
@@ -26,8 +28,12 @@ public class Piiririkkuja implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long piiririkkuja_ID;
 	
+	@Size(min = 1, max = 25)
+	@NotNull
 	private String eesnimi;
 	
+	@Size(min = 1, max = 35)
+	@NotNull
 	private String perek_nimi;
 	
 	private static final long serialVersionUID = 1L;
