@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_team24_entities_PiirivalvurIntsidendis" object="${piirivalvurintsidendis}" path="/piirivalvurintsidendises" z="6NmcEovparW03Q442ydMdKDqDEA=">
+        <field:display field="kommentaar" id="s_ee_itcollege_team24_entities_PiirivalvurIntsidendis_kommentaar" object="${piirivalvurintsidendis}" z="LYrZo2vAgs8tl6mIheJwbe7g8TA="/>
+        <field:display field="avaja" id="s_ee_itcollege_team24_entities_PiirivalvurIntsidendis_avaja" object="${piirivalvurintsidendis}" z="NbiyWcBGjQ5OA+ZeL0MwCTmZukI="/>
+        <field:display calendar="true" dateTimePattern="${piirivalvurIntsidendis_avatud_date_format}" field="avatud" id="s_ee_itcollege_team24_entities_PiirivalvurIntsidendis_avatud" object="${piirivalvurintsidendis}" z="aXk6cMavAQkIx4oARGXhhEMlyqo="/>
+        <field:display field="muutja" id="s_ee_itcollege_team24_entities_PiirivalvurIntsidendis_muutja" object="${piirivalvurintsidendis}" z="TCNMH4bhkbs8H3QQqJpKF4+Nvpw="/>
+        <field:display calendar="true" dateTimePattern="${piirivalvurIntsidendis_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_team24_entities_PiirivalvurIntsidendis_muudetud" object="${piirivalvurintsidendis}" z="K7zzWKKsqNe2a2Eb9cHIHq5qm78="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_team24_entities_PiirivalvurIntsidendis_sulgeja" object="${piirivalvurintsidendis}" z="qBwZhwNathXZbjCNdGiT+xhSDtg="/>
+        <field:display calendar="true" dateTimePattern="${piirivalvurIntsidendis_suletud_date_format}" field="suletud" id="s_ee_itcollege_team24_entities_PiirivalvurIntsidendis_suletud" object="${piirivalvurintsidendis}" z="Yb3HhQMaqpmreLVsfVQDkvtx64w="/>
+        <field:display calendar="true" dateTimePattern="${piirivalvurIntsidendis_alates_date_format}" field="alates" id="s_ee_itcollege_team24_entities_PiirivalvurIntsidendis_alates" object="${piirivalvurintsidendis}" z="BlPiNbEFtQSXKA/wGU6bQrBHge0="/>
+        <field:display calendar="true" dateTimePattern="${piirivalvurIntsidendis_kuni_date_format}" field="kuni" id="s_ee_itcollege_team24_entities_PiirivalvurIntsidendis_kuni" object="${piirivalvurintsidendis}" z="5sslEz0ULdR1v/nZGdvE52eIsvw="/>
+        <field:display field="kirjeldus" id="s_ee_itcollege_team24_entities_PiirivalvurIntsidendis_kirjeldus" object="${piirivalvurintsidendis}" z="V3wIoDiJOHxb0bG63EiI3x8qQ4M="/>
+    </page:show>
+</div>

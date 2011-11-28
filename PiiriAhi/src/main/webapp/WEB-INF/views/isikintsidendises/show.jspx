@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_team24_entities_IsikIntsidendis" object="${isikintsidendis}" path="/isikintsidendises" z="ilH/IjErcmHSX9MUsWTg5XA2Mtk=">
+        <field:display field="kommentaar" id="s_ee_itcollege_team24_entities_IsikIntsidendis_kommentaar" object="${isikintsidendis}" z="FT8LuOsgD70n+FfvGK1+1cWZEew="/>
+        <field:display field="avaja" id="s_ee_itcollege_team24_entities_IsikIntsidendis_avaja" object="${isikintsidendis}" z="YR7KRBEiYPPI/zmwJ1yBV+8pYAE="/>
+        <field:display calendar="true" dateTimePattern="${isikIntsidendis_avatud_date_format}" field="avatud" id="s_ee_itcollege_team24_entities_IsikIntsidendis_avatud" object="${isikintsidendis}" z="stme1aZ5+FXa8lMjXc0QSr2V5Ek="/>
+        <field:display field="muutja" id="s_ee_itcollege_team24_entities_IsikIntsidendis_muutja" object="${isikintsidendis}" z="w9cGeQkLxfmyvJoxS3P0UhOYGZk="/>
+        <field:display calendar="true" dateTimePattern="${isikIntsidendis_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_team24_entities_IsikIntsidendis_muudetud" object="${isikintsidendis}" z="M4AlaQl4lt05r4afF7dzk0i2D3k="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_team24_entities_IsikIntsidendis_sulgeja" object="${isikintsidendis}" z="uXGL+tK0vZUgH/GEbZi46FdVH5E="/>
+        <field:display calendar="true" dateTimePattern="${isikIntsidendis_suletud_date_format}" field="suletud" id="s_ee_itcollege_team24_entities_IsikIntsidendis_suletud" object="${isikintsidendis}" z="k95VYveO6WzcanYXXJwhRrjtD+8="/>
+        <field:display calendar="true" dateTimePattern="${isikIntsidendis_alates_date_format}" field="alates" id="s_ee_itcollege_team24_entities_IsikIntsidendis_alates" object="${isikintsidendis}" z="KnC1xOPly++2Tqhf2LURUei51tU="/>
+        <field:display calendar="true" dateTimePattern="${isikIntsidendis_kuni_date_format}" field="kuni" id="s_ee_itcollege_team24_entities_IsikIntsidendis_kuni" object="${isikintsidendis}" z="z9VLqHijPZWNTzU5adiHyvSRm7w="/>
+        <field:display field="kirjeldus" id="s_ee_itcollege_team24_entities_IsikIntsidendis_kirjeldus" object="${isikintsidendis}" z="VcpYM7Zk6txcRtP6uBLhWJlbIXQ="/>
+    </page:show>
+</div>

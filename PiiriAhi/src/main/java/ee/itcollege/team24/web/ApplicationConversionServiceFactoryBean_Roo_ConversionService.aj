@@ -4,11 +4,18 @@
 package ee.itcollege.team24.web;
 
 import ee.itcollege.team24.entities.IntsidendiLiik;
+import ee.itcollege.team24.entities.Intsident;
+import ee.itcollege.team24.entities.IsikIntsidendis;
 import ee.itcollege.team24.entities.Objekt;
+import ee.itcollege.team24.entities.ObjektIntsidendis;
 import ee.itcollege.team24.entities.Piiriloik;
 import ee.itcollege.team24.entities.Piiririkkuja;
 import ee.itcollege.team24.entities.Piirivalvur;
+import ee.itcollege.team24.entities.PiirivalvurIntsidendis;
 import ee.itcollege.team24.entities.Vaeosa;
+import ee.itcollege.team24.entities.Vahtkond;
+import ee.itcollege.team24.entities.VahtkondIntsidendis;
+import ee.itcollege.team24.entities.VahtkonnaLiige;
 import java.lang.String;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
@@ -17,11 +24,18 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
     
     public void ApplicationConversionServiceFactoryBean.installLabelConverters(FormatterRegistry registry) {
         registry.addConverter(new IntsidendiLiikConverter());
+        registry.addConverter(new IntsidentConverter());
+        registry.addConverter(new IsikIntsidendisConverter());
         registry.addConverter(new ObjektConverter());
+        registry.addConverter(new ObjektIntsidendisConverter());
         registry.addConverter(new PiiriloikConverter());
         registry.addConverter(new PiiririkkujaConverter());
         registry.addConverter(new PiirivalvurConverter());
+        registry.addConverter(new PiirivalvurIntsidendisConverter());
         registry.addConverter(new VaeosaConverter());
+        registry.addConverter(new VahtkondConverter());
+        registry.addConverter(new VahtkondIntsidendisConverter());
+        registry.addConverter(new VahtkonnaLiigeConverter());
     }
     
     public void ApplicationConversionServiceFactoryBean.afterPropertiesSet() {
@@ -36,9 +50,30 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         
     }
     
+    static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.IntsidentConverter implements Converter<Intsident, String> {
+        public String convert(Intsident intsident) {
+            return new StringBuilder().append(intsident.getKommentaar()).append(" ").append(intsident.getAvaja()).append(" ").append(intsident.getAvatud()).append(" ").append(intsident.getMuutja()).toString();
+        }
+        
+    }
+    
+    static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.IsikIntsidendisConverter implements Converter<IsikIntsidendis, String> {
+        public String convert(IsikIntsidendis isikIntsidendis) {
+            return new StringBuilder().append(isikIntsidendis.getKommentaar()).append(" ").append(isikIntsidendis.getAvaja()).append(" ").append(isikIntsidendis.getAvatud()).append(" ").append(isikIntsidendis.getMuutja()).toString();
+        }
+        
+    }
+    
     static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.ObjektConverter implements Converter<Objekt, String> {
         public String convert(Objekt objekt) {
             return new StringBuilder().append(objekt.getNimetus()).toString();
+        }
+        
+    }
+    
+    static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.ObjektIntsidendisConverter implements Converter<ObjektIntsidendis, String> {
+        public String convert(ObjektIntsidendis objektIntsidendis) {
+            return new StringBuilder().append(objektIntsidendis.getKommentaar()).append(" ").append(objektIntsidendis.getAvaja()).append(" ").append(objektIntsidendis.getAvatud()).append(" ").append(objektIntsidendis.getMuutja()).toString();
         }
         
     }
@@ -64,9 +99,37 @@ privileged aspect ApplicationConversionServiceFactoryBean_Roo_ConversionService 
         
     }
     
+    static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.PiirivalvurIntsidendisConverter implements Converter<PiirivalvurIntsidendis, String> {
+        public String convert(PiirivalvurIntsidendis piirivalvurIntsidendis) {
+            return new StringBuilder().append(piirivalvurIntsidendis.getKommentaar()).append(" ").append(piirivalvurIntsidendis.getAvaja()).append(" ").append(piirivalvurIntsidendis.getAvatud()).append(" ").append(piirivalvurIntsidendis.getMuutja()).toString();
+        }
+        
+    }
+    
     static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.VaeosaConverter implements Converter<Vaeosa, String> {
         public String convert(Vaeosa vaeosa) {
             return new StringBuilder().append(vaeosa.getNimetus()).toString();
+        }
+        
+    }
+    
+    static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.VahtkondConverter implements Converter<Vahtkond, String> {
+        public String convert(Vahtkond vahtkond) {
+            return new StringBuilder().append(vahtkond.getKood()).append(" ").append(vahtkond.getNimetus()).toString();
+        }
+        
+    }
+    
+    static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.VahtkondIntsidendisConverter implements Converter<VahtkondIntsidendis, String> {
+        public String convert(VahtkondIntsidendis vahtkondIntsidendis) {
+            return new StringBuilder().append(vahtkondIntsidendis.getKommentaar()).append(" ").append(vahtkondIntsidendis.getAvaja()).append(" ").append(vahtkondIntsidendis.getAvatud()).append(" ").append(vahtkondIntsidendis.getMuutja()).toString();
+        }
+        
+    }
+    
+    static class ee.itcollege.team24.web.ApplicationConversionServiceFactoryBean.VahtkonnaLiigeConverter implements Converter<VahtkonnaLiige, String> {
+        public String convert(VahtkonnaLiige vahtkonnaLiige) {
+            return new StringBuilder().append(vahtkonnaLiige.getAlates()).append(" ").append(vahtkonnaLiige.getKuni()).toString();
         }
         
     }

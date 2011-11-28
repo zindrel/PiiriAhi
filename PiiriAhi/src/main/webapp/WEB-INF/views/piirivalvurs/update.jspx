@@ -3,7 +3,7 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ee_itcollege_team24_entities_Piirivalvur" idField="piirivalvur_ID" modelAttribute="piirivalvur" path="/piirivalvurs" versionField="Version" z="akxjbKe1P/F/l2CXTl/EpORdfvw=">
-        <field:input field="eesnimed" id="c_ee_itcollege_team24_entities_Piirivalvur_eesnimed" z="PDkkHzOwUrjupbmJR7TH6DkfPys="/>
-        <field:input field="perekonnanimi" id="c_ee_itcollege_team24_entities_Piirivalvur_perekonnanimi" z="H9luBAvSNhFbu1s1bfUEnWaHqxw="/>
+        <field:input field="eesnimed" id="c_ee_itcollege_team24_entities_Piirivalvur_eesnimed" max="25" min="1" required="true" z="bnup3MYagXoPf2mR1E1z8qzKQTw="/>
+        <field:textarea field="perekonnanimi" id="c_ee_itcollege_team24_entities_Piirivalvur_perekonnanimi" required="true" z="ffbULYgrUz5v1ySlmBwIdJ0zgG0="/>
     </form:update>
 </div>

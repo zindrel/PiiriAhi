@@ -3,6 +3,6 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ee_itcollege_team24_entities_Vaeosa" idField="vaeosa_ID" modelAttribute="vaeosa" path="/vaeosas" versionField="Version" z="nWhKGDNv49ZplNhrSu40aH9haVo=">
-        <field:input field="nimetus" id="c_ee_itcollege_team24_entities_Vaeosa_nimetus" z="D6covzDOP5/i24HOEz990bL5eL8="/>
+        <field:textarea field="nimetus" id="c_ee_itcollege_team24_entities_Vaeosa_nimetus" required="true" z="28l3wP9Ps9zO21wrfbtcmOrv6rY="/>
     </form:update>
 </div>

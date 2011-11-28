@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_ee_itcollege_team24_entities_ObjektIntsidendis" idField="objekt_intsidendis_ID" modelAttribute="objektIntsidendis" path="/objektintsidendises" versionField="Version" z="gDcBRZQln/mane95zFfkP6Yd4Mc=">
+        <field:input field="kommentaar" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_kommentaar" z="389Uhb6CecE0WWL6TWOg7F+paAA="/>
+        <field:input field="avaja" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_avaja" z="SfSgwzgHoRsK/ovIGx0VYuFJNAw="/>
+        <field:datetime dateTimePattern="${objektIntsidendis_avatud_date_format}" field="avatud" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_avatud" z="Oa1vsMIQobGdhO7buTZ1qvf1tuU="/>
+        <field:input field="muutja" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_muutja" z="/4PyJyGOpjCVbkltbpPDTKgH1FM="/>
+        <field:datetime dateTimePattern="${objektIntsidendis_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_muudetud" z="A1o1NbNSOLYu5qqvKRWwWSN5X1U="/>
+        <field:input field="sulgeja" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_sulgeja" z="oBqd0jLd8Nbc27nQGueAw6ACfow="/>
+        <field:datetime dateTimePattern="${objektIntsidendis_suletud_date_format}" field="suletud" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_suletud" z="yuCcTJtPihb8VlFsQPsIw+wgXXE="/>
+        <field:datetime dateTimePattern="${objektIntsidendis_alates_date_format}" field="alates" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_alates" z="PFl/1BhYICHoQVknFH9tt35wOBk="/>
+        <field:datetime dateTimePattern="${objektIntsidendis_kuni_date_format}" field="kuni" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_kuni" z="phcjbqjwrSmZ57pG+rWzi9g8zMQ="/>
+        <field:input field="kirjeldus" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_kirjeldus" z="jFhAps2g8LopB/QN2rLQ+8Sb1Ik="/>
+    </form:update>
+</div>

@@ -27,5 +27,33 @@
             <menu:item id="i_intsidendiliik_new" messageCode="global_menu_new" url="/intsidendiliiks?form" z="bisLYTttGHOJhpb6iPYuVsXvH6Q="/>
             <menu:item id="i_intsidendiliik_list" messageCode="global_menu_list" url="/intsidendiliiks?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Soe3eFPh8EjS9q1wA0v6lbxicEA="/>
         </menu:category>
+        <menu:category id="c_intsident" z="kwTJaHl5VF4ahaSorWL0R46/LTM=">
+            <menu:item id="i_intsident_new" messageCode="global_menu_new" url="/intsidents?form" z="PoAgtQFn6iVS32mKUjyI3kM2khc="/>
+            <menu:item id="i_intsident_list" messageCode="global_menu_list" url="/intsidents?page=1&amp;size=${empty param.size ? 10 : param.size}" z="kHeRRwTb9AVfs3A2YRAPSkAX64k="/>
+        </menu:category>
+        <menu:category id="c_piirivalvurintsidendis" z="2A4RHnMmWNYYoZXEgP1sX8rkiK4=">
+            <menu:item id="i_piirivalvurintsidendis_new" messageCode="global_menu_new" url="/piirivalvurintsidendises?form" z="AAKwsf36eJIHNL9x8Ln1LAgzVbc="/>
+            <menu:item id="i_piirivalvurintsidendis_list" messageCode="global_menu_list" url="/piirivalvurintsidendises?page=1&amp;size=${empty param.size ? 10 : param.size}" z="g+B0jbR1/i5TfIkJhG1YCfPBqrY="/>
+        </menu:category>
+        <menu:category id="c_objektintsidendis" z="ak42GOPndjvkhlfXrsod+wtBG0E=">
+            <menu:item id="i_objektintsidendis_new" messageCode="global_menu_new" url="/objektintsidendises?form" z="Sa7kUNZ9AZPJP5J0effsIC6yv8s="/>
+            <menu:item id="i_objektintsidendis_list" messageCode="global_menu_list" url="/objektintsidendises?page=1&amp;size=${empty param.size ? 10 : param.size}" z="CAFsAeU7YDulf9gaHQZLgi01ZJU="/>
+        </menu:category>
+        <menu:category id="c_vahtkond" z="c/riL356fHQk+/mY3ExRqrVhU/4=">
+            <menu:item id="i_vahtkond_new" messageCode="global_menu_new" url="/vahtkonds?form" z="bvt9LhUzxYB+1+sxarsHufGq1po="/>
+            <menu:item id="i_vahtkond_list" messageCode="global_menu_list" url="/vahtkonds?page=1&amp;size=${empty param.size ? 10 : param.size}" z="yjK8dn1Lr/RZ1HbVVrZdpoTkXKI="/>
+        </menu:category>
+        <menu:category id="c_isikintsidendis" z="vGOtHGDwbJGA5TyXWTXduS1WznY=">
+            <menu:item id="i_isikintsidendis_new" messageCode="global_menu_new" url="/isikintsidendises?form" z="yIYMPRp2km+WGt9bIG94eBaJXzI="/>
+            <menu:item id="i_isikintsidendis_list" messageCode="global_menu_list" url="/isikintsidendises?page=1&amp;size=${empty param.size ? 10 : param.size}" z="a0GmXDXxgfK0vOIBuRKjFKOZ1PU="/>
+        </menu:category>
+        <menu:category id="c_vahtkonnaliige" z="dCzbyGrEFs7T/fFPeEMwGyrbZ4M=">
+            <menu:item id="i_vahtkonnaliige_new" messageCode="global_menu_new" url="/vahtkonnaliiges?form" z="VST3ao9yWT0IIPR08vCELTZVkDk="/>
+            <menu:item id="i_vahtkonnaliige_list" messageCode="global_menu_list" url="/vahtkonnaliiges?page=1&amp;size=${empty param.size ? 10 : param.size}" z="Rq4CNHWQbEABEtnz3uslq8mAgp0="/>
+        </menu:category>
+        <menu:category id="c_vahtkondintsidendis" z="MLLyNPlDqnkcOGrsw9EO8JDlx7I=">
+            <menu:item id="i_vahtkondintsidendis_new" messageCode="global_menu_new" url="/vahtkondintsidendises?form" z="jtqXO+WOaS/id6UHWPrtpIqFYAo="/>
+            <menu:item id="i_vahtkondintsidendis_list" messageCode="global_menu_list" url="/vahtkondintsidendises?page=1&amp;size=${empty param.size ? 10 : param.size}" z="YUVDehSbLKNZA/UUy/ICnl3mNLg="/>
+        </menu:category>
     </menu:menu>
 </div>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" xmlns:table="urn:jsptagdir:/WEB-INF/tags/form/fields" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:list id="pl_ee_itcollege_team24_entities_VahtkondIntsidendis" items="${vahtkondintsidendises}" z="oZSv6a7AekUiopEKhHqxsL22w3Q=">
+        <table:table data="${vahtkondintsidendises}" id="l_ee_itcollege_team24_entities_VahtkondIntsidendis" path="/vahtkondintsidendises" typeIdFieldName="vahtkond_intsidendis_ID" z="thPnvh8P6aR8tLZtXTarNoNpG48=">
+            <table:column id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_kommentaar" property="kommentaar" z="fYxkZd1DWoUPmMVhy/+bYnXc7XI="/>
+            <table:column id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_avaja" property="avaja" z="F7+e6Er7iM3hHBuzIbPCNJLgDxE="/>
+            <table:column calendar="true" dateTimePattern="${vahtkondIntsidendis_avatud_date_format}" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_avatud" property="avatud" z="Lw7vKCo6AZVosrTooUjcbFDhCIg="/>
+            <table:column id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_muutja" property="muutja" z="YkC0QWi27zlIKlIKyniiwQbh/bo="/>
+            <table:column calendar="true" dateTimePattern="${vahtkondIntsidendis_muudetud_date_format}" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_muudetud" property="muudetud" z="tStuFz9mIZiFH9Fb1tnthngRSxA="/>
+            <table:column id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_sulgeja" property="sulgeja" z="u6YkZ/9nXhyEQtsBwkt2C/+uePA="/>
+        </table:table>
+    </page:list>
+</div>

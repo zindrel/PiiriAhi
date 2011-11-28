@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:page="urn:jsptagdir:/WEB-INF/tags/form" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <page:show id="ps_ee_itcollege_team24_entities_VahtkondIntsidendis" object="${vahtkondintsidendis}" path="/vahtkondintsidendises" z="+XBG9ydXptfOSYPOsjrfAmslI9Q=">
+        <field:display field="kommentaar" id="s_ee_itcollege_team24_entities_VahtkondIntsidendis_kommentaar" object="${vahtkondintsidendis}" z="kFEbyvOu/H/r8ql/yYsVw8JOzC4="/>
+        <field:display field="avaja" id="s_ee_itcollege_team24_entities_VahtkondIntsidendis_avaja" object="${vahtkondintsidendis}" z="3lVl8stV0tyhMZ0YjN0YdmzDpuQ="/>
+        <field:display calendar="true" dateTimePattern="${vahtkondIntsidendis_avatud_date_format}" field="avatud" id="s_ee_itcollege_team24_entities_VahtkondIntsidendis_avatud" object="${vahtkondintsidendis}" z="GTvRLOH4+So1Q5UweLDJsEYYuaI="/>
+        <field:display field="muutja" id="s_ee_itcollege_team24_entities_VahtkondIntsidendis_muutja" object="${vahtkondintsidendis}" z="t3hHkMIm2ckARV34SPYG6wA18LI="/>
+        <field:display calendar="true" dateTimePattern="${vahtkondIntsidendis_muudetud_date_format}" field="muudetud" id="s_ee_itcollege_team24_entities_VahtkondIntsidendis_muudetud" object="${vahtkondintsidendis}" z="M9D67vMOXu0/sasVxQNBd2hqeK4="/>
+        <field:display field="sulgeja" id="s_ee_itcollege_team24_entities_VahtkondIntsidendis_sulgeja" object="${vahtkondintsidendis}" z="Rm/aW1XeOqTZgLSVz9JviNSVCIU="/>
+        <field:display calendar="true" dateTimePattern="${vahtkondIntsidendis_suletud_date_format}" field="suletud" id="s_ee_itcollege_team24_entities_VahtkondIntsidendis_suletud" object="${vahtkondintsidendis}" z="qtDQkfnPlHA6qJ9QSMx7u+1WXY4="/>
+        <field:display calendar="true" dateTimePattern="${vahtkondIntsidendis_alates_date_format}" field="alates" id="s_ee_itcollege_team24_entities_VahtkondIntsidendis_alates" object="${vahtkondintsidendis}" z="BpnNGwpz7dqT8UyOC22YzbRCKJA="/>
+        <field:display calendar="true" dateTimePattern="${vahtkondIntsidendis_kuni_date_format}" field="kuni" id="s_ee_itcollege_team24_entities_VahtkondIntsidendis_kuni" object="${vahtkondintsidendis}" z="4hAhpva53HhMvLj1Z8q158ydKdQ="/>
+        <field:display field="kirjeldus" id="s_ee_itcollege_team24_entities_VahtkondIntsidendis_kirjeldus" object="${vahtkondintsidendis}" z="q0ssCtLNr1yqI/GTfz/0msgkaR8="/>
+    </page:show>
+</div>

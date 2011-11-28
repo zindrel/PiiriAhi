@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_ee_itcollege_team24_entities_VahtkondIntsidendis" idField="vahtkond_intsidendis_ID" modelAttribute="vahtkondIntsidendis" path="/vahtkondintsidendises" versionField="Version" z="CK47dxkB6yFKynilLWTDQam+myo=">
+        <field:input field="kommentaar" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_kommentaar" z="N2QQRffx7KIypXJJ3GMdCId1ZTA="/>
+        <field:input field="avaja" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_avaja" z="9HXt+XdQxYEwUS0heN7O8jY8KOs="/>
+        <field:datetime dateTimePattern="${vahtkondIntsidendis_avatud_date_format}" field="avatud" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_avatud" z="VSHky5YpC2H1yZIPfqkBLL5sMSM="/>
+        <field:input field="muutja" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_muutja" z="CYnjRVslECv7TMrVo8ejHQiBy14="/>
+        <field:datetime dateTimePattern="${vahtkondIntsidendis_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_muudetud" z="IBt1WBDG5csubd5y2swe4i+7OnE="/>
+        <field:input field="sulgeja" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_sulgeja" z="w63H0p7dmplW9X/RYJq0w313oec="/>
+        <field:datetime dateTimePattern="${vahtkondIntsidendis_suletud_date_format}" field="suletud" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_suletud" z="jH9d/GbcMqqp1bW29nRVmeTa940="/>
+        <field:datetime dateTimePattern="${vahtkondIntsidendis_alates_date_format}" field="alates" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_alates" z="gYQQ5qjzVu9J8xptuMG3r6QSgJ4="/>
+        <field:datetime dateTimePattern="${vahtkondIntsidendis_kuni_date_format}" field="kuni" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_kuni" z="QIAWAv2r2r/l31yLVEC5nzxUDz4="/>
+        <field:input field="kirjeldus" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_kirjeldus" z="6zq3YQcq2RwpUHB5mU9hyd+0V9c="/>
+    </form:update>
+</div>

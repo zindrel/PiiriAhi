@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <jsp:output omit-xml-declaration="yes"/>
+    <form:update id="fu_ee_itcollege_team24_entities_Intsident" idField="intsident_ID" modelAttribute="intsident" path="/intsidents" versionField="Version" z="hXRVd87wgDgCI7KnlN8dvmYpoVk=">
+        <field:input field="kommentaar" id="c_ee_itcollege_team24_entities_Intsident_kommentaar" z="0tQqtrMeDsTsLcve0fSf+KhcpXo="/>
+        <field:input field="avaja" id="c_ee_itcollege_team24_entities_Intsident_avaja" z="hz3UaStFodB33QgayRz0Q5BcyhM="/>
+        <field:datetime dateTimePattern="${intsident_avatud_date_format}" field="avatud" id="c_ee_itcollege_team24_entities_Intsident_avatud" z="5TiCpv615zURdplf9nQmYMIPflc="/>
+        <field:input field="muutja" id="c_ee_itcollege_team24_entities_Intsident_muutja" z="I9M3Wn5tjuXsH/jVBevUVIQDvaw="/>
+        <field:datetime dateTimePattern="${intsident_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_team24_entities_Intsident_muudetud" z="yi1y/P58wBqTxN/ahGWhuOVNi5g="/>
+        <field:input field="sulgeja" id="c_ee_itcollege_team24_entities_Intsident_sulgeja" z="QOX0hzac9/D6iAxs5Cq1h6rsBAc="/>
+        <field:datetime dateTimePattern="${intsident_suletud_date_format}" field="suletud" id="c_ee_itcollege_team24_entities_Intsident_suletud" z="tbtGLItnrb+PrmjBr2vnPK85MC8="/>
+        <field:input field="kood" id="c_ee_itcollege_team24_entities_Intsident_kood" z="khQhZs9JgyTHhKM1Yo0EtW0DtkU="/>
+        <field:input field="nimetus" id="c_ee_itcollege_team24_entities_Intsident_nimetus" z="cG61LqQ+Rm92w2HD16YqTh6trfc="/>
+        <field:datetime dateTimePattern="${intsident_toimumise_algus_date_format}" field="toimumise_algus" id="c_ee_itcollege_team24_entities_Intsident_toimumise_algus" z="sESQjFpzRy+8Ej+hkV7HBfjC0OI="/>
+        <field:datetime dateTimePattern="${intsident_toimumise_lopp_date_format}" field="toimumise_lopp" id="c_ee_itcollege_team24_entities_Intsident_toimumise_lopp" z="PYqP/lr4w6OuFwtk+HgBUKWBKJ0="/>
+        <field:input field="GPS_longituud" id="c_ee_itcollege_team24_entities_Intsident_GPS_longituud" validationMessageCode="field_invalid_number" z="hihG9/uxaV99wVFkAsy4KBsS5+E="/>
+        <field:input field="GPS_latituud" id="c_ee_itcollege_team24_entities_Intsident_GPS_latituud" validationMessageCode="field_invalid_number" z="0897d5Ar8j2uYCjKREp0Xyc8nX8="/>
+        <field:input field="kirjeldus" id="c_ee_itcollege_team24_entities_Intsident_kirjeldus" z="D83fvDDSNA92I2gYOLSgs0mIBco="/>
+    </form:update>
+</div>
