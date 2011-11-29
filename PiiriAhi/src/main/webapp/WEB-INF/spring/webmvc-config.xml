@@ -21,7 +21,7 @@
 		<bean class="org.springframework.web.servlet.theme.ThemeChangeInterceptor"/>
 		<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" p:paramName="lang"/>
 	</mvc:interceptors>
-	
+
 	<!-- selects a static view for rendering without the need for an explicit controller -->
 	<mvc:view-controller path="/login"/>
     <mvc:view-controller path="/" view-name="index"/>
@@ -35,7 +35,9 @@
 	<bean class="org.springframework.context.support.ReloadableResourceBundleMessageSource" id="messageSource" p:basenames="WEB-INF/i18n/messages,WEB-INF/i18n/application" p:fallbackToSystemLocale="false"/>
 	
 	<!-- store preferred language configuration in a cookie -->
-	<bean class="org.springframework.web.servlet.i18n.CookieLocaleResolver" id="localeResolver" p:cookieName="locale"/>	
+	<bean class="org.springframework.web.servlet.i18n.CookieLocaleResolver" id="localeResolver" p:cookieName="locale">
+		<property value="et" name="defaultLocale" />
+	</bean>	
 	
 	<!-- resolves localized <theme_name>.properties files in the classpath to allow for theme support -->
 	<bean class="org.springframework.ui.context.support.ResourceBundleThemeSource" id="themeSource"/>
