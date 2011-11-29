@@ -26,7 +26,6 @@
   <util:language label="Eesti" locale="et"/>
   <util:language label="English" locale="en"/>
     </span>
-  <util:theme/>
 
   <spring:url value="/resources/images/springsource-logo.png" var="logo"/>
   <spring:message code="global_sponsored" htmlEscape="false" var="sponsored"/>
