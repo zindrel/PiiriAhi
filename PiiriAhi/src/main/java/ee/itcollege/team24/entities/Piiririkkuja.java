@@ -12,6 +12,11 @@ import javax.validation.constraints.Size;
 
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+import ee.itcollege.team24.entities.Objekt;
+import ee.itcollege.team24.entities.IsikIntsidendis;
+import javax.persistence.ManyToOne;
+import java.util.Collection;
+import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: Piiririkkuja
@@ -38,6 +43,12 @@ public class Piiririkkuja implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
+	@ManyToOne
+	private Objekt objekt;
+
+	@OneToMany(mappedBy = "piiririkkuja")
+	private Collection<IsikIntsidendis> isikIntsidendis;
+
 	public Piiririkkuja() {
 		super();
 	}   
@@ -61,6 +72,18 @@ public class Piiririkkuja implements Serializable {
 
 	public void setPerek_nimi(String perek_nimi) {
 		this.perek_nimi = perek_nimi;
+	}
+	public Objekt getObjekt() {
+	    return objekt;
+	}
+	public void setObjekt(Objekt param) {
+	    this.objekt = param;
+	}
+	public Collection<IsikIntsidendis> getIsikIntsidendis() {
+	    return isikIntsidendis;
+	}
+	public void setIsikIntsidendis(Collection<IsikIntsidendis> param) {
+	    this.isikIntsidendis = param;
 	}
    
 }

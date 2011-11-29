@@ -4,6 +4,8 @@
 package ee.itcollege.team24.web;
 
 import ee.itcollege.team24.entities.Piirivalvur;
+import ee.itcollege.team24.entities.PiirivalvurIntsidendis;
+import ee.itcollege.team24.entities.VahtkonnaLiige;
 import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
 import java.lang.Long;
@@ -89,6 +91,16 @@ privileged aspect PiirivalvurController_Roo_Controller {
     @ModelAttribute("piirivalvurs")
     public Collection<Piirivalvur> PiirivalvurController.populatePiirivalvurs() {
         return Piirivalvur.findAllPiirivalvurs();
+    }
+    
+    @ModelAttribute("piirivalvurintsidendises")
+    public Collection<PiirivalvurIntsidendis> PiirivalvurController.populatePiirivalvurIntsidendises() {
+        return PiirivalvurIntsidendis.findAllPiirivalvurIntsidendises();
+    }
+    
+    @ModelAttribute("vahtkonnaliiges")
+    public Collection<VahtkonnaLiige> PiirivalvurController.populateVahtkonnaLiiges() {
+        return VahtkonnaLiige.findAllVahtkonnaLiiges();
     }
     
     String PiirivalvurController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

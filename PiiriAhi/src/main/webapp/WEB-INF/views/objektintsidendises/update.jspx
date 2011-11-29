@@ -13,5 +13,7 @@
         <field:datetime dateTimePattern="${objektIntsidendis_alates_date_format}" field="alates" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_alates" required="true" z="BRU+j4CjrHtV9ijb+x8auJQ9DFA="/>
         <field:datetime dateTimePattern="${objektIntsidendis_kuni_date_format}" field="kuni" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_kuni" required="true" z="7HJ2Ugp76oyNtAbbIJxHyUyxBxE="/>
         <field:textarea field="kirjeldus" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_kirjeldus" required="true" z="SuAA8mocrMqaPgLa87GInWv8Slw="/>
+        <field:select field="objekt" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_objekt" itemValue="objekt_ID" items="${objekts}" path="/objekts" z="zLb55J4FgfPVanFJWp0QTnWMr4Y="/>
+        <field:select field="intsident" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_intsident" itemValue="intsident_ID" items="${intsidents}" path="/intsidents" z="mrRb925NUMJt773/Jzp5rPwOk0g="/>
     </form:update>
 </div>

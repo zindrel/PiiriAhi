@@ -3,7 +3,10 @@
 
 package ee.itcollege.team24.web;
 
+import ee.itcollege.team24.entities.Intsident;
+import ee.itcollege.team24.entities.Piirivalvur;
 import ee.itcollege.team24.entities.PiirivalvurIntsidendis;
+import ee.itcollege.team24.entities.VahtkondIntsidendis;
 import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
 import java.lang.Long;
@@ -92,9 +95,24 @@ privileged aspect PiirivalvurIntsidendisController_Roo_Controller {
         return "redirect:/piirivalvurintsidendises";
     }
     
+    @ModelAttribute("intsidents")
+    public Collection<Intsident> PiirivalvurIntsidendisController.populateIntsidents() {
+        return Intsident.findAllIntsidents();
+    }
+    
+    @ModelAttribute("piirivalvurs")
+    public Collection<Piirivalvur> PiirivalvurIntsidendisController.populatePiirivalvurs() {
+        return Piirivalvur.findAllPiirivalvurs();
+    }
+    
     @ModelAttribute("piirivalvurintsidendises")
     public Collection<PiirivalvurIntsidendis> PiirivalvurIntsidendisController.populatePiirivalvurIntsidendises() {
         return PiirivalvurIntsidendis.findAllPiirivalvurIntsidendises();
+    }
+    
+    @ModelAttribute("vahtkondintsidendises")
+    public Collection<VahtkondIntsidendis> PiirivalvurIntsidendisController.populateVahtkondIntsidendises() {
+        return VahtkondIntsidendis.findAllVahtkondIntsidendises();
     }
     
     void PiirivalvurIntsidendisController.addDateTimeFormatPatterns(Model uiModel) {

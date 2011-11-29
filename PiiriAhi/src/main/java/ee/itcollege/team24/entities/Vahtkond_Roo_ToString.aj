@@ -11,7 +11,10 @@ privileged aspect Vahtkond_Roo_ToString {
         StringBuilder sb = new StringBuilder();
         sb.append("Kood: ").append(getKood()).append(", ");
         sb.append("Nimetus: ").append(getNimetus()).append(", ");
+        sb.append("Vaeosa: ").append(getVaeosa()).append(", ");
+        sb.append("VahtkondIntsidendis: ").append(getVahtkondIntsidendis() == null ? "null" : getVahtkondIntsidendis().size()).append(", ");
         sb.append("Vahtkond_ID: ").append(getVahtkond_ID()).append(", ");
+        sb.append("VahtkonnaLiige: ").append(getVahtkonnaLiige() == null ? "null" : getVahtkonnaLiige().size()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();
     }

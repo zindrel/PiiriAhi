@@ -12,6 +12,9 @@ import javax.validation.constraints.Size;
 
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+import ee.itcollege.team24.entities.Intsident;
+import java.util.Collection;
+import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: Piiriloik
@@ -34,6 +37,9 @@ public class Piiriloik implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
+	@OneToMany(mappedBy = "piiriloik")
+	private Collection<Intsident> intsident;
+
 	public Piiriloik() {
 		super();
 	}   
@@ -50,6 +56,12 @@ public class Piiriloik implements Serializable {
 
 	public void setNimetus(String nimetus) {
 		this.nimetus = nimetus;
+	}
+	public Collection<Intsident> getIntsident() {
+	    return intsident;
+	}
+	public void setIntsident(Collection<Intsident> param) {
+	    this.intsident = param;
 	}
    
 }

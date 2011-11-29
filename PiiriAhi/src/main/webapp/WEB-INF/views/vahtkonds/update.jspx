@@ -5,5 +5,8 @@
     <form:update id="fu_ee_itcollege_team24_entities_Vahtkond" idField="vahtkond_ID" modelAttribute="vahtkond" path="/vahtkonds" versionField="Version" z="iqLnvxrBufOA3oigj9oBbB5ebsk=">
         <field:input field="kood" id="c_ee_itcollege_team24_entities_Vahtkond_kood" max="20" min="1" required="true" z="RVLXF3sG/nObSRyWbe5t6oIJJ1o="/>
         <field:textarea field="nimetus" id="c_ee_itcollege_team24_entities_Vahtkond_nimetus" required="true" z="qGXe6riLGNuNcNWypTMrzn6WGBs="/>
+        <field:select field="vaeosa" id="c_ee_itcollege_team24_entities_Vahtkond_vaeosa" itemValue="vaeosa_ID" items="${vaeosas}" path="/vaeosas" z="mmm+NJw8cKjkb4+HpRs2wo3sLkc="/>
+        <field:simple field="vahtkonnaLiige" id="c_ee_itcollege_team24_entities_Vahtkond_vahtkonnaLiige" messageCode="entity_reference_not_managed" messageCodeAttribute="Vahtkonna Liige" z="U2OhAc54W0J21K3k0sSfAXhyoxE="/>
+        <field:simple field="vahtkondIntsidendis" id="c_ee_itcollege_team24_entities_Vahtkond_vahtkondIntsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Vahtkond Intsidendis" z="cVGgQcV/dExTfAs+aqitEWl8rLA="/>
     </form:update>
 </div>

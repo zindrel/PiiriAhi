@@ -5,6 +5,7 @@
     <page:list id="pl_ee_itcollege_team24_entities_Piiriloik" items="${piiriloiks}" z="zoM4veChO7tZOOTH++o1vsI2fk8=">
         <table:table data="${piiriloiks}" id="l_ee_itcollege_team24_entities_Piiriloik" path="/piiriloiks" typeIdFieldName="piiriloik_ID" z="s2wkvZVT+m5rcFygRoIcEuoqfL4=">
             <table:column id="c_ee_itcollege_team24_entities_Piiriloik_nimetus" property="nimetus" z="jaWSKYcZhwU4JP/zcpflG2HSpYs="/>
+            <table:column id="c_ee_itcollege_team24_entities_Piiriloik_intsident" property="intsident" z="aPkobAQ+yIrKRfVvAtMBtjvKlqY="/>
         </table:table>
     </page:list>
 </div>

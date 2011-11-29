@@ -5,5 +5,7 @@
     <form:update id="fu_ee_itcollege_team24_entities_Piiririkkuja" idField="piiririkkuja_ID" modelAttribute="piiririkkuja" path="/piiririkkujas" versionField="Version" z="AkjRJsWuNfvvbhHq5Ch/qCCDA2Q=">
         <field:input field="eesnimi" id="c_ee_itcollege_team24_entities_Piiririkkuja_eesnimi" max="25" min="1" required="true" z="DWUQMzb8hnUU+Pz17Un0JeRnEqg="/>
         <field:textarea field="perek_nimi" id="c_ee_itcollege_team24_entities_Piiririkkuja_perek_nimi" required="true" z="9RVyu5aqk8CVHb4ER4y19XhO6a8="/>
+        <field:select field="objekt" id="c_ee_itcollege_team24_entities_Piiririkkuja_objekt" itemValue="objekt_ID" items="${objekts}" path="/objekts" z="u6fG3IrhbMSVTGcgaXBTrmKXXYw="/>
+        <field:simple field="isikIntsidendis" id="c_ee_itcollege_team24_entities_Piiririkkuja_isikIntsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Isik Intsidendis" z="Thlfpi+UD3SCmJGqz4LjenUOp0g="/>
     </form:update>
 </div>

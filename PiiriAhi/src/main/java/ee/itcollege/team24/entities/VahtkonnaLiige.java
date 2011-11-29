@@ -13,6 +13,9 @@ import javax.validation.constraints.NotNull;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+import ee.itcollege.team24.entities.Piirivalvur;
+import ee.itcollege.team24.entities.Vahtkond;
+import javax.persistence.ManyToOne;
 
 /**
  * Entity implementation class for Entity: VahtkonnaLiige
@@ -39,6 +42,12 @@ public class VahtkonnaLiige implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
+	@ManyToOne
+	private Piirivalvur piirivalvur;
+
+	@ManyToOne
+	private Vahtkond vahtkond;
+
 	public VahtkonnaLiige() {
 		super();
 	}   
@@ -62,6 +71,18 @@ public class VahtkonnaLiige implements Serializable {
 
 	public void setKuni(Calendar kuni) {
 		this.kuni = kuni;
+	}
+	public Piirivalvur getPiirivalvur() {
+	    return piirivalvur;
+	}
+	public void setPiirivalvur(Piirivalvur param) {
+	    this.piirivalvur = param;
+	}
+	public Vahtkond getVahtkond() {
+	    return vahtkond;
+	}
+	public void setVahtkond(Vahtkond param) {
+	    this.vahtkond = param;
 	}
    
 }

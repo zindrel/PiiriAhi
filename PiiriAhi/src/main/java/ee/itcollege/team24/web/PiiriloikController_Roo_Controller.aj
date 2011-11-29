@@ -3,6 +3,7 @@
 
 package ee.itcollege.team24.web;
 
+import ee.itcollege.team24.entities.Intsident;
 import ee.itcollege.team24.entities.Piiriloik;
 import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
@@ -84,6 +85,11 @@ privileged aspect PiiriloikController_Roo_Controller {
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
         return "redirect:/piiriloiks";
+    }
+    
+    @ModelAttribute("intsidents")
+    public Collection<Intsident> PiiriloikController.populateIntsidents() {
+        return Intsident.findAllIntsidents();
     }
     
     @ModelAttribute("piiriloiks")

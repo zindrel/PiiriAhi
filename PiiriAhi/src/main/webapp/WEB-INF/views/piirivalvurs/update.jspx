@@ -5,5 +5,7 @@
     <form:update id="fu_ee_itcollege_team24_entities_Piirivalvur" idField="piirivalvur_ID" modelAttribute="piirivalvur" path="/piirivalvurs" versionField="Version" z="akxjbKe1P/F/l2CXTl/EpORdfvw=">
         <field:input field="eesnimed" id="c_ee_itcollege_team24_entities_Piirivalvur_eesnimed" max="25" min="1" required="true" z="bnup3MYagXoPf2mR1E1z8qzKQTw="/>
         <field:textarea field="perekonnanimi" id="c_ee_itcollege_team24_entities_Piirivalvur_perekonnanimi" required="true" z="ffbULYgrUz5v1ySlmBwIdJ0zgG0="/>
+        <field:simple field="piirivalvurIntsidendis" id="c_ee_itcollege_team24_entities_Piirivalvur_piirivalvurIntsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Piirivalvur Intsidendis" z="nXT+jb6IW9FSsX+w+MjpjgJmjZI="/>
+        <field:simple field="vahtkonnaLiige" id="c_ee_itcollege_team24_entities_Piirivalvur_vahtkonnaLiige" messageCode="entity_reference_not_managed" messageCodeAttribute="Vahtkonna Liige" z="CBLKiSWBa99LtJLKZNyW7KG8/DY="/>
     </form:update>
 </div>

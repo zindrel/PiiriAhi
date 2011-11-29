@@ -13,5 +13,7 @@
         <field:display calendar="true" dateTimePattern="${isikIntsidendis_alates_date_format}" field="alates" id="s_ee_itcollege_team24_entities_IsikIntsidendis_alates" object="${isikintsidendis}" z="KnC1xOPly++2Tqhf2LURUei51tU="/>
         <field:display calendar="true" dateTimePattern="${isikIntsidendis_kuni_date_format}" field="kuni" id="s_ee_itcollege_team24_entities_IsikIntsidendis_kuni" object="${isikintsidendis}" z="z9VLqHijPZWNTzU5adiHyvSRm7w="/>
         <field:display field="kirjeldus" id="s_ee_itcollege_team24_entities_IsikIntsidendis_kirjeldus" object="${isikintsidendis}" z="VcpYM7Zk6txcRtP6uBLhWJlbIXQ="/>
+        <field:display field="piiririkkuja" id="s_ee_itcollege_team24_entities_IsikIntsidendis_piiririkkuja" object="${isikintsidendis}" z="VZS6w8M0vrcbDcrJlTMfS49jjf0="/>
+        <field:display field="intsident" id="s_ee_itcollege_team24_entities_IsikIntsidendis_intsident" object="${isikintsidendis}" z="qD1jMXP+Ha6dbdhoICY0gT56zwk="/>
     </page:show>
 </div>

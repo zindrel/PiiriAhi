@@ -4,5 +4,6 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ee_itcollege_team24_entities_Vaeosa" idField="vaeosa_ID" modelAttribute="vaeosa" path="/vaeosas" versionField="Version" z="nWhKGDNv49ZplNhrSu40aH9haVo=">
         <field:textarea field="nimetus" id="c_ee_itcollege_team24_entities_Vaeosa_nimetus" required="true" z="28l3wP9Ps9zO21wrfbtcmOrv6rY="/>
+        <field:simple field="vahtkond" id="c_ee_itcollege_team24_entities_Vaeosa_vahtkond" messageCode="entity_reference_not_managed" messageCodeAttribute="Vahtkond" z="JRhEfA0PDH5612pVvZg1IVK6wW4="/>
     </form:update>
 </div>

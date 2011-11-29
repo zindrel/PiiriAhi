@@ -17,6 +17,15 @@ import javax.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+import ee.itcollege.team24.entities.Piiriloik;
+import ee.itcollege.team24.entities.VahtkondIntsidendis;
+import javax.persistence.ManyToOne;
+import java.util.Collection;
+import javax.persistence.OneToMany;
+import ee.itcollege.team24.entities.PiirivalvurIntsidendis;
+import ee.itcollege.team24.entities.ObjektIntsidendis;
+import ee.itcollege.team24.entities.IntsidendiLiik;
+import ee.itcollege.team24.entities.IsikIntsidendis;
 
 /**
  * Entity implementation class for Entity: Intsident
@@ -64,6 +73,24 @@ public class Intsident extends BaseHistoryEntity implements Serializable {
 	private String kirjeldus;
 	
 	private static final long serialVersionUID = 1L;
+
+	@ManyToOne
+	private Piiriloik piiriloik;
+
+	@OneToMany(mappedBy = "intsident")
+	private Collection<VahtkondIntsidendis> vahtkondIntsidendis;
+
+	@OneToMany(mappedBy = "intsident")
+	private Collection<PiirivalvurIntsidendis> piirivalvurIntsidendis;
+
+	@OneToMany(mappedBy = "intsident")
+	private Collection<ObjektIntsidendis> objektIntsidendis;
+
+	@ManyToOne
+	private IntsidendiLiik intsidendiLiik;
+
+	@OneToMany(mappedBy = "intsident")
+	private Collection<IsikIntsidendis> isikIntsidendis;
 
 	public Intsident() {
 		super();
@@ -123,6 +150,42 @@ public class Intsident extends BaseHistoryEntity implements Serializable {
 
 	public void setKirjeldus(String kirjeldus) {
 		this.kirjeldus = kirjeldus;
+	}
+	public Piiriloik getPiiriloik() {
+	    return piiriloik;
+	}
+	public void setPiiriloik(Piiriloik param) {
+	    this.piiriloik = param;
+	}
+	public Collection<VahtkondIntsidendis> getVahtkondIntsidendis() {
+	    return vahtkondIntsidendis;
+	}
+	public void setVahtkondIntsidendis(Collection<VahtkondIntsidendis> param) {
+	    this.vahtkondIntsidendis = param;
+	}
+	public Collection<PiirivalvurIntsidendis> getPiirivalvurIntsidendis() {
+	    return piirivalvurIntsidendis;
+	}
+	public void setPiirivalvurIntsidendis(Collection<PiirivalvurIntsidendis> param) {
+	    this.piirivalvurIntsidendis = param;
+	}
+	public Collection<ObjektIntsidendis> getObjektsIntsidendis() {
+	    return objektIntsidendis;
+	}
+	public void setObjektIntsidendis(Collection<ObjektIntsidendis> param) {
+	    this.objektIntsidendis = param;
+	}
+	public IntsidendiLiik getIntsidendiLiik() {
+	    return intsidendiLiik;
+	}
+	public void setIntsidendiLiik(IntsidendiLiik param) {
+	    this.intsidendiLiik = param;
+	}
+	public Collection<IsikIntsidendis> getIsikIntsidendis() {
+	    return isikIntsidendis;
+	}
+	public void setIsikIntsidendis(Collection<IsikIntsidendis> param) {
+	    this.isikIntsidendis = param;
 	}
    
 }

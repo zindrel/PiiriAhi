@@ -4,6 +4,8 @@
 package ee.itcollege.team24.web;
 
 import ee.itcollege.team24.entities.Objekt;
+import ee.itcollege.team24.entities.ObjektIntsidendis;
+import ee.itcollege.team24.entities.Piiririkkuja;
 import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
 import java.lang.Long;
@@ -89,6 +91,16 @@ privileged aspect ObjektController_Roo_Controller {
     @ModelAttribute("objekts")
     public Collection<Objekt> ObjektController.populateObjekts() {
         return Objekt.findAllObjekts();
+    }
+    
+    @ModelAttribute("objektintsidendises")
+    public Collection<ObjektIntsidendis> ObjektController.populateObjektIntsidendises() {
+        return ObjektIntsidendis.findAllObjektIntsidendises();
+    }
+    
+    @ModelAttribute("piiririkkujas")
+    public Collection<Piiririkkuja> ObjektController.populatePiiririkkujas() {
+        return Piiririkkuja.findAllPiiririkkujas();
     }
     
     String ObjektController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

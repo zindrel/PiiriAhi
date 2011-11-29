@@ -10,6 +10,7 @@ privileged aspect IntsidendiLiik_Roo_ToString {
     public String IntsidendiLiik.toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Intsidendi_liik_ID: ").append(getIntsidendi_liik_ID()).append(", ");
+        sb.append("Intsidents: ").append(getIntsidents() == null ? "null" : getIntsidents().size()).append(", ");
         sb.append("Nimetus: ").append(getNimetus()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();

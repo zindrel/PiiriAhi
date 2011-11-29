@@ -13,5 +13,8 @@
         <field:display calendar="true" dateTimePattern="${piirivalvurIntsidendis_alates_date_format}" field="alates" id="s_ee_itcollege_team24_entities_PiirivalvurIntsidendis_alates" object="${piirivalvurintsidendis}" z="BlPiNbEFtQSXKA/wGU6bQrBHge0="/>
         <field:display calendar="true" dateTimePattern="${piirivalvurIntsidendis_kuni_date_format}" field="kuni" id="s_ee_itcollege_team24_entities_PiirivalvurIntsidendis_kuni" object="${piirivalvurintsidendis}" z="5sslEz0ULdR1v/nZGdvE52eIsvw="/>
         <field:display field="kirjeldus" id="s_ee_itcollege_team24_entities_PiirivalvurIntsidendis_kirjeldus" object="${piirivalvurintsidendis}" z="V3wIoDiJOHxb0bG63EiI3x8qQ4M="/>
+        <field:display field="piirivalvur" id="s_ee_itcollege_team24_entities_PiirivalvurIntsidendis_piirivalvur" object="${piirivalvurintsidendis}" z="fN+nMjxzQ+RK4sJ55dq2Q0AVOxM="/>
+        <field:display field="intsident" id="s_ee_itcollege_team24_entities_PiirivalvurIntsidendis_intsident" object="${piirivalvurintsidendis}" z="vrJg9b8aSckXoA8Y51iqn0muxdg="/>
+        <field:display field="vahtkondIntsidendis" id="s_ee_itcollege_team24_entities_PiirivalvurIntsidendis_vahtkondIntsidendis" object="${piirivalvurintsidendis}" z="7bKhyOvOw8Zc9moY8k3ViK5Mzrc="/>
     </page:show>
 </div>

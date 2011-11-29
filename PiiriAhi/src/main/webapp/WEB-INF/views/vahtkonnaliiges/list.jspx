@@ -6,6 +6,8 @@
         <table:table data="${vahtkonnaliiges}" id="l_ee_itcollege_team24_entities_VahtkonnaLiige" path="/vahtkonnaliiges" typeIdFieldName="vahtkonna_liige_ID" z="tTvrMJaXR3rYqP5yVQ9PawuhueA=">
             <table:column calendar="true" dateTimePattern="${vahtkonnaLiige_alates_date_format}" id="c_ee_itcollege_team24_entities_VahtkonnaLiige_alates" property="alates" z="ax/ZoXT4+qyAH6OB6kVfA06vdVU="/>
             <table:column calendar="true" dateTimePattern="${vahtkonnaLiige_kuni_date_format}" id="c_ee_itcollege_team24_entities_VahtkonnaLiige_kuni" property="kuni" z="zobu7EWuK99MZfaCRl5poHF5Ffc="/>
+            <table:column id="c_ee_itcollege_team24_entities_VahtkonnaLiige_piirivalvur" property="piirivalvur" z="8i3ZmvNuD/kWpCPjCug1rFKG9qY="/>
+            <table:column id="c_ee_itcollege_team24_entities_VahtkonnaLiige_vahtkond" property="vahtkond" z="8MNkm7I1SuLtMcPEw13MmiqBe4k="/>
         </table:table>
     </page:list>
 </div>

@@ -3,7 +3,12 @@
 
 package ee.itcollege.team24.web;
 
+import ee.itcollege.team24.entities.IntsidendiLiik;
 import ee.itcollege.team24.entities.Intsident;
+import ee.itcollege.team24.entities.IsikIntsidendis;
+import ee.itcollege.team24.entities.Piiriloik;
+import ee.itcollege.team24.entities.PiirivalvurIntsidendis;
+import ee.itcollege.team24.entities.VahtkondIntsidendis;
 import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
 import java.lang.Long;
@@ -92,9 +97,34 @@ privileged aspect IntsidentController_Roo_Controller {
         return "redirect:/intsidents";
     }
     
+    @ModelAttribute("intsidendiliiks")
+    public Collection<IntsidendiLiik> IntsidentController.populateIntsidendiLiiks() {
+        return IntsidendiLiik.findAllIntsidendiLiiks();
+    }
+    
     @ModelAttribute("intsidents")
     public Collection<Intsident> IntsidentController.populateIntsidents() {
         return Intsident.findAllIntsidents();
+    }
+    
+    @ModelAttribute("isikintsidendises")
+    public Collection<IsikIntsidendis> IntsidentController.populateIsikIntsidendises() {
+        return IsikIntsidendis.findAllIsikIntsidendises();
+    }
+    
+    @ModelAttribute("piiriloiks")
+    public Collection<Piiriloik> IntsidentController.populatePiiriloiks() {
+        return Piiriloik.findAllPiiriloiks();
+    }
+    
+    @ModelAttribute("piirivalvurintsidendises")
+    public Collection<PiirivalvurIntsidendis> IntsidentController.populatePiirivalvurIntsidendises() {
+        return PiirivalvurIntsidendis.findAllPiirivalvurIntsidendises();
+    }
+    
+    @ModelAttribute("vahtkondintsidendises")
+    public Collection<VahtkondIntsidendis> IntsidentController.populateVahtkondIntsidendises() {
+        return VahtkondIntsidendis.findAllVahtkondIntsidendises();
     }
     
     void IntsidentController.addDateTimeFormatPatterns(Model uiModel) {

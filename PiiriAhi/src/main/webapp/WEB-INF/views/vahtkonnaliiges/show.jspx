@@ -5,5 +5,7 @@
     <page:show id="ps_ee_itcollege_team24_entities_VahtkonnaLiige" object="${vahtkonnaliige}" path="/vahtkonnaliiges" z="252BSTnvm7rdIrY5aUcme6v77Pg=">
         <field:display calendar="true" dateTimePattern="${vahtkonnaLiige_alates_date_format}" field="alates" id="s_ee_itcollege_team24_entities_VahtkonnaLiige_alates" object="${vahtkonnaliige}" z="bUbWsj3Sx0s536CqtOVI/wcpqHw="/>
         <field:display calendar="true" dateTimePattern="${vahtkonnaLiige_kuni_date_format}" field="kuni" id="s_ee_itcollege_team24_entities_VahtkonnaLiige_kuni" object="${vahtkonnaliige}" z="5K8SKk2obz3MPdCiyDWoiMmysWU="/>
+        <field:display field="piirivalvur" id="s_ee_itcollege_team24_entities_VahtkonnaLiige_piirivalvur" object="${vahtkonnaliige}" z="t4VNjwd6+eZVNm8L6N2pQrFl5Ag="/>
+        <field:display field="vahtkond" id="s_ee_itcollege_team24_entities_VahtkonnaLiige_vahtkond" object="${vahtkonnaliige}" z="leHO4i2eYtS55ltl+6Tyc2aE1SQ="/>
     </page:show>
 </div>

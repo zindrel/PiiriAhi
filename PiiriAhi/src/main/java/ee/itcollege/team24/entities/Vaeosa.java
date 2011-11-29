@@ -12,6 +12,9 @@ import javax.validation.constraints.Size;
 
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+import ee.itcollege.team24.entities.Vahtkond;
+import java.util.Collection;
+import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: Vaeosa
@@ -34,6 +37,9 @@ public class Vaeosa implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
+	@OneToMany(mappedBy = "vaeosa")
+	private Collection<Vahtkond> vahtkond;
+
 	public Vaeosa() {
 		super();
 	}   
@@ -50,6 +56,12 @@ public class Vaeosa implements Serializable {
 
 	public void setNimetus(String nimetus) {
 		this.nimetus = nimetus;
+	}
+	public Collection<Vahtkond> getVahtkond() {
+	    return vahtkond;
+	}
+	public void setVahtkond(Collection<Vahtkond> param) {
+	    this.vahtkond = param;
 	}
    
 }

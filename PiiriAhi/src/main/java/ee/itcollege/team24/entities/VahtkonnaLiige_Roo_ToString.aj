@@ -11,6 +11,8 @@ privileged aspect VahtkonnaLiige_Roo_ToString {
         StringBuilder sb = new StringBuilder();
         sb.append("Alates: ").append(getAlates() == null ? "null" : getAlates().getTime()).append(", ");
         sb.append("Kuni: ").append(getKuni() == null ? "null" : getKuni().getTime()).append(", ");
+        sb.append("Piirivalvur: ").append(getPiirivalvur()).append(", ");
+        sb.append("Vahtkond: ").append(getVahtkond()).append(", ");
         sb.append("Vahtkonna_liige_ID: ").append(getVahtkonna_liige_ID()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();

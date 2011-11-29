@@ -6,12 +6,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+import ee.itcollege.team24.entities.VahtkonnaLiige;
+import java.util.Collection;
+import javax.persistence.OneToMany;
+import ee.itcollege.team24.entities.VahtkondIntsidendis;
 
 /**
  * Entity implementation class for Entity: Vahtkond
@@ -38,6 +43,15 @@ public class Vahtkond implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
+	@ManyToOne
+	private Vaeosa vaeosa;
+
+	@OneToMany(mappedBy = "vahtkond")
+	private Collection<VahtkonnaLiige> vahtkonnaLiige;
+
+	@OneToMany(mappedBy = "vahtkond")
+	private Collection<VahtkondIntsidendis> vahtkondIntsidendis;
+
 	public Vahtkond() {
 		super();
 	}   
@@ -61,6 +75,24 @@ public class Vahtkond implements Serializable {
 
 	public void setNimetus(String nimetus) {
 		this.nimetus = nimetus;
+	}
+	public Vaeosa getVaeosa() {
+	    return vaeosa;
+	}
+	public void setVaeosa(Vaeosa param) {
+	    this.vaeosa = param;
+	}
+	public Collection<VahtkonnaLiige> getVahtkonnaLiige() {
+	    return vahtkonnaLiige;
+	}
+	public void setVahtkonnaLiige(Collection<VahtkonnaLiige> param) {
+	    this.vahtkonnaLiige = param;
+	}
+	public Collection<VahtkondIntsidendis> getVahtkondIntsidendis() {
+	    return vahtkondIntsidendis;
+	}
+	public void setVahtkondIntsidendis(Collection<VahtkondIntsidendis> param) {
+	    this.vahtkondIntsidendis = param;
 	}
    
 }

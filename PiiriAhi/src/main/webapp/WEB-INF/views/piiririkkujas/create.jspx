@@ -5,6 +5,8 @@
     <form:create id="fc_ee_itcollege_team24_entities_Piiririkkuja" modelAttribute="piiririkkuja" path="/piiririkkujas" render="${empty dependencies}" z="gxX0ZklIHzp+g0uTVPt5mBQ1ADA=">
         <field:input field="eesnimi" id="c_ee_itcollege_team24_entities_Piiririkkuja_eesnimi" max="25" min="1" required="true" z="DWUQMzb8hnUU+Pz17Un0JeRnEqg="/>
         <field:textarea field="perek_nimi" id="c_ee_itcollege_team24_entities_Piiririkkuja_perek_nimi" required="true" z="9RVyu5aqk8CVHb4ER4y19XhO6a8="/>
+        <field:select field="objekt" id="c_ee_itcollege_team24_entities_Piiririkkuja_objekt" itemValue="objekt_ID" items="${objekts}" path="/objekts" z="u6fG3IrhbMSVTGcgaXBTrmKXXYw="/>
+        <field:simple field="isikIntsidendis" id="c_ee_itcollege_team24_entities_Piiririkkuja_isikIntsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Isik Intsidendis" z="Thlfpi+UD3SCmJGqz4LjenUOp0g="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_team24_entities_Piiririkkuja" render="${not empty dependencies}" z="qE/TraFRKjNk1kb7md6bSOetRE8="/>
 </div>

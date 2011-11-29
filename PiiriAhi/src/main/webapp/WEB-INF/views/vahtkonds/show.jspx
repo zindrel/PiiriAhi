@@ -5,5 +5,6 @@
     <page:show id="ps_ee_itcollege_team24_entities_Vahtkond" object="${vahtkond}" path="/vahtkonds" z="RcME218m5NnkmrUDCUGKFv4m7DE=">
         <field:display field="kood" id="s_ee_itcollege_team24_entities_Vahtkond_kood" object="${vahtkond}" z="f2zoS11axMXW+kdxDucSxGZgX4g="/>
         <field:display field="nimetus" id="s_ee_itcollege_team24_entities_Vahtkond_nimetus" object="${vahtkond}" z="sSG360DMBYyGmEQSFNqpq5r2T8c="/>
+        <field:display field="vaeosa" id="s_ee_itcollege_team24_entities_Vahtkond_vaeosa" object="${vahtkond}" z="MIl5tbDx3Ze9v0xvjyAaatUt3xI="/>
     </page:show>
 </div>

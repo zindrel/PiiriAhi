@@ -14,6 +14,10 @@ import javax.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+import ee.itcollege.team24.entities.Piirivalvur;
+import ee.itcollege.team24.entities.Intsident;
+import javax.persistence.ManyToOne;
+import ee.itcollege.team24.entities.VahtkondIntsidendis;
 
 /**
  * Entity implementation class for Entity: PiirivalvurIntsidendis
@@ -43,6 +47,15 @@ public class PiirivalvurIntsidendis extends BaseHistoryEntity implements Seriali
 	private String kirjeldus;
 	
 	private static final long serialVersionUID = 1L;
+
+	@ManyToOne
+	private Piirivalvur piirivalvur;
+
+	@ManyToOne
+	private Intsident intsident;
+
+	@ManyToOne
+	private VahtkondIntsidendis vahtkondIntsidendis;
 
 	public PiirivalvurIntsidendis() {
 		super();
@@ -74,6 +87,24 @@ public class PiirivalvurIntsidendis extends BaseHistoryEntity implements Seriali
 
 	public void setKirjeldus(String kirjeldus) {
 		this.kirjeldus = kirjeldus;
+	}
+	public Piirivalvur getPiirivalvur() {
+	    return piirivalvur;
+	}
+	public void setPiirivalvur(Piirivalvur param) {
+	    this.piirivalvur = param;
+	}
+	public Intsident getIntsident() {
+	    return intsident;
+	}
+	public void setIntsident(Intsident param) {
+	    this.intsident = param;
+	}
+	public VahtkondIntsidendis getVahtkondIntsidendis() {
+	    return vahtkondIntsidendis;
+	}
+	public void setVahtkondIntsidendis(VahtkondIntsidendis param) {
+	    this.vahtkondIntsidendis = param;
 	}
    
 }

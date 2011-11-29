@@ -5,5 +5,6 @@
     <page:show id="ps_ee_itcollege_team24_entities_Piiririkkuja" object="${piiririkkuja}" path="/piiririkkujas" z="g0ZTuFUtD6MF01dUSYw7j2V6Gt8=">
         <field:display field="eesnimi" id="s_ee_itcollege_team24_entities_Piiririkkuja_eesnimi" object="${piiririkkuja}" z="d9nHXxb/TVdsfz/EWhGQcVor2jc="/>
         <field:display field="perek_nimi" id="s_ee_itcollege_team24_entities_Piiririkkuja_perek_nimi" object="${piiririkkuja}" z="W5+bqliJXtcoXYaFTggJD3ikScE="/>
+        <field:display field="objekt" id="s_ee_itcollege_team24_entities_Piiririkkuja_objekt" object="${piiririkkuja}" z="q3vr1uO0qzkEkdaXqsbjolhxwdI="/>
     </page:show>
 </div>

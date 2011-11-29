@@ -6,6 +6,8 @@
         <table:table data="${piirivalvurs}" id="l_ee_itcollege_team24_entities_Piirivalvur" path="/piirivalvurs" typeIdFieldName="piirivalvur_ID" z="8XH1Fnsng+Lat2GCa68biyMZ3k4=">
             <table:column id="c_ee_itcollege_team24_entities_Piirivalvur_eesnimed" property="eesnimed" z="enDf6j/8tBPRZFmV4zPWmFSr3H8="/>
             <table:column id="c_ee_itcollege_team24_entities_Piirivalvur_perekonnanimi" property="perekonnanimi" z="eNByZQOHnCNtcram0m+jSUkYKXM="/>
+            <table:column id="c_ee_itcollege_team24_entities_Piirivalvur_piirivalvurIntsidendis" property="piirivalvurIntsidendis" z="hMG6lZ+UurAUOy06Sy/HXbkReIE="/>
+            <table:column id="c_ee_itcollege_team24_entities_Piirivalvur_vahtkonnaLiige" property="vahtkonnaLiige" z="74uF9Jag0WMj6Xt3r/gD7ICS44Y="/>
         </table:table>
     </page:list>
 </div>

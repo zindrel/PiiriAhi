@@ -9,6 +9,7 @@ privileged aspect Piiriloik_Roo_ToString {
     
     public String Piiriloik.toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("Intsident: ").append(getIntsident() == null ? "null" : getIntsident().size()).append(", ");
         sb.append("Nimetus: ").append(getNimetus()).append(", ");
         sb.append("Piiriloik_ID: ").append(getPiiriloik_ID()).append(", ");
         sb.append("Version: ").append(getVersion());

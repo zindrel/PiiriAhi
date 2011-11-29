@@ -3,7 +3,9 @@
 
 package ee.itcollege.team24.web;
 
+import ee.itcollege.team24.entities.Intsident;
 import ee.itcollege.team24.entities.IsikIntsidendis;
+import ee.itcollege.team24.entities.Piiririkkuja;
 import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
 import java.lang.Long;
@@ -92,9 +94,19 @@ privileged aspect IsikIntsidendisController_Roo_Controller {
         return "redirect:/isikintsidendises";
     }
     
+    @ModelAttribute("intsidents")
+    public Collection<Intsident> IsikIntsidendisController.populateIntsidents() {
+        return Intsident.findAllIntsidents();
+    }
+    
     @ModelAttribute("isikintsidendises")
     public Collection<IsikIntsidendis> IsikIntsidendisController.populateIsikIntsidendises() {
         return IsikIntsidendis.findAllIsikIntsidendises();
+    }
+    
+    @ModelAttribute("piiririkkujas")
+    public Collection<Piiririkkuja> IsikIntsidendisController.populatePiiririkkujas() {
+        return Piiririkkuja.findAllPiiririkkujas();
     }
     
     void IsikIntsidendisController.addDateTimeFormatPatterns(Model uiModel) {

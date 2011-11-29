@@ -3,6 +3,8 @@
 
 package ee.itcollege.team24.web;
 
+import ee.itcollege.team24.entities.Intsident;
+import ee.itcollege.team24.entities.Objekt;
 import ee.itcollege.team24.entities.ObjektIntsidendis;
 import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
@@ -90,6 +92,16 @@ privileged aspect ObjektIntsidendisController_Roo_Controller {
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
         return "redirect:/objektintsidendises";
+    }
+    
+    @ModelAttribute("intsidents")
+    public Collection<Intsident> ObjektIntsidendisController.populateIntsidents() {
+        return Intsident.findAllIntsidents();
+    }
+    
+    @ModelAttribute("objekts")
+    public Collection<Objekt> ObjektIntsidendisController.populateObjekts() {
+        return Objekt.findAllObjekts();
     }
     
     @ModelAttribute("objektintsidendises")

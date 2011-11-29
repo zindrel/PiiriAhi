@@ -13,5 +13,8 @@
         <field:datetime dateTimePattern="${piirivalvurIntsidendis_alates_date_format}" field="alates" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_alates" required="true" z="IO9CVNrBGCXllSJgOq8ZSyXMZmw="/>
         <field:datetime dateTimePattern="${piirivalvurIntsidendis_kuni_date_format}" field="kuni" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_kuni" required="true" z="uWgwpKulDuSWZfsTXHMMDd4U70g="/>
         <field:textarea field="kirjeldus" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_kirjeldus" required="true" z="0OUugXQa17ToYezb8LVjKhzpFAI="/>
+        <field:select field="piirivalvur" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_piirivalvur" itemValue="piirivalvur_ID" items="${piirivalvurs}" path="/piirivalvurs" z="w5kMjsgvQ5BNc6Jy1UW6AG2/fR0="/>
+        <field:select field="intsident" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_intsident" itemValue="intsident_ID" items="${intsidents}" path="/intsidents" z="whP022pfod4Zfl3L74joa59T/cw="/>
+        <field:select field="vahtkondIntsidendis" id="c_ee_itcollege_team24_entities_PiirivalvurIntsidendis_vahtkondIntsidendis" itemValue="vahtkond_intsidendis_ID" items="${vahtkondintsidendises}" path="/vahtkondintsidendises" z="RufQfe+rjSs/Vr3GC31mOPMcSFM="/>
     </form:update>
 </div>

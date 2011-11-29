@@ -4,6 +4,7 @@
 package ee.itcollege.team24.web;
 
 import ee.itcollege.team24.entities.Vaeosa;
+import ee.itcollege.team24.entities.Vahtkond;
 import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
 import java.lang.Long;
@@ -89,6 +90,11 @@ privileged aspect VaeosaController_Roo_Controller {
     @ModelAttribute("vaeosas")
     public Collection<Vaeosa> VaeosaController.populateVaeosas() {
         return Vaeosa.findAllVaeosas();
+    }
+    
+    @ModelAttribute("vahtkonds")
+    public Collection<Vahtkond> VaeosaController.populateVahtkonds() {
+        return Vahtkond.findAllVahtkonds();
     }
     
     String VaeosaController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

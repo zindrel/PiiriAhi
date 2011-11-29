@@ -3,7 +3,10 @@
 
 package ee.itcollege.team24.web;
 
+import ee.itcollege.team24.entities.Vaeosa;
 import ee.itcollege.team24.entities.Vahtkond;
+import ee.itcollege.team24.entities.VahtkondIntsidendis;
+import ee.itcollege.team24.entities.VahtkonnaLiige;
 import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
 import java.lang.Long;
@@ -86,9 +89,24 @@ privileged aspect VahtkondController_Roo_Controller {
         return "redirect:/vahtkonds";
     }
     
+    @ModelAttribute("vaeosas")
+    public Collection<Vaeosa> VahtkondController.populateVaeosas() {
+        return Vaeosa.findAllVaeosas();
+    }
+    
     @ModelAttribute("vahtkonds")
     public Collection<Vahtkond> VahtkondController.populateVahtkonds() {
         return Vahtkond.findAllVahtkonds();
+    }
+    
+    @ModelAttribute("vahtkondintsidendises")
+    public Collection<VahtkondIntsidendis> VahtkondController.populateVahtkondIntsidendises() {
+        return VahtkondIntsidendis.findAllVahtkondIntsidendises();
+    }
+    
+    @ModelAttribute("vahtkonnaliiges")
+    public Collection<VahtkonnaLiige> VahtkondController.populateVahtkonnaLiiges() {
+        return VahtkonnaLiige.findAllVahtkonnaLiiges();
     }
     
     String VahtkondController.encodeUrlPathSegment(String pathSegment, HttpServletRequest httpServletRequest) {

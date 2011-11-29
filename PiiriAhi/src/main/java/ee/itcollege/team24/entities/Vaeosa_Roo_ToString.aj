@@ -11,6 +11,7 @@ privileged aspect Vaeosa_Roo_ToString {
         StringBuilder sb = new StringBuilder();
         sb.append("Nimetus: ").append(getNimetus()).append(", ");
         sb.append("Vaeosa_ID: ").append(getVaeosa_ID()).append(", ");
+        sb.append("Vahtkond: ").append(getVahtkond() == null ? "null" : getVahtkond().size()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();
     }

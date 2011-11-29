@@ -11,7 +11,9 @@ privileged aspect Piirivalvur_Roo_ToString {
         StringBuilder sb = new StringBuilder();
         sb.append("Eesnimed: ").append(getEesnimed()).append(", ");
         sb.append("Perekonnanimi: ").append(getPerekonnanimi()).append(", ");
+        sb.append("PiirivalvurIntsidendis: ").append(getPiirivalvurIntsidendis() == null ? "null" : getPiirivalvurIntsidendis().size()).append(", ");
         sb.append("Piirivalvur_ID: ").append(getPiirivalvur_ID()).append(", ");
+        sb.append("VahtkonnaLiige: ").append(getVahtkonnaLiige() == null ? "null" : getVahtkonnaLiige().size()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();
     }

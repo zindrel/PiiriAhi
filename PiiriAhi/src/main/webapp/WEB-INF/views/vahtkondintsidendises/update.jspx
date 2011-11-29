@@ -13,5 +13,8 @@
         <field:datetime dateTimePattern="${vahtkondIntsidendis_alates_date_format}" field="alates" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_alates" required="true" z="ARAm4ANsAMXBtw4/SUkXm17UmGc="/>
         <field:datetime dateTimePattern="${vahtkondIntsidendis_kuni_date_format}" field="kuni" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_kuni" required="true" z="qduj9ACetQP3W2dsN5p56d0C5CA="/>
         <field:textarea field="kirjeldus" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_kirjeldus" required="true" z="amA4oYbVGi7VleTbe1UMLu/NE40="/>
+        <field:select field="vahtkond" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_vahtkond" itemValue="vahtkond_ID" items="${vahtkonds}" path="/vahtkonds" z="ekR4hHom99gxK7AxBM3Z2u+4xAo="/>
+        <field:select field="intsident" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_intsident" itemValue="intsident_ID" items="${intsidents}" path="/intsidents" z="8n3/TQY+uO5k8GeQEnHPH84qgLc="/>
+        <field:simple field="piirivalvurIntsidendis" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_piirivalvurIntsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Piirivalvur Intsidendis" z="r5ZlAeTfbi2B9U5MyJLrnS4U/dg="/>
     </form:update>
 </div>

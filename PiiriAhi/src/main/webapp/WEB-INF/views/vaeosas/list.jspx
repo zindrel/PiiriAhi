@@ -5,6 +5,7 @@
     <page:list id="pl_ee_itcollege_team24_entities_Vaeosa" items="${vaeosas}" z="frN1TbhyKwnm3Y1fGXeppoc3TLA=">
         <table:table data="${vaeosas}" id="l_ee_itcollege_team24_entities_Vaeosa" path="/vaeosas" typeIdFieldName="vaeosa_ID" z="LBWsfnpC4DCF869shXufZyISkUs=">
             <table:column id="c_ee_itcollege_team24_entities_Vaeosa_nimetus" property="nimetus" z="gHcsZe9Y5v2D90o652pBP6wT8Ow="/>
+            <table:column id="c_ee_itcollege_team24_entities_Vaeosa_vahtkond" property="vahtkond" z="ubfHAzOZ1Ip4yt1WxYFeSk+5cuc="/>
         </table:table>
     </page:list>
 </div>

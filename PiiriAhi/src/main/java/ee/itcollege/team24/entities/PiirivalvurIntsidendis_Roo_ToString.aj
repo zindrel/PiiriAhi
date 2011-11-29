@@ -12,14 +12,17 @@ privileged aspect PiirivalvurIntsidendis_Roo_ToString {
         sb.append("Alates: ").append(getAlates() == null ? "null" : getAlates().getTime()).append(", ");
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud() == null ? "null" : getAvatud().getTime()).append(", ");
+        sb.append("Intsident: ").append(getIntsident()).append(", ");
         sb.append("Kirjeldus: ").append(getKirjeldus()).append(", ");
         sb.append("Kommentaar: ").append(getKommentaar()).append(", ");
         sb.append("Kuni: ").append(getKuni() == null ? "null" : getKuni().getTime()).append(", ");
         sb.append("Muudetud: ").append(getMuudetud() == null ? "null" : getMuudetud().getTime()).append(", ");
         sb.append("Muutja: ").append(getMuutja()).append(", ");
+        sb.append("Piirivalvur: ").append(getPiirivalvur()).append(", ");
         sb.append("Piirivalvur_intsidendis_ID: ").append(getPiirivalvur_intsidendis_ID()).append(", ");
         sb.append("Suletud: ").append(getSuletud() == null ? "null" : getSuletud().getTime()).append(", ");
         sb.append("Sulgeja: ").append(getSulgeja()).append(", ");
+        sb.append("VahtkondIntsidendis: ").append(getVahtkondIntsidendis()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();
     }

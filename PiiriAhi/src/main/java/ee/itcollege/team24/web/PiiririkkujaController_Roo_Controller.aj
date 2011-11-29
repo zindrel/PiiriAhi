@@ -3,6 +3,8 @@
 
 package ee.itcollege.team24.web;
 
+import ee.itcollege.team24.entities.IsikIntsidendis;
+import ee.itcollege.team24.entities.Objekt;
 import ee.itcollege.team24.entities.Piiririkkuja;
 import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
@@ -84,6 +86,16 @@ privileged aspect PiiririkkujaController_Roo_Controller {
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
         return "redirect:/piiririkkujas";
+    }
+    
+    @ModelAttribute("isikintsidendises")
+    public Collection<IsikIntsidendis> PiiririkkujaController.populateIsikIntsidendises() {
+        return IsikIntsidendis.findAllIsikIntsidendises();
+    }
+    
+    @ModelAttribute("objekts")
+    public Collection<Objekt> PiiririkkujaController.populateObjekts() {
+        return Objekt.findAllObjekts();
     }
     
     @ModelAttribute("piiririkkujas")

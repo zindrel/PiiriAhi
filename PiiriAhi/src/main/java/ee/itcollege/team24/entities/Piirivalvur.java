@@ -12,6 +12,10 @@ import javax.validation.constraints.Size;
 
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+import ee.itcollege.team24.entities.PiirivalvurIntsidendis;
+import java.util.Collection;
+import javax.persistence.OneToMany;
+import ee.itcollege.team24.entities.VahtkonnaLiige;
 
 /**
  * Entity implementation class for Entity: Piirivalvur
@@ -38,6 +42,12 @@ public class Piirivalvur implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 
+	@OneToMany(mappedBy = "piirivalvur")
+	private Collection<PiirivalvurIntsidendis> piirivalvurIntsidendis;
+
+	@OneToMany(mappedBy = "piirivalvur")
+	private Collection<VahtkonnaLiige> vahtkonnaLiige;
+
 	public Piirivalvur() {
 		super();
 	}   
@@ -61,6 +71,18 @@ public class Piirivalvur implements Serializable {
 
 	public void setPerekonnanimi(String perekonnanimi) {
 		this.perekonnanimi = perekonnanimi;
+	}
+	public Collection<PiirivalvurIntsidendis> getPiirivalvurIntsidendis() {
+	    return piirivalvurIntsidendis;
+	}
+	public void setPiirivalvurIntsidendis(Collection<PiirivalvurIntsidendis> param) {
+	    this.piirivalvurIntsidendis = param;
+	}
+	public Collection<VahtkonnaLiige> getVahtkonnaLiige() {
+	    return vahtkonnaLiige;
+	}
+	public void setVahtkonnaLiige(Collection<VahtkonnaLiige> param) {
+	    this.vahtkonnaLiige = param;
 	}
    
 }

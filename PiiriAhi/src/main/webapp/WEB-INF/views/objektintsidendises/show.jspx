@@ -13,5 +13,7 @@
         <field:display calendar="true" dateTimePattern="${objektIntsidendis_alates_date_format}" field="alates" id="s_ee_itcollege_team24_entities_ObjektIntsidendis_alates" object="${objektintsidendis}" z="EnPGc8XYnEsoOu4xQLeGb/NuSgA="/>
         <field:display calendar="true" dateTimePattern="${objektIntsidendis_kuni_date_format}" field="kuni" id="s_ee_itcollege_team24_entities_ObjektIntsidendis_kuni" object="${objektintsidendis}" z="4xpFOoEgDa/P3WPIAqGt3sXkVfE="/>
         <field:display field="kirjeldus" id="s_ee_itcollege_team24_entities_ObjektIntsidendis_kirjeldus" object="${objektintsidendis}" z="lgSt5LpRQZ1wvOEoUYtdOcK5tNY="/>
+        <field:display field="objekt" id="s_ee_itcollege_team24_entities_ObjektIntsidendis_objekt" object="${objektintsidendis}" z="+dp3lzxSyccAF5gbfk6Y5VnM6IY="/>
+        <field:display field="intsident" id="s_ee_itcollege_team24_entities_ObjektIntsidendis_intsident" object="${objektintsidendis}" z="VmMuLxSfRvcPCsstg9q1xzrV04c="/>
     </page:show>
 </div>

@@ -3,6 +3,8 @@
 
 package ee.itcollege.team24.web;
 
+import ee.itcollege.team24.entities.Piirivalvur;
+import ee.itcollege.team24.entities.Vahtkond;
 import ee.itcollege.team24.entities.VahtkonnaLiige;
 import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
@@ -90,6 +92,16 @@ privileged aspect VahtkonnaLiigeController_Roo_Controller {
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
         return "redirect:/vahtkonnaliiges";
+    }
+    
+    @ModelAttribute("piirivalvurs")
+    public Collection<Piirivalvur> VahtkonnaLiigeController.populatePiirivalvurs() {
+        return Piirivalvur.findAllPiirivalvurs();
+    }
+    
+    @ModelAttribute("vahtkonds")
+    public Collection<Vahtkond> VahtkonnaLiigeController.populateVahtkonds() {
+        return Vahtkond.findAllVahtkonds();
     }
     
     @ModelAttribute("vahtkonnaliiges")

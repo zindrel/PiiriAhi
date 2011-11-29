@@ -4,6 +4,8 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_itcollege_team24_entities_Objekt" modelAttribute="objekt" path="/objekts" render="${empty dependencies}" z="nZj4VkPj3ik+Ly44cGyelmoWFws=">
         <field:textarea field="nimetus" id="c_ee_itcollege_team24_entities_Objekt_nimetus" required="true" z="KucYXD03KA4f4q0P8OJ+Z03MVSo="/>
+        <field:simple field="piiririkkujas" id="c_ee_itcollege_team24_entities_Objekt_piiririkkujas" messageCode="entity_reference_not_managed" messageCodeAttribute="Piiririkkuja" z="YJaNFszWJogfnjpXIAIwXt1grNA="/>
+        <field:simple field="objektIntsidendis" id="c_ee_itcollege_team24_entities_Objekt_objektIntsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Objekt Intsidendis" z="bTpsyN9+4XPH0zx7ZD4nFfjS48s="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_team24_entities_Objekt" render="${not empty dependencies}" z="cUg1OsckSRUNQqrO1ZREWZrPGf0="/>
 </div>

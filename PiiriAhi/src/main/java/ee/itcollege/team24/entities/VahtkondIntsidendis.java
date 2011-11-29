@@ -14,6 +14,12 @@ import javax.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+import ee.itcollege.team24.entities.Vahtkond;
+import ee.itcollege.team24.entities.Intsident;
+import javax.persistence.ManyToOne;
+import ee.itcollege.team24.entities.PiirivalvurIntsidendis;
+import java.util.Collection;
+import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: VahtkondIntsidendis
@@ -43,6 +49,15 @@ public class VahtkondIntsidendis extends BaseHistoryEntity implements Serializab
 	private String kirjeldus;
 	
 	private static final long serialVersionUID = 1L;
+
+	@ManyToOne
+	private Vahtkond vahtkond;
+
+	@ManyToOne
+	private Intsident intsident;
+
+	@OneToMany(mappedBy = "vahtkondIntsidendis")
+	private Collection<PiirivalvurIntsidendis> piirivalvurIntsidendis;
 
 	public VahtkondIntsidendis() {
 		super();
@@ -74,6 +89,24 @@ public class VahtkondIntsidendis extends BaseHistoryEntity implements Serializab
 
 	public void setKirjeldus(String kirjeldus) {
 		this.kirjeldus = kirjeldus;
+	}
+	public Vahtkond getVahtkond() {
+	    return vahtkond;
+	}
+	public void setVahtkond(Vahtkond param) {
+	    this.vahtkond = param;
+	}
+	public Intsident getIntsident() {
+	    return intsident;
+	}
+	public void setIntsident(Intsident param) {
+	    this.intsident = param;
+	}
+	public Collection<PiirivalvurIntsidendis> getPiirivalvurIntsidendis() {
+	    return piirivalvurIntsidendis;
+	}
+	public void setPiirivalvurIntsidendis(Collection<PiirivalvurIntsidendis> param) {
+	    this.piirivalvurIntsidendis = param;
 	}
    
 }

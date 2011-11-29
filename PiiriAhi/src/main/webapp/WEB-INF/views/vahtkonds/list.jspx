@@ -6,6 +6,9 @@
         <table:table data="${vahtkonds}" id="l_ee_itcollege_team24_entities_Vahtkond" path="/vahtkonds" typeIdFieldName="vahtkond_ID" z="3FS5qH08uQrfSKR1kXfJ4PfTep4=">
             <table:column id="c_ee_itcollege_team24_entities_Vahtkond_kood" property="kood" z="02mjAAw2aseLl6cbjiWJjuM3A+E="/>
             <table:column id="c_ee_itcollege_team24_entities_Vahtkond_nimetus" property="nimetus" z="ofO1hhSNisPcFemXO4lquxYmSxc="/>
+            <table:column id="c_ee_itcollege_team24_entities_Vahtkond_vaeosa" property="vaeosa" z="3HB9znUw0MJPrkoGSmIDHXQOp/c="/>
+            <table:column id="c_ee_itcollege_team24_entities_Vahtkond_vahtkonnaLiige" property="vahtkonnaLiige" z="0htQMU0pLYvQEeTY64MlFRHUGko="/>
+            <table:column id="c_ee_itcollege_team24_entities_Vahtkond_vahtkondIntsidendis" property="vahtkondIntsidendis" z="/jHIkJ5YFEkS9v4vkibufmDkL8U="/>
         </table:table>
     </page:list>
 </div>

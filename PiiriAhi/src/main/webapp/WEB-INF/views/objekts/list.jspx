@@ -5,6 +5,8 @@
     <page:list id="pl_ee_itcollege_team24_entities_Objekt" items="${objekts}" z="fnEyd4JOA/1vUMRYXwNmCgwySNA=">
         <table:table data="${objekts}" id="l_ee_itcollege_team24_entities_Objekt" path="/objekts" typeIdFieldName="objekt_ID" z="Hlt08mXQDHF8yKE5TvBqFAmJQ/4=">
             <table:column id="c_ee_itcollege_team24_entities_Objekt_nimetus" property="nimetus" z="5kKC2UasLb0928u50sr4M50hhNg="/>
+            <table:column id="c_ee_itcollege_team24_entities_Objekt_piiririkkujas" property="piiririkkujas" z="1zkphsU+vKfdYCVee8Chd5jMmek="/>
+            <table:column id="c_ee_itcollege_team24_entities_Objekt_objektIntsidendis" property="objektIntsidendis" z="So06Xq98VUAcwp3l0+Xe+egCepw="/>
         </table:table>
     </page:list>
 </div>

@@ -14,6 +14,9 @@ import javax.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
+import ee.itcollege.team24.entities.Objekt;
+import ee.itcollege.team24.entities.Intsident;
+import javax.persistence.ManyToOne;
 
 /**
  * Entity implementation class for Entity: ObjektIntsidendis
@@ -43,6 +46,12 @@ public class ObjektIntsidendis extends BaseHistoryEntity implements Serializable
 	private String kirjeldus;
 	
 	private static final long serialVersionUID = 1L;
+
+	@ManyToOne
+	private Objekt objekt;
+
+	@ManyToOne
+	private Intsident intsident;
 
 	public ObjektIntsidendis() {
 		super();
@@ -74,6 +83,18 @@ public class ObjektIntsidendis extends BaseHistoryEntity implements Serializable
 
 	public void setKirjeldus(String kirjeldus) {
 		this.kirjeldus = kirjeldus;
+	}
+	public Objekt getObjekt() {
+	    return objekt;
+	}
+	public void setObjekt(Objekt param) {
+	    this.objekt = param;
+	}
+	public Intsident getIntsident() {
+	    return intsident;
+	}
+	public void setIntsident(Intsident param) {
+	    this.intsident = param;
 	}
    
 }

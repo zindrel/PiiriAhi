@@ -10,7 +10,9 @@ privileged aspect Objekt_Roo_ToString {
     public String Objekt.toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Nimetus: ").append(getNimetus()).append(", ");
+        sb.append("ObjektIntsidendis: ").append(getObjektIntsidendis() == null ? "null" : getObjektIntsidendis().size()).append(", ");
         sb.append("Objekt_ID: ").append(getObjekt_ID()).append(", ");
+        sb.append("Piiririkkujas: ").append(getPiiririkkujas() == null ? "null" : getPiiririkkujas().size()).append(", ");
         sb.append("Version: ").append(getVersion());
         return sb.toString();
     }

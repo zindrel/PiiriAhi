@@ -6,6 +6,8 @@
         <table:table data="${piiririkkujas}" id="l_ee_itcollege_team24_entities_Piiririkkuja" path="/piiririkkujas" typeIdFieldName="piiririkkuja_ID" z="NsPH4wk/shnCCjrk2scQZez23pE=">
             <table:column id="c_ee_itcollege_team24_entities_Piiririkkuja_eesnimi" property="eesnimi" z="V1UjefTrPljjV7/dDUil4+x2zF8="/>
             <table:column id="c_ee_itcollege_team24_entities_Piiririkkuja_perek_nimi" property="perek_nimi" z="6NeVkY14co2rkHNwM/ntAaehJgQ="/>
+            <table:column id="c_ee_itcollege_team24_entities_Piiririkkuja_objekt" property="objekt" z="L+lSmBNvRCI+qXV3OTFcJP+1KD0="/>
+            <table:column id="c_ee_itcollege_team24_entities_Piiririkkuja_isikIntsidendis" property="isikIntsidendis" z="Te/P3Lhz9ozznCFLguYUkuzDi54="/>
         </table:table>
     </page:list>
 </div>

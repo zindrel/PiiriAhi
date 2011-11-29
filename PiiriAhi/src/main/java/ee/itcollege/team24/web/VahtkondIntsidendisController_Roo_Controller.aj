@@ -3,6 +3,9 @@
 
 package ee.itcollege.team24.web;
 
+import ee.itcollege.team24.entities.Intsident;
+import ee.itcollege.team24.entities.PiirivalvurIntsidendis;
+import ee.itcollege.team24.entities.Vahtkond;
 import ee.itcollege.team24.entities.VahtkondIntsidendis;
 import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
@@ -90,6 +93,21 @@ privileged aspect VahtkondIntsidendisController_Roo_Controller {
         uiModel.addAttribute("page", (page == null) ? "1" : page.toString());
         uiModel.addAttribute("size", (size == null) ? "10" : size.toString());
         return "redirect:/vahtkondintsidendises";
+    }
+    
+    @ModelAttribute("intsidents")
+    public Collection<Intsident> VahtkondIntsidendisController.populateIntsidents() {
+        return Intsident.findAllIntsidents();
+    }
+    
+    @ModelAttribute("piirivalvurintsidendises")
+    public Collection<PiirivalvurIntsidendis> VahtkondIntsidendisController.populatePiirivalvurIntsidendises() {
+        return PiirivalvurIntsidendis.findAllPiirivalvurIntsidendises();
+    }
+    
+    @ModelAttribute("vahtkonds")
+    public Collection<Vahtkond> VahtkondIntsidendisController.populateVahtkonds() {
+        return Vahtkond.findAllVahtkonds();
     }
     
     @ModelAttribute("vahtkondintsidendises")
