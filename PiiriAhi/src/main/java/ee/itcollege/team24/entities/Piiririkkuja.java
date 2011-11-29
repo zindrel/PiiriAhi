@@ -18,7 +18,7 @@ import org.springframework.roo.addon.tostring.RooToString;
  *
  */
 @Entity
-@Table(name="Piiririkkuja")
+@Table(name="PIIRIRIKKUJA")
 @RooToString
 @RooEntity
 public class Piiririkkuja implements Serializable {
