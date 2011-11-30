@@ -77,8 +77,8 @@ public class BaseHistoryEntity {
 	private void setTemporaryClosedDate() {
 		Calendar tempDate = Calendar.getInstance();
 		tempDate.clear();
-		tempDate.set(Calendar.YEAR, 9998);
-		tempDate.set(Calendar.MONTH, 12);
+		tempDate.set(Calendar.YEAR, 9999);
+		tempDate.set(Calendar.MONTH, Calendar.DECEMBER);
 		tempDate.set(Calendar.DAY_OF_MONTH, 31);
 		this.suletud = tempDate;
 	}
