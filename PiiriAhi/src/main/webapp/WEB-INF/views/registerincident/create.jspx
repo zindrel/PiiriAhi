@@ -4,12 +4,6 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_itcollege_team24_entities_Intsident" modelAttribute="intsident" path="/registerincident" render="${empty dependencies}" z="88Y83MZdiowKY+sDzK1smRpnc7E=">
         <field:textarea field="kommentaar" id="c_ee_itcollege_team24_entities_Intsident_kommentaar" z="XNirW24MyhIgqgi3r0dMJiGnkkM="/>
-        <field:textarea field="avaja" id="c_ee_itcollege_team24_entities_Intsident_avaja" z="6unTYr8n6wJzlqivNrR8DnPJKVc="/>
-        <field:datetime dateTimePattern="${intsident_avatud_date_format}" field="avatud" id="c_ee_itcollege_team24_entities_Intsident_avatud" z="5TiCpv615zURdplf9nQmYMIPflc="/>
-        <field:textarea field="muutja" id="c_ee_itcollege_team24_entities_Intsident_muutja" z="vEi6W9XLVmGTrK+Z0XDCd9BHFEk="/>
-        <field:datetime dateTimePattern="${intsident_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_team24_entities_Intsident_muudetud" z="yi1y/P58wBqTxN/ahGWhuOVNi5g="/>
-        <field:textarea field="sulgeja" id="c_ee_itcollege_team24_entities_Intsident_sulgeja" z="FFHDn3Jdcp97vv4PTpx7etqcJKo="/>
-        <field:datetime dateTimePattern="${intsident_suletud_date_format}" field="suletud" id="c_ee_itcollege_team24_entities_Intsident_suletud" z="tbtGLItnrb+PrmjBr2vnPK85MC8="/>
         <field:input field="kood" id="c_ee_itcollege_team24_entities_Intsident_kood" max="20" min="1" required="true" z="YiHnSsMzcw2HlffxVPZqdjWA/pI="/>
         <field:textarea field="nimetus" id="c_ee_itcollege_team24_entities_Intsident_nimetus" required="true" z="NfhvTnJ4qVhGsKnCPIFeENxvoUE="/>
         <field:datetime dateTimePattern="${intsident_toimumise_algus_date_format}" field="toimumise_algus" id="c_ee_itcollege_team24_entities_Intsident_toimumise_algus" required="true" z="8Yj97SQx4Ilqo+HEJyM+UpWDWD4="/>
@@ -18,10 +12,7 @@
         <field:input decimalMax="90.0" decimalMin="0.0" field="GPS_latituud" id="c_ee_itcollege_team24_entities_Intsident_GPS_latituud" required="true" validationMessageCode="field_invalid_number" z="/9HW3tKvSl16BnAsay+za4rdtG0="/>
         <field:textarea field="kirjeldus" id="c_ee_itcollege_team24_entities_Intsident_kirjeldus" required="true" z="SZMr2FlLwHgKkfy+rGUJuR7c0c8="/>
         <field:select field="piiriloik" id="c_ee_itcollege_team24_entities_Intsident_piiriloik" itemValue="piiriloik_ID" items="${piiriloiks}" path="/piiriloiks" z="i+s++mQyip+Wi02YppG69dZsL20="/>
-        <field:simple field="vahtkondIntsidendis" id="c_ee_itcollege_team24_entities_Intsident_vahtkondIntsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Vahtkond Intsidendis" z="43h5pWPv/bwz0GnmXpFzRHUZyF8="/>
-        <field:simple field="piirivalvurIntsidendis" id="c_ee_itcollege_team24_entities_Intsident_piirivalvurIntsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Piirivalvur Intsidendis" z="qm5X8uK5LbvOJIspYBBj76O0HG0="/>
         <field:select field="intsidendiLiik" id="c_ee_itcollege_team24_entities_Intsident_intsidendiLiik" itemValue="intsidendi_liik_ID" items="${intsidendiliiks}" path="/intsidendiliiks" z="ISAgXxEzXMWMJ317dAoFFipSQf0="/>
-        <field:simple field="isikIntsidendis" id="c_ee_itcollege_team24_entities_Intsident_isikIntsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Isik Intsidendis" z="YYvq6iysj+3FIs9g//lLI2Q3i50="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_team24_entities_Intsident" render="${not empty dependencies}" z="fHLsXveiRRjGyIkYmGGi9wVj8hU="/>
 </div>
