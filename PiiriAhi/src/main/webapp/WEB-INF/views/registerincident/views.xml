@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+    <definition extends="default" name="registerincident/index">
+        <put-attribute name="body" value="/WEB-INF/views/registerincident/index.jspx"/>
+    </definition>
+<definition extends="default" name="registerincident/list">
+        <put-attribute name="body" value="/WEB-INF/views/registerincident/list.jspx"/>
+    </definition>
+<definition extends="default" name="registerincident/show">
+        <put-attribute name="body" value="/WEB-INF/views/registerincident/show.jspx"/>
+    </definition>
+<definition extends="default" name="registerincident/create">
+        <put-attribute name="body" value="/WEB-INF/views/registerincident/create.jspx"/>
+    </definition>
+<definition extends="default" name="registerincident/update">
+        <put-attribute name="body" value="/WEB-INF/views/registerincident/update.jspx"/>
+    </definition>
+</tiles-definitions>
