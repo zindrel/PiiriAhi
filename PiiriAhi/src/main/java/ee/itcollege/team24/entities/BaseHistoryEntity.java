@@ -3,10 +3,13 @@ package ee.itcollege.team24.entities;
 import java.util.Calendar;
 
 import javax.persistence.MappedSuperclass;
-import javax.validation.constraints.NotNull;
+import javax.persistence.PrePersist;
+import javax.persistence.PreRemove;
+import javax.persistence.PreUpdate;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 /**
  * Base class for all entities that require modification history
@@ -19,28 +22,69 @@ public class BaseHistoryEntity {
 	@Size(max = 150)
 	private String kommentaar;
 	
-	@Size(min = 1, max = 32)
-	@NotNull
+	@Size(max = 32)
 	private String avaja;
 	
 	@DateTimeFormat(pattern="dd.MM.yyyy")
-	@NotNull
 	private Calendar avatud;
 	
-	@Size(min = 1, max = 32)
-	@NotNull
+	@Size(max = 32)
 	private String muutja;
 	
 	@DateTimeFormat(pattern="dd.MM.yyyy")
-	@NotNull
 	private Calendar muudetud;
 	
 	@Size(max = 32)
 	private String sulgeja;
 	
 	@DateTimeFormat(pattern="dd.MM.yyyy")
-	@NotNull
 	private Calendar suletud;
+	
+	
+	
+	
+	@PrePersist
+	public void setCreated() {
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		Calendar now = Calendar.getInstance();
+		setOpen(currentUser, now);
+		setModified(currentUser, now);
+		setTemporaryClosedDate();
+	}
+	
+	@PreUpdate
+	public void setUpdated() {
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		Calendar now = Calendar.getInstance();
+		setModified(currentUser, now);
+	}
+	
+	@PreRemove
+	public void preventRemoval() {
+		throw new SecurityException("Removal of objects from DB is prohibited!");
+	}
+	
+	private void setOpen(String user, Calendar date) {
+		this.avaja = user;
+		this.avatud = date;
+	}
+	
+	private void setModified(String user, Calendar date) {
+		this.muutja = user;
+		this.muudetud = date;
+	}
+	
+	private void setTemporaryClosedDate() {
+		Calendar tempDate = Calendar.getInstance();
+		tempDate.clear();
+		tempDate.set(Calendar.YEAR, 9998);
+		tempDate.set(Calendar.MONTH, 12);
+		tempDate.set(Calendar.DAY_OF_MONTH, 31);
+		this.suletud = tempDate;
+	}
+	
+	
+	
 	
 	public String getKommentaar() {
 		return kommentaar;

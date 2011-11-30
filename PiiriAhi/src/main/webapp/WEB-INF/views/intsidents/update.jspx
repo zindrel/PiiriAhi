@@ -4,12 +4,12 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:update id="fu_ee_itcollege_team24_entities_Intsident" idField="intsident_ID" modelAttribute="intsident" path="/intsidents" versionField="Version" z="hXRVd87wgDgCI7KnlN8dvmYpoVk=">
         <field:textarea field="kommentaar" id="c_ee_itcollege_team24_entities_Intsident_kommentaar" z="XNirW24MyhIgqgi3r0dMJiGnkkM="/>
-        <field:textarea field="avaja" id="c_ee_itcollege_team24_entities_Intsident_avaja" required="true" z="8jLcpKua/seEJpc3nypNdQQ3wsE="/>
-        <field:datetime dateTimePattern="${intsident_avatud_date_format}" field="avatud" id="c_ee_itcollege_team24_entities_Intsident_avatud" required="true" z="L8/vcixPFYGvYCRE+v8kov/2iUs="/>
-        <field:textarea field="muutja" id="c_ee_itcollege_team24_entities_Intsident_muutja" required="true" z="BWIep4thi7phcgMuJvsVwz9ybSM="/>
-        <field:datetime dateTimePattern="${intsident_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_team24_entities_Intsident_muudetud" required="true" z="C9HLFrwHJ6I2/c2Aj1lfU9WlfEc="/>
+        <field:textarea field="avaja" id="c_ee_itcollege_team24_entities_Intsident_avaja" z="6unTYr8n6wJzlqivNrR8DnPJKVc="/>
+        <field:datetime dateTimePattern="${intsident_avatud_date_format}" field="avatud" id="c_ee_itcollege_team24_entities_Intsident_avatud" z="5TiCpv615zURdplf9nQmYMIPflc="/>
+        <field:textarea field="muutja" id="c_ee_itcollege_team24_entities_Intsident_muutja" z="vEi6W9XLVmGTrK+Z0XDCd9BHFEk="/>
+        <field:datetime dateTimePattern="${intsident_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_team24_entities_Intsident_muudetud" z="yi1y/P58wBqTxN/ahGWhuOVNi5g="/>
         <field:textarea field="sulgeja" id="c_ee_itcollege_team24_entities_Intsident_sulgeja" z="FFHDn3Jdcp97vv4PTpx7etqcJKo="/>
-        <field:datetime dateTimePattern="${intsident_suletud_date_format}" field="suletud" id="c_ee_itcollege_team24_entities_Intsident_suletud" required="true" z="l2PC0NNNnQINMz5BWVv2ToBLymc="/>
+        <field:datetime dateTimePattern="${intsident_suletud_date_format}" field="suletud" id="c_ee_itcollege_team24_entities_Intsident_suletud" z="tbtGLItnrb+PrmjBr2vnPK85MC8="/>
         <field:input field="kood" id="c_ee_itcollege_team24_entities_Intsident_kood" max="20" min="1" required="true" z="YiHnSsMzcw2HlffxVPZqdjWA/pI="/>
         <field:textarea field="nimetus" id="c_ee_itcollege_team24_entities_Intsident_nimetus" required="true" z="NfhvTnJ4qVhGsKnCPIFeENxvoUE="/>
         <field:datetime dateTimePattern="${intsident_toimumise_algus_date_format}" field="toimumise_algus" id="c_ee_itcollege_team24_entities_Intsident_toimumise_algus" required="true" z="8Yj97SQx4Ilqo+HEJyM+UpWDWD4="/>

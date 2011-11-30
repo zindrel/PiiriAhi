@@ -4,12 +4,12 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_itcollege_team24_entities_IsikIntsidendis" modelAttribute="isikIntsidendis" path="/isikintsidendises" render="${empty dependencies}" z="mmysBSF2Pn325MaZy2oFJytaNpw=">
         <field:textarea field="kommentaar" id="c_ee_itcollege_team24_entities_IsikIntsidendis_kommentaar" z="+6LbIuVXbzVvAjwAP98RvYmawtY="/>
-        <field:textarea field="avaja" id="c_ee_itcollege_team24_entities_IsikIntsidendis_avaja" required="true" z="IYFyv7HIKDzSoUYiGyQX2rLA5pg="/>
-        <field:datetime dateTimePattern="${isikIntsidendis_avatud_date_format}" field="avatud" id="c_ee_itcollege_team24_entities_IsikIntsidendis_avatud" required="true" z="SlpO3Vegj18eWU3vYINU/hHacxs="/>
-        <field:textarea field="muutja" id="c_ee_itcollege_team24_entities_IsikIntsidendis_muutja" required="true" z="eKOaafizemMFwzeRes5J+mSTbKI="/>
-        <field:datetime dateTimePattern="${isikIntsidendis_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_team24_entities_IsikIntsidendis_muudetud" required="true" z="Ks1SIHAtrld4o5MhK7+XBd5vsjI="/>
+        <field:textarea field="avaja" id="c_ee_itcollege_team24_entities_IsikIntsidendis_avaja" z="jqIcQJZA49j8CTcUqRksE4phvmE="/>
+        <field:datetime dateTimePattern="${isikIntsidendis_avatud_date_format}" field="avatud" id="c_ee_itcollege_team24_entities_IsikIntsidendis_avatud" z="Zkq2FETbXGH3O7N0Npa9y0R/0QM="/>
+        <field:textarea field="muutja" id="c_ee_itcollege_team24_entities_IsikIntsidendis_muutja" z="FFdg9spPqQDhMOq5Yiv/43+mozE="/>
+        <field:datetime dateTimePattern="${isikIntsidendis_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_team24_entities_IsikIntsidendis_muudetud" z="zmgl6I4minPOhfU5gNJNF2KPXrY="/>
         <field:textarea field="sulgeja" id="c_ee_itcollege_team24_entities_IsikIntsidendis_sulgeja" z="yYfD2M82uO/GSamUgx1y3pE8Sbc="/>
-        <field:datetime dateTimePattern="${isikIntsidendis_suletud_date_format}" field="suletud" id="c_ee_itcollege_team24_entities_IsikIntsidendis_suletud" required="true" z="kF+xfK9V8c/Bngkoy8xNnbdxNlA="/>
+        <field:datetime dateTimePattern="${isikIntsidendis_suletud_date_format}" field="suletud" id="c_ee_itcollege_team24_entities_IsikIntsidendis_suletud" z="xeIaDlZrTvQF+41Q84WGrwJRTWA="/>
         <field:datetime dateTimePattern="${isikIntsidendis_alates_date_format}" field="alates" id="c_ee_itcollege_team24_entities_IsikIntsidendis_alates" required="true" z="wxiFvCO7isHr95uTasrpLFxUmsc="/>
         <field:datetime dateTimePattern="${isikIntsidendis_kuni_date_format}" field="kuni" id="c_ee_itcollege_team24_entities_IsikIntsidendis_kuni" required="true" z="WslPwRWAqdNRcQp0nX0hDVPrF2I="/>
         <field:textarea field="kirjeldus" id="c_ee_itcollege_team24_entities_IsikIntsidendis_kirjeldus" required="true" z="bzwb74ySE0OQRkr0sS8i1PCOwf0="/>
