@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import ee.itcollege.team24.entities.Intsident;
-import ee.itcollege.team24.entities.Vaeosa;
 
 @RooWebScaffold(path = "registerincident", formBackingObject = Intsident.class)
 @RequestMapping("/registerincident")
