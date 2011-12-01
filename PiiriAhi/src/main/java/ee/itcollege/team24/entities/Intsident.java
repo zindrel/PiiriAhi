@@ -75,6 +75,7 @@ public class Intsident extends BaseHistoryEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@ManyToOne
+	@NotNull
 	private Piiriloik piiriloik;
 
 	@OneToMany(mappedBy = "intsident")
@@ -87,6 +88,7 @@ public class Intsident extends BaseHistoryEntity implements Serializable {
 	private Collection<ObjektIntsidendis> objektIntsidendis;
 
 	@ManyToOne
+	@NotNull
 	private IntsidendiLiik intsidendiLiik;
 
 	@OneToMany(mappedBy = "intsident")
