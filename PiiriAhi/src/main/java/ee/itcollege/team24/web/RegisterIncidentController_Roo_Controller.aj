@@ -40,12 +40,6 @@ privileged aspect RegisterIncidentController_Roo_Controller {
         return "redirect:/registerincident/" + encodeUrlPathSegment(intsident.getIntsident_ID().toString(), httpServletRequest);
     }
     
-    @RequestMapping(params = "cancel", method = RequestMethod.POST)
-    public String cancelUpdateUser(HttpServletRequest request) {
-    return "redirect:/registerincident/index";
-    }
-
-    
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String RegisterIncidentController.createForm(Model uiModel) {
         uiModel.addAttribute("intsident", new Intsident());
