@@ -20,10 +20,13 @@
                                 <td>
                                     ${person.getPiiririkkuja().getEesnimi()}
                                     ${person.getPiiririkkuja().getPerek_nimi()}
+                                    <input type="button" value="Eemalda" onClick="alert('Pole implementeeritud')" style="float:right" />
+                                    <input type="button" value="Info" onClick="alert('Pole implementeeritud')" style="float:right" />
                                 </td>
                             </tr>
                         </c:forEach>
                     </table>
+                    <input type="button" value="Lisa" onClick="alert('Pole implementeeritud')" style="float:right;margin-top:7px" />
                 </td>
                 <td width="50%" style="border-style:none;vertical-align:top">
                     <table>
@@ -32,15 +35,20 @@
                         </tr>
                         <c:forEach items="${intsident.getObjektsIntsidendis()}" var="objekt">
                             <tr>
-                                <td>${objekt.getObjekt().getNimetus()}</td>
+                                <td>
+                                    ${objekt.getObjekt().getNimetus()}
+	                                <input type="button" value="Eemalda" onClick="alert('Pole implementeeritud')" style="float:right" />
+	                                <input type="button" value="Info" onClick="alert('Pole implementeeritud')" style="float:right" />
+                                </td>
                             </tr>
                         </c:forEach>
                     </table>
+                    <input type="button" value="Lisa" onClick="alert('Pole implementeeritud')" style="float:right;margin-top:7px" />
                 </td>
             </tr>
         </table>
     </div>
-    <div style="margin-top:10px">
+    <div style="margin-top:12px">
         <table style="border-style:none">
             <tr>
                 <td width="50%" style="border-style:none;vertical-align:top">
@@ -50,10 +58,15 @@
                         </tr>
                         <c:forEach items="${intsident.getVahtkondIntsidendis()}" var="vahtkond">
                             <tr>
-                                <td>${vahtkond.getVahtkond().getNimetus()}</td>
+                                <td>
+                                    ${vahtkond.getVahtkond().getNimetus()}
+	                                <input type="button" value="Eemalda" onClick="alert('Pole implementeeritud')" style="float:right" />
+	                                <input type="button" value="Info" onClick="alert('Pole implementeeritud')" style="float:right" />
+                                </td>
                             </tr>
                         </c:forEach>
                     </table>
+                    <input type="button" value="Lisa" onClick="alert('Pole implementeeritud')" style="float:right;margin-top:7px" />
                 </td>
                 <td width="50%" style="border-style:none;vertical-align:top">
                     <table>
@@ -65,12 +78,18 @@
                                 <td>
                                     ${valvur.getPiirivalvur().getEesnimed()}
                                     ${valvur.getPiirivalvur().getPerekonnanimi()}
+                                    <input type="button" value="Eemalda" onClick="alert('Pole implementeeritud')" style="float:right" />
+                                    <input type="button" value="Info" onClick="alert('Pole implementeeritud')" style="float:right" />
                                 </td>
                             </tr>
                         </c:forEach>
                     </table>
+                    <input type="button" value="Lisa" onClick="alert('Pole implementeeritud')" style="float:right;margin-top:7px" />
                 </td>
             </tr>
         </table>
+    </div>
+    <div style="margin-top:30px;padding-bottom:10px">
+        <input type="button" value="Tagasi" onClick="alert('Pole implementeeritud')" style="float:right" />
     </div>
 </div>
