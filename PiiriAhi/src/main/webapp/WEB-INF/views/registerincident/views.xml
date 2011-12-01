@@ -16,4 +16,7 @@
 <definition extends="default" name="registerincident/update">
         <put-attribute name="body" value="/WEB-INF/views/registerincident/update.jspx"/>
     </definition>
+<definition extends="default" name="registerincident/createdetails">
+        <put-attribute name="body" value="/WEB-INF/views/registerincident/createDetails.jspx"/>
+    </definition>
 </tiles-definitions>

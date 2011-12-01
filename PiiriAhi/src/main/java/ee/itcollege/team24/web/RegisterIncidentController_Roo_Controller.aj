@@ -30,18 +30,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect RegisterIncidentController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST)
-    public String RegisterIncidentController.create(@Valid Intsident intsident, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("intsident", intsident);
-            addDateTimeFormatPatterns(uiModel);
-            return "registerincident/create";
-        }
-        uiModel.asMap().clear();
-        intsident.persist();
-        return "redirect:/registerincident/" + encodeUrlPathSegment(intsident.getIntsident_ID().toString(), httpServletRequest);
-    }
-    
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String RegisterIncidentController.createForm(Model uiModel) {
         uiModel.addAttribute("intsident", new Intsident());
