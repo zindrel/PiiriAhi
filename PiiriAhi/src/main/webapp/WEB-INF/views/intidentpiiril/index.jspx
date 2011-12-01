@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:form="http://www.springframework.org/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" xmlns:util="urn:jsptagdir:/WEB-INF/tags/util" version="2.0">
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" 
+     xmlns:form="http://www.springframework.org/tags/form"
+     xmlns:jsp="http://java.sun.com/JSP/Page" 
+     xmlns:spring="http://www.springframework.org/tags" 
+     xmlns:util="http://www.springframework.org/tags/util" version="2.0"
+     xmlns:field="http://www.springframework.org/tags/form/fields"
+     >
   <jsp:directive.page contentType="text/html;charset=UTF-8"/>
   <jsp:output omit-xml-declaration="yes"/>
   <spring:message code="label_intidentpiiril_index" htmlEscape="false" var="title"/>
@@ -17,12 +23,12 @@
     		<td></td>	
         </tr>
     	<tr>
-            <td></td>
-    		<td></td>
+            <td><field:datetime dateTimePattern="dd.MM.yyyy" field="toimumise_algus" id="algus" required="true" /></td>
+    		<td><field:datetime dateTimePattern="dd.MM.yyyy" field="toimumise_lopp" id="lopp" required="true" /></td>
     		<td>
     		   <select name="loik">
     		      <c:forEach items="${piiriloiks}" var="piiriloik">
-    		      	 <option value="${piiriloik.piiriloik_ID}" label="${piiriloik.nimetus}" />
+    		      	 <option value="${piiriloik.piiriloik_ID}" label="${piiriloik.nimetus}">${piiriloik.nimetus}</option>>
     		      </c:forEach>
     		   </select></td>
     		<td><input type="submit" value="Värskenda" style='float: right;' /></td>	

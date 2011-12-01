@@ -3,6 +3,7 @@ package ee.itcollege.team24.web;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +31,5 @@ public class IntidentPiirilController {
     	modelMap.addAttribute("number",Intsident.countIntsidents());
         return "intidentpiiril/index";
     }
-    
 
 }
