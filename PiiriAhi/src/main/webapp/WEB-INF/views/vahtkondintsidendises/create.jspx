@@ -4,11 +4,11 @@
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_itcollege_team24_entities_VahtkondIntsidendis" modelAttribute="vahtkondIntsidendis" path="/vahtkondintsidendises" render="${empty dependencies}" z="s5pXUjx8gSpbGQb6rqmngzdX8R8=">
         <field:textarea field="kommentaar" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_kommentaar" z="bUuEdhVh5ARxcBSSigPrlSiK+Ks="/>
-        <util:placeholder id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_avaja" z="user-managed"/>
-        <util:placeholder id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_avatud" z="user-managed"/>
-        <util:placeholder id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_muutja" z="user-managed"/>
-        <util:placeholder id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_muudetud" z="user-managed"/>
-        <util:placeholder id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_sulgeja" z="user-managed"/>
+        <field:textarea field="avaja" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_avaja" z="user-managed"/>
+        <field:datetime dateTimePattern="${piirivalvurIntsidendis_avatud_date_format}" field="avatud" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_avatud" z="user-managed"/>
+        <field:textarea field="muutja"  id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_muutja" z="user-managed"/>
+        <field:datetime dateTimePattern="${piirivalvurIntsidendis_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_muudetud" z="user-managed"/>
+        <field:textarea field="sulgeja" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_sulgeja" z="user-managed"/>
         <field:datetime dateTimePattern="${vahtkondIntsidendis_suletud_date_format}" field="suletud" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_suletud" z="jH9d/GbcMqqp1bW29nRVmeTa940="/>
         <field:datetime dateTimePattern="${vahtkondIntsidendis_alates_date_format}" field="alates" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_alates" required="true" z="ARAm4ANsAMXBtw4/SUkXm17UmGc="/>
         <field:datetime dateTimePattern="${vahtkondIntsidendis_kuni_date_format}" field="kuni" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_kuni" required="true" z="qduj9ACetQP3W2dsN5p56d0C5CA="/>
