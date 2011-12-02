@@ -25,25 +25,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect ObjektIntsidendisController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST)
-    public String ObjektIntsidendisController.create(@Valid ObjektIntsidendis objektIntsidendis, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("objektIntsidendis", objektIntsidendis);
-            addDateTimeFormatPatterns(uiModel);
-            return "objektintsidendises/create";
-        }
-        uiModel.asMap().clear();
-        objektIntsidendis.persist();
-        return "redirect:/objektintsidendises/" + encodeUrlPathSegment(objektIntsidendis.getObjekt_intsidendis_ID().toString(), httpServletRequest);
-    }
-    
-    @RequestMapping(params = "form", method = RequestMethod.GET)
-    public String ObjektIntsidendisController.createForm(Model uiModel) {
-        uiModel.addAttribute("objektIntsidendis", new ObjektIntsidendis());
-        addDateTimeFormatPatterns(uiModel);
-        return "objektintsidendises/create";
-    }
-    
     @RequestMapping(value = "/{objekt_intsidendis_ID}", method = RequestMethod.GET)
     public String ObjektIntsidendisController.show(@PathVariable("objekt_intsidendis_ID") Long objekt_intsidendis_ID, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);

@@ -26,25 +26,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect PiirivalvurIntsidendisController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST)
-    public String PiirivalvurIntsidendisController.create(@Valid PiirivalvurIntsidendis piirivalvurIntsidendis, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("piirivalvurIntsidendis", piirivalvurIntsidendis);
-            addDateTimeFormatPatterns(uiModel);
-            return "piirivalvurintsidendises/create";
-        }
-        uiModel.asMap().clear();
-        piirivalvurIntsidendis.persist();
-        return "redirect:/piirivalvurintsidendises/" + encodeUrlPathSegment(piirivalvurIntsidendis.getPiirivalvur_intsidendis_ID().toString(), httpServletRequest);
-    }
-    
-    @RequestMapping(params = "form", method = RequestMethod.GET)
-    public String PiirivalvurIntsidendisController.createForm(Model uiModel) {
-        uiModel.addAttribute("piirivalvurIntsidendis", new PiirivalvurIntsidendis());
-        addDateTimeFormatPatterns(uiModel);
-        return "piirivalvurintsidendises/create";
-    }
-    
     @RequestMapping(value = "/{piirivalvur_intsidendis_ID}", method = RequestMethod.GET)
     public String PiirivalvurIntsidendisController.show(@PathVariable("piirivalvur_intsidendis_ID") Long piirivalvur_intsidendis_ID, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
