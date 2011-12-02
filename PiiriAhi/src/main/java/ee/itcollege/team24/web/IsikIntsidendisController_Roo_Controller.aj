@@ -25,25 +25,6 @@ import org.springframework.web.util.WebUtils;
 
 privileged aspect IsikIntsidendisController_Roo_Controller {
     
-    @RequestMapping(method = RequestMethod.POST)
-    public String IsikIntsidendisController.create(@Valid IsikIntsidendis isikIntsidendis, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("isikIntsidendis", isikIntsidendis);
-            addDateTimeFormatPatterns(uiModel);
-            return "isikintsidendises/create";
-        }
-        uiModel.asMap().clear();
-        isikIntsidendis.persist();
-        return "redirect:/isikintsidendises/" + encodeUrlPathSegment(isikIntsidendis.getIsik_intsidendis_ID().toString(), httpServletRequest);
-    }
-    
-    @RequestMapping(params = "form", method = RequestMethod.GET)
-    public String IsikIntsidendisController.createForm(Model uiModel) {
-        uiModel.addAttribute("isikIntsidendis", new IsikIntsidendis());
-        addDateTimeFormatPatterns(uiModel);
-        return "isikintsidendises/create";
-    }
-    
     @RequestMapping(value = "/{isik_intsidendis_ID}", method = RequestMethod.GET)
     public String IsikIntsidendisController.show(@PathVariable("isik_intsidendis_ID") Long isik_intsidendis_ID, Model uiModel) {
         addDateTimeFormatPatterns(uiModel);
