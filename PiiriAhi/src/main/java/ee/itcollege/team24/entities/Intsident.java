@@ -2,6 +2,7 @@ package ee.itcollege.team24.entities;
 
 import java.io.Serializable;
 import java.util.Calendar;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

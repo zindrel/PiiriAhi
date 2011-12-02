@@ -8,53 +8,60 @@
      version="2.0">
   <jsp:directive.page contentType="text/html;charset=UTF-8"/>
   <jsp:output omit-xml-declaration="yes"/>
+    
     <h3>
       Intsidendid piiril vahtkondade kaupa
     </h3>
-    <form name="select" action="../intidentpiiril/index" method="GET">
-    <table border="0">
+
+    <form name="select" action="../intidentpiiril/index" method="GET" >
+    <table style="border-style:none" >
         <tr>
-    		<td>Alates</td>
-    		<td>Kuni</td>
-    		<td>Piirilõik</td>
-    		<td></td>	
+    		<td width="25%" style="border-style:none;background-color:transparent;" >Alates</td>
+    		<td width="25%" style="border-style:none;background-color:transparent;" >Kuni</td>
+    		<td width="25%" style="border-style:none;background-color:transparent;" >Piirilõik</td>
+    		<td width="25%" style="border-style:none;background-color:transparent;" ></td>	
         </tr>
     	<tr>
-            <td><!--<field:datetime dateTimePattern="dd.MM.yyyy" field="" id="algus"/>/--></td>
-    		<td><!--<field:datetime dateTimePattern="dd.MM.yyyy" field="" id="lopp" />/--></td>
-    		<td>
+            <td width="25%" style="border-style:none;background-color:transparent;" ><!--<field:datetime dateTimePattern="dd.MM.yyyy" field="" id="algus"/>/--></td>
+    		<td width="25%" style="border-style:none;background-color:transparent;" ><!--<field:datetime dateTimePattern="dd.MM.yyyy" field="" id="lopp" />/--></td>
+    		<td width="25%" style="border-style:none;background-color:transparent;" >
     		   <select name="loik">
+    		   		<option value ="-1" label="Kõik lõigud" />
     		      <c:forEach items="${piiriloiks}" var="piiriloik">
     		      	 <option value="${piiriloik.piiriloik_ID}" label="${piiriloik.nimetus}">${piiriloik.nimetus}</option>>
     		      </c:forEach>
     		   </select></td>
-    		<td><input type="submit" value="Värskenda" style='float: right;' /></td>	
+    		<td width="25%" style="border-style:none;background-color:transparent;" ><input type="submit" value="Värskenda" style='float: right;' /></td>	
         </tr>
     </table>
     </form>
     <br />
-    <table>
-    <tr>
-    	<th>
-    		Vahtkond Nimetus
-    	</th>
-    </tr>
     
-    <c:forEach items="${intsidents}" var="intsident">
-         <tr>
-    		<td>
-    			${intsident.nimetus}
-    	    <input type="button" value="Vaata" onClick="" style='float: right;' />
-    	</td>	
-    </tr>
-    </c:forEach>
-
-    
-    <tr>
-    	<td>
-    		Kokku intsidente: ${number}
-    	</td>
-    </tr>
-    </table>
+    <c:forEach items="${vahtIntsidendid}" var="vid">
+	    <table>
+	    <tr>
+	    	<th>
+	    		<b>${vid.getVahtkond().getKood()} - ${vid.getVahtkond().getNimetus()}</b>
+	    	</th>
+	    </tr>
+	    
+		    <c:forEach items="${vid.getIntsidendid()}" var="intsident">
+		         <tr>
+		    		<td>
+		    			${intsident.getNimetus()} - ${intsident.getPiiriloik().getNimetus()} 
+		    	    <input type="button" value="Vaata" onClick="alert('Pole implementeeritud')" style='float: right;' />
+		    	</td>	
+		    </tr>
+		    </c:forEach>
+	
+	    
+	    <tr>
+	    	<td>
+	    		Intsidentide arv kokku: <b>${vid.getIntsidentideArv()}</b>
+	    	</td>
+	    </tr>
+	    </table>
+	    <br />
+   </c:forEach>
 
 </div>
