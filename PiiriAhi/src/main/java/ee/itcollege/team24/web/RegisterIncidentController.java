@@ -14,6 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import ee.itcollege.team24.entities.Intsident;
 import ee.itcollege.team24.entities.IsikIntsidendis;
+import ee.itcollege.team24.entities.ObjektIntsidendis;
+import ee.itcollege.team24.entities.PiirivalvurIntsidendis;
+import ee.itcollege.team24.entities.VahtkondIntsidendis;
 
 @RooWebScaffold(path = "registerincident", formBackingObject = Intsident.class)
 @RequestMapping("/registerincident")
@@ -49,6 +52,21 @@ public class RegisterIncidentController {
         	IsikIntsidendis isikIntsidendis = IsikIntsidendis.findIsikIntsidendis(Long.parseLong(objectParams[1]));
         	isikIntsidendis.close();
         	isikIntsidendis.persist();
+        }
+        else if (objectParams[0].equals("objekt")) {
+        	ObjektIntsidendis objektIntsidendis = ObjektIntsidendis.findObjektIntsidendis(Long.parseLong(objectParams[1]));
+        	objektIntsidendis.close();
+        	objektIntsidendis.persist();
+        }
+        else if (objectParams[0].equals("vahtkond")) {
+        	VahtkondIntsidendis vahtkondIntsidendis = VahtkondIntsidendis.findVahtkondIntsidendis(Long.parseLong(objectParams[1]));
+        	vahtkondIntsidendis.close();
+        	vahtkondIntsidendis.persist();
+        }
+        else if (objectParams[0].equals("valvur")) {
+        	PiirivalvurIntsidendis piirivalvurIntsidendis = PiirivalvurIntsidendis.findPiirivalvurIntsidendis(Long.parseLong(objectParams[1]));
+        	piirivalvurIntsidendis.close();
+        	piirivalvurIntsidendis.persist();
         }
         
         addDateTimeFormatPatterns(uiModel);

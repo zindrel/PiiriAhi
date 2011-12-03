@@ -74,12 +74,15 @@ public class Intsident extends BaseHistoryEntity implements Serializable {
 	private Piiriloik piiriloik;
 
 	@OneToMany(mappedBy = "intsident")
+	@Where(clause = "sulgeja = ''")
 	private Collection<VahtkondIntsidendis> vahtkondIntsidendis;
 
 	@OneToMany(mappedBy = "intsident")
+	@Where(clause = "sulgeja = ''")
 	private Collection<PiirivalvurIntsidendis> piirivalvurIntsidendis;
 
 	@OneToMany(mappedBy = "intsident")
+	@Where(clause = "sulgeja = ''")
 	private Collection<ObjektIntsidendis> objektIntsidendis;
 
 	@ManyToOne

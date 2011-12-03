@@ -37,7 +37,7 @@
                             <tr>
                                 <td>
                                     ${objekt.getObjekt().getNimetus()}
-	                                <input type="button" value="Eemalda" onClick="alert('Pole implementeeritud')" style="float:right" />
+	                                <input type="button" value="Eemalda" onClick="if(confirm('Kustutan objekti ${objekt.getObjekt().getNimetus()} intsidendist?')){window.location='?object=objekt,${objekt.getObjekt_intsidendis_ID()}'}" style="float:right" />
 	                                <input type="button" value="Info" onClick="alert('Pole implementeeritud')" style="float:right" />
                                 </td>
                             </tr>
@@ -60,7 +60,7 @@
                             <tr>
                                 <td>
                                     ${vahtkond.getVahtkond().getNimetus()}
-	                                <input type="button" value="Eemalda" onClick="alert('Pole implementeeritud')" style="float:right" />
+	                                <input type="button" value="Eemalda" onClick="if(confirm('Kustutan vahtkonna ${vahtkond.getVahtkond().getNimetus()} intsidendist?')){window.location='?object=vahtkond,${vahtkond.getVahtkond_intsidendis_ID()}'}" style="float:right" />
 	                                <input type="button" value="Info" onClick="alert('Pole implementeeritud')" style="float:right" />
                                 </td>
                             </tr>
@@ -78,7 +78,7 @@
                                 <td>
                                     ${valvur.getPiirivalvur().getEesnimed()}
                                     ${valvur.getPiirivalvur().getPerekonnanimi()}
-                                    <input type="button" value="Eemalda" onClick="alert('Pole implementeeritud')" style="float:right" />
+                                    <input type="button" value="Eemalda" onClick="if(confirm('Kustutan piirivalvuri ${valvur.getPiirivalvur().getEesnimed()} ${valvur.getPiirivalvur().getPerekonnanimi()} intsidendist?')){window.location='?object=valvur,${valvur.getPiirivalvur_intsidendis_ID()}'}" style="float:right" />
                                     <input type="button" value="Info" onClick="alert('Pole implementeeritud')" style="float:right" />
                                 </td>
                             </tr>

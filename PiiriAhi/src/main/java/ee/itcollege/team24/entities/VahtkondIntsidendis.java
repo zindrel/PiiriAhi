@@ -11,6 +11,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Where;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
@@ -27,6 +28,7 @@ import javax.persistence.OneToMany;
  */
 @Entity
 @Table(name="VAHTKOND_INTSIDENDIS")
+@Where(clause="sulgeja = ''")
 @RooToString
 @RooEntity
 public class VahtkondIntsidendis extends BaseHistoryEntity implements Serializable {
