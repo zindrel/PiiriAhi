@@ -49,15 +49,9 @@ public class IntidentPiirilController {
     	
     	StringBuilder sb = new StringBuilder("");
     	
-    	sb.append(" " + "PreForTsükkel");
-    	
     	for (Vahtkond vaht : koikVahtkonnad) {
     		
-    		sb.append(" " + "JÄRGMINE Vahkondade tsükkel");
-    		
     		VahtkonnaIntsidendid_dao intsiVahtkond = new VahtkonnaIntsidendid_dao();
-    		
-    		sb.append(" " + "VahkondID: " + vaht.getVahtkond_ID());
     		
     		intsiVahtkond.setVahtkond(vaht);
     	
@@ -67,10 +61,9 @@ public class IntidentPiirilController {
 	    		
 	    		if (vaht.equals(v.getVahtkond())) {
 	    			
-	    			sb.append(" " + "PROOVIN LISADA!");
 	    			sb.append(" IF KONTROLL" + loik + " ==? " +  v.getIntsident().getPiiriloik().getPiiriloik_ID());
 	    			//Lisame ainult vastava piiriloigu intsidendid voi kui -1 siis koik
-	    			if (loik == -1 || v.getIntsident().getPiiriloik().getPiiriloik_ID() == loik ) {
+	    			if (loik.equals(new Long(-1)) || (v.getIntsident().getPiiriloik().getPiiriloik_ID().equals(loik)) ) {
 	    				intsiVahtkond.addIntsident(v.getIntsident());
 	    				sb.append(" " + "LISASIN! INTSI KOOD" + v.getIntsident().getKood());
 	    			}
