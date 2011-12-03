@@ -46,11 +46,11 @@
           </script>
         </c:if>
         <jsp:doBody />
-        <div class="submit" id="${fn:escapeXml(id)}_submit">
+        <div style="margin-top:10px;padding-bottom:20px" class="submit" id="${fn:escapeXml(id)}_submit">
           <spring:message code="button_save" var="save_button" htmlEscape="false" />
           <script type="text/javascript">Spring.addDecoration(new Spring.ValidateAllDecoration({elementId:'proceed', event:'onclick'}));</script>
-          <input id="proceed" type="submit" value="${fn:escapeXml(save_button)}"/>
-          <input id="loobu" type="button" onClick="history.go(-1);return true;" value="Loobu"/>
+          <input id="loobu" type="button" onClick="history.go(-1);return true;" value="Loobu" style="float:right"/>
+          <input id="proceed" type="submit" value="${fn:escapeXml(save_button)}" style="float:right"/>
         </div>
       </form:form>
     </util:panel>
