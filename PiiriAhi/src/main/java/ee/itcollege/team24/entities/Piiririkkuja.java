@@ -1,22 +1,20 @@
 package ee.itcollege.team24.entities;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
-import ee.itcollege.team24.entities.Objekt;
-import ee.itcollege.team24.entities.IsikIntsidendis;
-import javax.persistence.ManyToOne;
-import java.util.Collection;
-import javax.persistence.OneToMany;
 
 /**
  * Entity implementation class for Entity: Piiririkkuja

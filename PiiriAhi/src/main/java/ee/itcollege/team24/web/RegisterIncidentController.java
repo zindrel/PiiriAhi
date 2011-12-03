@@ -10,8 +10,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import ee.itcollege.team24.entities.Intsident;
+import ee.itcollege.team24.entities.IsikIntsidendis;
 
 @RooWebScaffold(path = "registerincident", formBackingObject = Intsident.class)
 @RequestMapping("/registerincident")
@@ -37,4 +39,22 @@ public class RegisterIncidentController {
         uiModel.addAttribute("itemId", intsident_ID);
         return "registerincident/createdetails";
     }
+	
+	@RequestMapping(value = "/createdetails/{intsident_ID}", method = RequestMethod.GET, params = "object")
+    public String close(@PathVariable("intsident_ID") Long intsident_ID, @RequestParam(value = "object", required = false) String objectDescription, Model uiModel, HttpServletRequest httpServletRequest) {
+		
+        String[] objectParams = objectDescription.split(",");
+        
+        if (objectParams[0].equals("isik")) {
+        	IsikIntsidendis isikIntsidendis = IsikIntsidendis.findIsikIntsidendis(Long.parseLong(objectParams[1]));
+        	isikIntsidendis.close();
+        	isikIntsidendis.persist();
+        }
+        
+        addDateTimeFormatPatterns(uiModel);
+        uiModel.addAttribute("intsident", Intsident.findIntsident(intsident_ID));
+        uiModel.addAttribute("itemId", intsident_ID);
+        return "redirect:/registerincident/createdetails/" + encodeUrlPathSegment(intsident_ID.toString(), httpServletRequest);
+    }
+	
 }

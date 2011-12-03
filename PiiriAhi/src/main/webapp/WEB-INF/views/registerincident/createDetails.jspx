@@ -20,7 +20,7 @@
                                 <td>
                                     ${person.getPiiririkkuja().getEesnimi()}
                                     ${person.getPiiririkkuja().getPerek_nimi()}
-                                    <input type="button" value="Eemalda" onClick="alert('Pole implementeeritud')" style="float:right" />
+                                    <input type="button" value="Eemalda" onClick="if(confirm('Kustutan isiku ${person.getPiiririkkuja().getEesnimi()} ${person.getPiiririkkuja().getPerek_nimi()} intsidendist?')){window.location='?object=isik,${person.getIsik_intsidendis_ID()}'}" style="float:right" />
                                     <input type="button" value="Info" onClick="alert('Pole implementeeritud')" style="float:right" />
                                 </td>
                             </tr>

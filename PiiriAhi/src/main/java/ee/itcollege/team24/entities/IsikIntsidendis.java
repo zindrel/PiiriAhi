@@ -7,16 +7,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Where;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
-import ee.itcollege.team24.entities.Piiririkkuja;
-import ee.itcollege.team24.entities.Intsident;
-import javax.persistence.ManyToOne;
 
 /**
  * Entity implementation class for Entity: IsikIntsidendis
@@ -24,6 +23,7 @@ import javax.persistence.ManyToOne;
  */
 @Entity
 @Table(name="ISIK_INTSIDENDIS")
+@Where(clause="sulgeja = ''")
 @RooToString
 @RooEntity
 public class IsikIntsidendis extends BaseHistoryEntity implements Serializable {
@@ -96,5 +96,6 @@ public class IsikIntsidendis extends BaseHistoryEntity implements Serializable {
 	public void setIntsident(Intsident param) {
 	    this.intsident = param;
 	}
+
    
 }

@@ -2,12 +2,14 @@ package ee.itcollege.team24.entities;
 
 import java.io.Serializable;
 import java.util.Calendar;
-import java.util.List;
+import java.util.Collection;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
@@ -15,18 +17,10 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Where;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.roo.addon.entity.RooEntity;
 import org.springframework.roo.addon.tostring.RooToString;
-import ee.itcollege.team24.entities.Piiriloik;
-import ee.itcollege.team24.entities.VahtkondIntsidendis;
-import javax.persistence.ManyToOne;
-import java.util.Collection;
-import javax.persistence.OneToMany;
-import ee.itcollege.team24.entities.PiirivalvurIntsidendis;
-import ee.itcollege.team24.entities.ObjektIntsidendis;
-import ee.itcollege.team24.entities.IntsidendiLiik;
-import ee.itcollege.team24.entities.IsikIntsidendis;
 
 /**
  * Entity implementation class for Entity: Intsident
@@ -93,6 +87,7 @@ public class Intsident extends BaseHistoryEntity implements Serializable {
 	private IntsidendiLiik intsidendiLiik;
 
 	@OneToMany(mappedBy = "intsident")
+	@Where(clause = "sulgeja = ''")
 	private Collection<IsikIntsidendis> isikIntsidendis;
 
 	public Intsident() {

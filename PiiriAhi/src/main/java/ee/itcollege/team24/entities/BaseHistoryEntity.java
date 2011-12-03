@@ -83,6 +83,13 @@ public class BaseHistoryEntity {
 		this.suletud = tempDate;
 	}
 	
+	public void close() {
+		Calendar now = Calendar.getInstance();
+		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
+		this.suletud = now;
+		this.sulgeja = currentUser;
+	}
+	
 	
 	
 	
