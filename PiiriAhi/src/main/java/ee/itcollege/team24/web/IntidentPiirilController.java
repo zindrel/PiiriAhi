@@ -47,18 +47,32 @@ public class IntidentPiirilController {
     	List<VahtkondIntsidendis> vahtkonnadIntsidendis = VahtkondIntsidendis.findAllVahtkondIntsidendises();
     	List<VahtkonnaIntsidendid_dao> vahtkonnaIntsidendid = new ArrayList<VahtkonnaIntsidendid_dao>();
     	
+    	StringBuilder sb = new StringBuilder("");
+    	
+    	sb.append(" " + "PreForTsükkel");
+    	
     	for (Vahtkond vaht : koikVahtkonnad) {
     		
-    		VahtkonnaIntsidendid_dao intsiVahtkond = new VahtkonnaIntsidendid_dao();
-    		intsiVahtkond.setVahtkond(vaht);
+    		sb.append(" " + "JÄRGMINE Vahkondade tsükkel");
     		
+    		VahtkonnaIntsidendid_dao intsiVahtkond = new VahtkonnaIntsidendid_dao();
+    		
+    		sb.append(" " + "VahkondID: " + vaht.getVahtkond_ID());
+    		
+    		intsiVahtkond.setVahtkond(vaht);
+    	
 	    	for (VahtkondIntsidendis v: vahtkonnadIntsidendis) {
+	    		
+	    		sb.append(" " + "JÄRGMINE =? Vahkond intsidendis ID: " + v.getVahtkond().getVahtkond_ID());
 	    		
 	    		if (vaht.equals(v.getVahtkond())) {
 	    			
+	    			sb.append(" " + "PROOVIN LISADA!");
+	    			sb.append(" IF KONTROLL" + loik + " ==? " +  v.getIntsident().getPiiriloik().getPiiriloik_ID());
 	    			//Lisame ainult vastava piiriloigu intsidendid voi kui -1 siis koik
 	    			if (loik == -1 || v.getIntsident().getPiiriloik().getPiiriloik_ID() == loik ) {
 	    				intsiVahtkond.addIntsident(v.getIntsident());
+	    				sb.append(" " + "LISASIN! INTSI KOOD" + v.getIntsident().getKood());
 	    			}
 	    			
 	    		}
@@ -66,10 +80,14 @@ public class IntidentPiirilController {
 	    	}
 	    	
 	    	// Kuvame ainult siis kui antud vahkonnal on sellel piiriloigul intsidente
+	    	sb.append(" " + "DAO obj arv: " + intsiVahtkond.getIntsidentideArv());
 	    	if(intsiVahtkond.getIntsidentideArv() > 0) {
+	    		sb.append(" Lisasin UUE DAO objekti!");
 	    		vahtkonnaIntsidendid.add(intsiVahtkond);
 	    	}
     	}	
+    	
+    	uiModel.addAttribute("debugshit", sb.toString());
     	
     	uiModel.addAttribute("vahtIntsidendid", vahtkonnaIntsidendid);
     	uiModel.addAttribute("piiril", loik);

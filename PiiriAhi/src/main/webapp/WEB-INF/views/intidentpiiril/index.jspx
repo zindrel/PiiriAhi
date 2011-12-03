@@ -12,7 +12,7 @@
     <h3>
       Intsidendid piiril vahtkondade kaupa
     </h3>
-
+    
     <form name="select" action="../intidentpiiril/index" method="GET" >
     <table style="border-style:none" >
         <tr>
@@ -31,17 +31,14 @@
     		      	 <option value="${piiriloik.piiriloik_ID}" label="${piiriloik.nimetus}">${piiriloik.nimetus}</option>>
     		      </c:forEach>
     		   </select></td>
-    		<td width="25%" style="border-style:none;background-color:transparent;" ><input type="submit" value="Värskenda" style='float: right;' /></td>	
+    		<td width="25%" style="border-style:none;background-color:transparent;" >
+    		<input type="submit" value="Värskenda" style='float: right;' /></td>	
         </tr>
     </table>
     </form>
     <br />
     
-    DEBUG: Piirilõik ID = ${piiril}<br/>
-    DEBUG: DAO objekte = ${vahtIntsidendid.size()}<br/><br/>
-    
     <c:forEach items="${vahtIntsidendid}" var="vid">
-    DEBUG: Vahtkond ID : ${vid.getVahtkond().getVahtkond_ID()}
 	    <table>
 	    <tr>
 	    	<th>
@@ -50,8 +47,7 @@
 	    </tr>
 	    
 		    <c:forEach items="${vid.getIntsidendid()}" var="intsident">
-		         <tr>
-		         DEBUG: Piirilõik ID : ${intsident.getPiiriloik().getPiiriloik_ID()}
+		    <tr>
 		    		<td>
 		    			${intsident.getNimetus()} - ${intsident.getPiiriloik().getNimetus()} 
 		    	    <input type="button" value="Vaata" onClick="alert('Pole implementeeritud')" style='float: right;' />
@@ -68,5 +64,6 @@
 	    </table>
 	    <br />
    </c:forEach>
+   DEBUG: ${debugshit}
 
 </div>
