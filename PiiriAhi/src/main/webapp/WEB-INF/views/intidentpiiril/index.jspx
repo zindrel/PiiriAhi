@@ -12,7 +12,7 @@
     <h3>
       Intsidendid piiril vahtkondade kaupa
     </h3>
-
+    
     <form name="select" action="../intidentpiiril/index" method="GET" >
     <table style="border-style:none" >
         <tr>
@@ -31,7 +31,8 @@
     		      	 <option value="${piiriloik.piiriloik_ID}" label="${piiriloik.nimetus}">${piiriloik.nimetus}</option>>
     		      </c:forEach>
     		   </select></td>
-    		<td width="25%" style="border-style:none;background-color:transparent;" ><input type="submit" value="Värskenda" style='float: right;' /></td>	
+    		<td width="25%" style="border-style:none;background-color:transparent;" >
+    		<input type="submit" value="Värskenda" style='float: right;' /></td>	
         </tr>
     </table>
     </form>
@@ -46,7 +47,7 @@
 	    </tr>
 	    
 		    <c:forEach items="${vid.getIntsidendid()}" var="intsident">
-		         <tr>
+		    <tr>
 		    		<td>
 		    			${intsident.getNimetus()} - ${intsident.getPiiriloik().getNimetus()} 
 		    	    <input type="button" value="Vaata" onClick="alert('Pole implementeeritud')" style='float: right;' />

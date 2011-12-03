@@ -47,17 +47,20 @@ public class IntidentPiirilController {
     	List<VahtkondIntsidendis> vahtkonnadIntsidendis = VahtkondIntsidendis.findAllVahtkondIntsidendises();
     	List<VahtkonnaIntsidendid_dao> vahtkonnaIntsidendid = new ArrayList<VahtkonnaIntsidendid_dao>();
     	
+    	StringBuilder sb = new StringBuilder("");
+    	
     	for (Vahtkond vaht : koikVahtkonnad) {
     		
     		VahtkonnaIntsidendid_dao intsiVahtkond = new VahtkonnaIntsidendid_dao();
-    		intsiVahtkond.setVahtkond(vaht);
     		
+    		intsiVahtkond.setVahtkond(vaht);
+    	
 	    	for (VahtkondIntsidendis v: vahtkonnadIntsidendis) {
 	    		
 	    		if (vaht.equals(v.getVahtkond())) {
 	    			
 	    			//Lisame ainult vastava piiriloigu intsidendid voi kui -1 siis koik
-	    			if (loik == -1 || v.getIntsident().getPiiriloik().getPiiriloik_ID() == loik ) {
+	    			if (loik.equals(new Long(-1)) || (v.getIntsident().getPiiriloik().getPiiriloik_ID().equals(loik)) ) {
 	    				intsiVahtkond.addIntsident(v.getIntsident());
 	    			}
 	    			
