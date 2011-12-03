@@ -37,7 +37,11 @@
     </form>
     <br />
     
+    DEBUG: Piirilõik ID = ${piiril}<br/>
+    DEBUG: DAO objekte = ${vahtIntsidendid.size()}<br/><br/>
+    
     <c:forEach items="${vahtIntsidendid}" var="vid">
+    DEBUG: Vahtkond ID : ${vid.getVahtkond().getVahtkond_ID()}
 	    <table>
 	    <tr>
 	    	<th>
@@ -47,6 +51,7 @@
 	    
 		    <c:forEach items="${vid.getIntsidendid()}" var="intsident">
 		         <tr>
+		         DEBUG: Piirilõik ID : ${intsident.getPiiriloik().getPiiriloik_ID()}
 		    		<td>
 		    			${intsident.getNimetus()} - ${intsident.getPiiriloik().getNimetus()} 
 		    	    <input type="button" value="Vaata" onClick="alert('Pole implementeeritud')" style='float: right;' />
