@@ -8,7 +8,7 @@
      version="2.0">
   <jsp:directive.page contentType="text/html;charset=UTF-8"/>
   <jsp:output omit-xml-declaration="yes"/>
-    
+   
     <h3>
       Intsidendid piiril vahtkondade kaupa
     </h3>
@@ -22,19 +22,20 @@
     		<td width="25%" style="border-style:none;background-color:transparent;" ></td>	
         </tr>
     	<tr>
-            <td width="25%" style="border-style:none;background-color:transparent;" ><!--<field:datetime dateTimePattern="dd.MM.yyyy" field="" id="algus"/>/--></td>
-    		<td width="25%" style="border-style:none;background-color:transparent;" ><!--<field:datetime dateTimePattern="dd.MM.yyyy" field="" id="lopp" />/--></td>
+            <td width="25%" style="border-style:none;background-color:transparent;" ><input type="text" id="alates" value="${alates}" name="alates"/></td>
+    		<td width="25%" style="border-style:none;background-color:transparent;" ><input type="text" id="kuni" value="${kuni}" name="kuni"/></td>
     		<td width="25%" style="border-style:none;background-color:transparent;" >
     		   <select name="loik">
     		   		<option value ="-1" label="Kõik lõigud" >Kõik lõigud</option>
     		      <c:forEach items="${piiriloiks}" var="piiriloik">
-    		      	 <option value="${piiriloik.piiriloik_ID}" label="${piiriloik.nimetus}">${piiriloik.nimetus}</option>>
+    		      	 <option value="${piiriloik.piiriloik_ID}" label="${piiriloik.nimetus}" onLoad="checkSelected(${piiriloik.getPiiriloik_ID()},${piiril})">${piiriloik.nimetus}</option>
     		      </c:forEach>
     		   </select></td>
     		<td width="25%" style="border-style:none;background-color:transparent;" >
     		<input type="submit" value="Värskenda" style='float: right;' /></td>	
         </tr>
     </table>
+
     </form>
     <br />
     
@@ -64,5 +65,12 @@
 	    </table>
 	    <br />
    </c:forEach>
+
+    <script type="text/javascript">
+   	  Spring.addDecoration(new Spring.ElementDecoration({elementId : 'alates', widgetType : 'dijit.form.DateTextBox',
+   		widgetAttrs : {required: false, constraints: {datePattern : 'yyyy-dd-MM', required : false}, datePattern : 'yyyy-dd-MM'}}));
+   	  Spring.addDecoration( new Spring.ElementDecoration({elementId : 'kuni', widgetType : 'dijit.form.DateTextBox', 
+   		widgetAttrs : {required: false, constraints: {datePattern : 'yyyy-dd-MM', required : false}, datePattern : 'yyyy-dd-MM'}}));
+    </script>
 
 </div>
