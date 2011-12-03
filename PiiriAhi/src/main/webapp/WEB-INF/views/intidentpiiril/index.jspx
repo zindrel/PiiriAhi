@@ -64,6 +64,5 @@
 	    </table>
 	    <br />
    </c:forEach>
-   DEBUG: ${debugshit}
 
 </div>

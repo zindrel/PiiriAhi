@@ -57,15 +57,11 @@ public class IntidentPiirilController {
     	
 	    	for (VahtkondIntsidendis v: vahtkonnadIntsidendis) {
 	    		
-	    		sb.append(" " + "JÄRGMINE =? Vahkond intsidendis ID: " + v.getVahtkond().getVahtkond_ID());
-	    		
 	    		if (vaht.equals(v.getVahtkond())) {
 	    			
-	    			sb.append(" IF KONTROLL" + loik + " ==? " +  v.getIntsident().getPiiriloik().getPiiriloik_ID());
 	    			//Lisame ainult vastava piiriloigu intsidendid voi kui -1 siis koik
 	    			if (loik.equals(new Long(-1)) || (v.getIntsident().getPiiriloik().getPiiriloik_ID().equals(loik)) ) {
 	    				intsiVahtkond.addIntsident(v.getIntsident());
-	    				sb.append(" " + "LISASIN! INTSI KOOD" + v.getIntsident().getKood());
 	    			}
 	    			
 	    		}
@@ -73,14 +69,10 @@ public class IntidentPiirilController {
 	    	}
 	    	
 	    	// Kuvame ainult siis kui antud vahkonnal on sellel piiriloigul intsidente
-	    	sb.append(" " + "DAO obj arv: " + intsiVahtkond.getIntsidentideArv());
 	    	if(intsiVahtkond.getIntsidentideArv() > 0) {
-	    		sb.append(" Lisasin UUE DAO objekti!");
 	    		vahtkonnaIntsidendid.add(intsiVahtkond);
 	    	}
     	}	
-    	
-    	uiModel.addAttribute("debugshit", sb.toString());
     	
     	uiModel.addAttribute("vahtIntsidendid", vahtkonnaIntsidendid);
     	uiModel.addAttribute("piiril", loik);
