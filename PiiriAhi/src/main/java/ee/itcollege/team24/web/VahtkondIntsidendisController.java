@@ -80,6 +80,7 @@ public class VahtkondIntsidendisController {
         			piirivalvurIntsidendis.setIntsident(intsident);
         			piirivalvurIntsidendis.setPiirivalvur(vahtkonnaLiige.getPiirivalvur());
         			piirivalvurIntsidendis.setVahtkondIntsidendis(vahtkondIntsidendis);
+        			piirivalvurIntsidendis.setSulgeja(" ");
         			piirivalvurIntsidendis.persist();
         		}
         	}

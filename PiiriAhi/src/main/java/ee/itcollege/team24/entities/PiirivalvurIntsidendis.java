@@ -26,7 +26,7 @@ import ee.itcollege.team24.entities.VahtkondIntsidendis;
  */
 @Entity
 @Table(name="PIIRIVALVUR_INTSIDENDIS")
-@Where(clause="sulgeja = ''")
+@Where(clause="sulgeja = '' OR sulgeja = ' '")
 @RooToString
 @RooEntity
 public class PiirivalvurIntsidendis extends BaseHistoryEntity implements Serializable {

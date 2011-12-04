@@ -81,7 +81,7 @@ public class Intsident extends BaseHistoryEntity implements Serializable {
 	private Collection<VahtkondIntsidendis> vahtkondIntsidendis;
 
 	@OneToMany(mappedBy = "intsident")
-	@Where(clause = "sulgeja = ''")
+	@Where(clause = "sulgeja = '' OR sulgeja = ' '")
 	private Collection<PiirivalvurIntsidendis> piirivalvurIntsidendis;
 
 	@OneToMany(mappedBy = "intsident")
