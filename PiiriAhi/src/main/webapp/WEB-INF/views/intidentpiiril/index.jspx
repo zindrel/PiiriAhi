@@ -28,7 +28,14 @@
     		   <select name="loik">
     		   		<option value ="-1" label="Kõik lõigud" >Kõik lõigud</option>
     		      <c:forEach items="${piiriloiks}" var="piiriloik">
-    		      	 <option value="${piiriloik.piiriloik_ID}" label="${piiriloik.nimetus}" >${piiriloik.nimetus}</option>
+    		      		<c:choose>
+    		          		<c:when test="${piiriloik.piiriloik_ID==piiril}">
+    							<option value="${piiriloik.piiriloik_ID}" label="${piiriloik.nimetus}" selected="selected" >${piiriloik.nimetus}</option>
+    						</c:when>
+    						<c:when test="${piiriloik.piiriloik_ID!=piiril}">
+    							<option value="${piiriloik.piiriloik_ID}" label="${piiriloik.nimetus}" >${piiriloik.nimetus}</option>
+    						</c:when>
+    					</c:choose>
     		      </c:forEach>
     		   </select></td>
     		<td width="25%" style="border-style:none;background-color:transparent;" >
