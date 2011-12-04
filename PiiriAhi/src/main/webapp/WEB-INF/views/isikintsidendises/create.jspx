@@ -13,8 +13,8 @@
         <field:datetime dateTimePattern="${isikIntsidendis_alates_date_format}" field="alates" id="c_ee_itcollege_team24_entities_IsikIntsidendis_alates" required="true" z="wxiFvCO7isHr95uTasrpLFxUmsc="/>
         <field:datetime dateTimePattern="${isikIntsidendis_kuni_date_format}" field="kuni" id="c_ee_itcollege_team24_entities_IsikIntsidendis_kuni" required="true" z="WslPwRWAqdNRcQp0nX0hDVPrF2I="/>
         <field:textarea field="kirjeldus" id="c_ee_itcollege_team24_entities_IsikIntsidendis_kirjeldus" required="true" z="bzwb74ySE0OQRkr0sS8i1PCOwf0="/>
-        <field:select field="piiririkkuja" id="c_ee_itcollege_team24_entities_IsikIntsidendis_piiririkkuja" itemValue="piiririkkuja_ID" items="${piiririkkujas}" path="/piiririkkujas" z="iBQrRL8X1VDoniqjLfLAnBjjtwE="/>
-        <field:select field="intsident" id="c_ee_itcollege_team24_entities_IsikIntsidendis_intsident" itemValue="intsident_ID" items="${intsidents}" path="/intsidents" z="sFjjHDs+9uFFTbwVRGy8bK4xDPs="/>
+        <field:select field="piiririkkuja" id="c_ee_itcollege_team24_entities_IsikIntsidendis_piiririkkuja" itemValue="piiririkkuja_ID" items="${piiririkkujas}" path="/piiririkkujas" required="true" z="My/VrSt2y9u9YVfh1klJpKz0aCo="/>
+        <field:select field="intsident" id="c_ee_itcollege_team24_entities_IsikIntsidendis_intsident" itemValue="intsident_ID" items="${intsidents}" path="/intsidents" required="true" z="v+XPF2tJVUExdN2yzsFDEKzaRQw="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_team24_entities_IsikIntsidendis" render="${not empty dependencies}" z="LNK+5M++rHT4F57reM2X58ngviY="/>
 </div>

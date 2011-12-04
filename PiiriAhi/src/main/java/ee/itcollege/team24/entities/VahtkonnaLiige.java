@@ -43,9 +43,11 @@ public class VahtkonnaLiige implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@ManyToOne
+	@NotNull
 	private Piirivalvur piirivalvur;
 
 	@ManyToOne
+	@NotNull
 	private Vahtkond vahtkond;
 
 	public VahtkonnaLiige() {

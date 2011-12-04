@@ -50,9 +50,11 @@ public class ObjektIntsidendis extends BaseHistoryEntity implements Serializable
 	private static final long serialVersionUID = 1L;
 
 	@ManyToOne
+	@NotNull
 	private Objekt objekt;
 
 	@ManyToOne
+	@NotNull
 	private Intsident intsident;
 
 	public ObjektIntsidendis() {

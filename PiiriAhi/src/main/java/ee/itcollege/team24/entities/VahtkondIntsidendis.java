@@ -53,9 +53,11 @@ public class VahtkondIntsidendis extends BaseHistoryEntity implements Serializab
 	private static final long serialVersionUID = 1L;
 
 	@ManyToOne
+	@NotNull
 	private Vahtkond vahtkond;
 
 	@ManyToOne
+	@NotNull
 	private Intsident intsident;
 
 	@OneToMany(mappedBy = "vahtkondIntsidendis")

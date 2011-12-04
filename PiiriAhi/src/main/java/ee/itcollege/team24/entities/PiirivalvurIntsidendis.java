@@ -51,9 +51,11 @@ public class PiirivalvurIntsidendis extends BaseHistoryEntity implements Seriali
 	private static final long serialVersionUID = 1L;
 
 	@ManyToOne
+	@NotNull
 	private Piirivalvur piirivalvur;
 
 	@ManyToOne
+	@NotNull
 	private Intsident intsident;
 
 	@ManyToOne

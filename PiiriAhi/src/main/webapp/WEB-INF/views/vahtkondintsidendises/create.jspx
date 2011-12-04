@@ -6,15 +6,15 @@
         <field:textarea field="kommentaar" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_kommentaar" z="bUuEdhVh5ARxcBSSigPrlSiK+Ks="/>
         <field:textarea field="avaja" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_avaja" z="user-managed"/>
         <field:datetime dateTimePattern="${piirivalvurIntsidendis_avatud_date_format}" field="avatud" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_avatud" z="user-managed"/>
-        <field:textarea field="muutja"  id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_muutja" z="user-managed"/>
+        <field:textarea field="muutja" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_muutja" z="user-managed"/>
         <field:datetime dateTimePattern="${piirivalvurIntsidendis_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_muudetud" z="user-managed"/>
         <field:textarea field="sulgeja" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_sulgeja" z="user-managed"/>
         <field:datetime dateTimePattern="${vahtkondIntsidendis_suletud_date_format}" field="suletud" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_suletud" z="jH9d/GbcMqqp1bW29nRVmeTa940="/>
         <field:datetime dateTimePattern="${vahtkondIntsidendis_alates_date_format}" field="alates" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_alates" required="true" z="ARAm4ANsAMXBtw4/SUkXm17UmGc="/>
         <field:datetime dateTimePattern="${vahtkondIntsidendis_kuni_date_format}" field="kuni" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_kuni" required="true" z="qduj9ACetQP3W2dsN5p56d0C5CA="/>
         <field:textarea field="kirjeldus" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_kirjeldus" required="true" z="amA4oYbVGi7VleTbe1UMLu/NE40="/>
-        <field:select field="vahtkond" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_vahtkond" itemValue="vahtkond_ID" items="${vahtkonds}" path="/vahtkonds" z="ekR4hHom99gxK7AxBM3Z2u+4xAo="/>
-        <field:select field="intsident" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_intsident" itemValue="intsident_ID" items="${intsidents}" path="/intsidents" z="8n3/TQY+uO5k8GeQEnHPH84qgLc="/>
+        <field:select field="vahtkond" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_vahtkond" itemValue="vahtkond_ID" items="${vahtkonds}" path="/vahtkonds" required="true" z="5M0F9i4NVTR+Ao/ASQi7ZOds9Go="/>
+        <field:select field="intsident" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_intsident" itemValue="intsident_ID" items="${intsidents}" path="/intsidents" required="true" z="lTNp6xj67s/7F9io1kPNJd/gAwc="/>
         <field:simple field="piirivalvurIntsidendis" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_piirivalvurIntsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Piirivalvur Intsidendis" z="r5ZlAeTfbi2B9U5MyJLrnS4U/dg="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_team24_entities_VahtkondIntsidendis" render="${not empty dependencies}" z="BDC/yI3pvdAfReNnNYzdkvCF45g="/>

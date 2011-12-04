@@ -48,9 +48,11 @@ public class IsikIntsidendis extends BaseHistoryEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@ManyToOne
+	@NotNull
 	private Piiririkkuja piiririkkuja;
 
 	@ManyToOne
+	@NotNull
 	private Intsident intsident;
 
 	public IsikIntsidendis() {

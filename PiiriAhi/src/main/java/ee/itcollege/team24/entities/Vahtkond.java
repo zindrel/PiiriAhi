@@ -44,6 +44,7 @@ public class Vahtkond implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@ManyToOne
+	@NotNull
 	private Vaeosa vaeosa;
 
 	@OneToMany(mappedBy = "vahtkond")

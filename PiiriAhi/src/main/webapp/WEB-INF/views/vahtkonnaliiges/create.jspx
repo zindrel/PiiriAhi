@@ -5,8 +5,8 @@
     <form:create id="fc_ee_itcollege_team24_entities_VahtkonnaLiige" modelAttribute="vahtkonnaLiige" path="/vahtkonnaliiges" render="${empty dependencies}" z="+ekMpO7TtByXoKFpqNrUOvzCeoc=">
         <field:datetime dateTimePattern="${vahtkonnaLiige_alates_date_format}" field="alates" id="c_ee_itcollege_team24_entities_VahtkonnaLiige_alates" required="true" z="VWJCYZYPHVggbbmmGljIHDl8WBc="/>
         <field:datetime dateTimePattern="${vahtkonnaLiige_kuni_date_format}" field="kuni" id="c_ee_itcollege_team24_entities_VahtkonnaLiige_kuni" required="true" z="DN2shRyU7XmHNs3pg+ZEjuH3hhg="/>
-        <field:select field="piirivalvur" id="c_ee_itcollege_team24_entities_VahtkonnaLiige_piirivalvur" itemValue="piirivalvur_ID" items="${piirivalvurs}" path="/piirivalvurs" z="8TK8n9dJJe7m662jPw8V5aUBhs8="/>
-        <field:select field="vahtkond" id="c_ee_itcollege_team24_entities_VahtkonnaLiige_vahtkond" itemValue="vahtkond_ID" items="${vahtkonds}" path="/vahtkonds" z="DYhSF27ojPuh1q/dtTESP0C/FG8="/>
+        <field:select field="piirivalvur" id="c_ee_itcollege_team24_entities_VahtkonnaLiige_piirivalvur" itemValue="piirivalvur_ID" items="${piirivalvurs}" path="/piirivalvurs" required="true" z="R8LcyLHcaNUGN+dnAfMVqNZzGS8="/>
+        <field:select field="vahtkond" id="c_ee_itcollege_team24_entities_VahtkonnaLiige_vahtkond" itemValue="vahtkond_ID" items="${vahtkonds}" path="/vahtkonds" required="true" z="MQj29r+tRP+cljTqM5sI9DKZSZE="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_team24_entities_VahtkonnaLiige" render="${not empty dependencies}" z="BQEgAmSWrQPyDP6l0gNgMKt8R5g="/>
 </div>
