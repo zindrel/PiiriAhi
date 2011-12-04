@@ -10,7 +10,9 @@ import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
 import java.lang.Long;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.ui.Model;
@@ -41,6 +43,14 @@ privileged aspect VahtkonnaLiigeController_Roo_Controller {
     public String VahtkonnaLiigeController.createForm(Model uiModel) {
         uiModel.addAttribute("vahtkonnaLiige", new VahtkonnaLiige());
         addDateTimeFormatPatterns(uiModel);
+        List dependencies = new ArrayList();
+        if (Piirivalvur.countPiirivalvurs() == 0) {
+            dependencies.add(new String[]{"piirivalvur", "piirivalvurs"});
+        }
+        if (Vahtkond.countVahtkonds() == 0) {
+            dependencies.add(new String[]{"vahtkond", "vahtkonds"});
+        }
+        uiModel.addAttribute("dependencies", dependencies);
         return "vahtkonnaliiges/create";
     }
     

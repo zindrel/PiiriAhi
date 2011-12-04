@@ -46,6 +46,6 @@ public class VahtkonnaIntsidendid_dao {
 
 	public void setIntsidentideArv(int intsidentideArv) {
 		this.intsidentideArv = intsidentideArv;
-	} 
+	}
 	
 }

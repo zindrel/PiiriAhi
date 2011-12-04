@@ -9,6 +9,7 @@ privileged aspect VahtkondIntsidendis_Roo_ToString {
     
     public String VahtkondIntsidendis.toString() {
         StringBuilder sb = new StringBuilder();
+        sb.append("AddAllPiirivalvurs: ").append(getAddAllPiirivalvurs()).append(", ");
         sb.append("Alates: ").append(getAlates() == null ? "null" : getAlates().getTime()).append(", ");
         sb.append("Avaja: ").append(getAvaja()).append(", ");
         sb.append("Avatud: ").append(getAvatud() == null ? "null" : getAvatud().getTime()).append(", ");

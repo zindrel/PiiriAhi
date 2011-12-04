@@ -60,13 +60,6 @@ privileged aspect VahtkondIntsidendisController_Roo_Controller {
         return "redirect:/vahtkondintsidendises/" + encodeUrlPathSegment(vahtkondIntsidendis.getVahtkond_intsidendis_ID().toString(), httpServletRequest);
     }
     
-    @RequestMapping(value = "/{vahtkond_intsidendis_ID}", params = "form", method = RequestMethod.GET)
-    public String VahtkondIntsidendisController.updateForm(@PathVariable("vahtkond_intsidendis_ID") Long vahtkond_intsidendis_ID, Model uiModel) {
-        uiModel.addAttribute("vahtkondIntsidendis", VahtkondIntsidendis.findVahtkondIntsidendis(vahtkond_intsidendis_ID));
-        addDateTimeFormatPatterns(uiModel);
-        return "vahtkondintsidendises/update";
-    }
-    
     @RequestMapping(value = "/{vahtkond_intsidendis_ID}", method = RequestMethod.DELETE)
     public String VahtkondIntsidendisController.delete(@PathVariable("vahtkond_intsidendis_ID") Long vahtkond_intsidendis_ID, @RequestParam(value = "page", required = false) Integer page, @RequestParam(value = "size", required = false) Integer size, Model uiModel) {
         VahtkondIntsidendis.findVahtkondIntsidendis(vahtkond_intsidendis_ID).remove();

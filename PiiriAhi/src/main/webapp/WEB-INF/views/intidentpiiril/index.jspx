@@ -59,7 +59,7 @@
 				    <tr>
 				    		<td>
 				    			${intsident.getNimetus()} - ${intsident.getPiiriloik().getNimetus()} 
-				    	    <input type="button" value="Vaata" onClick="alert('Pole implementeeritud')" style='float: right;' />
+				    	    <input type="button" value="Vaata" onClick="window.location='../registerincident/createdetails/${intsident.getIntsident_ID()}'" style='float: right;' />
 				    	</td>	
 				    </tr>
 				    </c:forEach>

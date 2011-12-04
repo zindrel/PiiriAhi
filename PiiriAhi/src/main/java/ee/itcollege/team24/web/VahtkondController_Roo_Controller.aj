@@ -11,7 +11,9 @@ import java.io.UnsupportedEncodingException;
 import java.lang.Integer;
 import java.lang.Long;
 import java.lang.String;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import org.springframework.ui.Model;
@@ -40,6 +42,11 @@ privileged aspect VahtkondController_Roo_Controller {
     @RequestMapping(params = "form", method = RequestMethod.GET)
     public String VahtkondController.createForm(Model uiModel) {
         uiModel.addAttribute("vahtkond", new Vahtkond());
+        List dependencies = new ArrayList();
+        if (Vaeosa.countVaeosas() == 0) {
+            dependencies.add(new String[]{"vaeosa", "vaeosas"});
+        }
+        uiModel.addAttribute("dependencies", dependencies);
         return "vahtkonds/create";
     }
     
