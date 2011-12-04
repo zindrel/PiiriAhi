@@ -3,18 +3,20 @@
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
     <form:create id="fc_ee_itcollege_team24_entities_ObjektIntsidendis" modelAttribute="objektIntsidendis" path="/objektintsidendises" render="${empty dependencies}" z="DBLDEzdgmNNNW08TpynxYMdoKjE=">
-        <field:textarea field="kommentaar" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_kommentaar" z="KndqB+jvM006XhdzYIFqfr/FUxg="/>
-        <field:textarea field="avaja" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_avaja" z="0hHazAjBtX1HjziLjyzQjcocgwE="/>
-        <field:datetime dateTimePattern="${objektIntsidendis_avatud_date_format}" field="avatud" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_avatud" z="Oa1vsMIQobGdhO7buTZ1qvf1tuU="/>
-        <field:textarea field="muutja" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_muutja" z="50bsPd0VydQMBAynzJZ44FGE0Ko="/>
-        <field:datetime dateTimePattern="${objektIntsidendis_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_muudetud" z="A1o1NbNSOLYu5qqvKRWwWSN5X1U="/>
-        <field:textarea field="sulgeja" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_sulgeja" z="eoQZ3FedmrkjqhUy0N5DJE2TG0U="/>
-        <field:datetime dateTimePattern="${objektIntsidendis_suletud_date_format}" field="suletud" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_suletud" z="yuCcTJtPihb8VlFsQPsIw+wgXXE="/>
         <field:datetime dateTimePattern="${objektIntsidendis_alates_date_format}" field="alates" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_alates" required="true" z="BRU+j4CjrHtV9ijb+x8auJQ9DFA="/>
         <field:datetime dateTimePattern="${objektIntsidendis_kuni_date_format}" field="kuni" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_kuni" required="true" z="7HJ2Ugp76oyNtAbbIJxHyUyxBxE="/>
         <field:textarea field="kirjeldus" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_kirjeldus" required="true" z="SuAA8mocrMqaPgLa87GInWv8Slw="/>
         <field:select field="objekt" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_objekt" itemValue="objekt_ID" items="${objekts}" path="/objekts" required="true" z="8rZ1pxYrWk/COFdjHy8sESOF4Zc="/>
         <field:select field="intsident" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_intsident" itemValue="intsident_ID" items="${intsidents}" path="/intsidents" required="true" z="s8U6gip5ZheSppf+lSy5nysS9nA="/>
+    	<field:textarea field="kommentaar" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_kommentaar" z="KndqB+jvM006XhdzYIFqfr/FUxg="/>
+    	<div style="display:none">
+	    	<field:textarea field="avaja" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_avaja" z="0hHazAjBtX1HjziLjyzQjcocgwE="/>
+	        <field:datetime dateTimePattern="${objektIntsidendis_avatud_date_format}" field="avatud" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_avatud" z="Oa1vsMIQobGdhO7buTZ1qvf1tuU="/>
+	        <field:textarea field="muutja" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_muutja" z="50bsPd0VydQMBAynzJZ44FGE0Ko="/>
+	        <field:datetime dateTimePattern="${objektIntsidendis_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_muudetud" z="A1o1NbNSOLYu5qqvKRWwWSN5X1U="/>
+	        <field:textarea field="sulgeja" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_sulgeja" z="eoQZ3FedmrkjqhUy0N5DJE2TG0U="/>
+	        <field:datetime dateTimePattern="${objektIntsidendis_suletud_date_format}" field="suletud" id="c_ee_itcollege_team24_entities_ObjektIntsidendis_suletud" z="yuCcTJtPihb8VlFsQPsIw+wgXXE="/>
+        </div>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_team24_entities_ObjektIntsidendis" render="${not empty dependencies}" z="vOVBkO/L+d8UZVK2aKjRWpHkbsc="/>
 </div>
