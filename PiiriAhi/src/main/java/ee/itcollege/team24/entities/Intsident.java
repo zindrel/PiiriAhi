@@ -1,8 +1,11 @@
 package ee.itcollege.team24.entities;
 
 import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -188,5 +191,42 @@ public class Intsident extends BaseHistoryEntity implements Serializable {
 	public void setIsikIntsidendis(Collection<IsikIntsidendis> param) {
 	    this.isikIntsidendis = param;
 	}
+	
+	// Kontrollime, kas intsident toimus soovitud vahemikus
+    public boolean isRelevantByDate(String _alates, String _kuni) {
+        boolean _relevant = false;
+        
+        if(_alates.equals("") && _kuni.equals("")) {
+        	_relevant = true;
+        	return _relevant;
+        } 
+        
+        SimpleDateFormat _format = new SimpleDateFormat("dd.MM.yyyy");
+        
+        Date _alatesDate = new Date();
+        Date _kuniDate = new Date();
+		try {
+			_alatesDate = _format.parse(_alates);
+			_kuniDate = _format.parse(_kuni);
+		} catch (ParseException e) {
+			System.out.println("Error parsing the date");
+		}
+		
+		Calendar _alatesCalendar = Calendar.getInstance();
+		Calendar _kuniCalendar = Calendar.getInstance();
+		_alatesCalendar.setTime(_alatesDate);
+		_kuniCalendar.setTime(_kuniDate);
+		
+		//näitame kui osa intsidentist jääb soovitud vahemikku
+		if(_alatesCalendar.compareTo(this.getToimumise_lopp()) <= 0 && 
+		   _kuniCalendar.compareTo(this.getToimumise_algus()) >= 0 &&
+		   _alatesCalendar.compareTo(_kuniCalendar) <= 0
+		  ) 
+		{
+			_relevant = true;
+		}
+
+        return _relevant;
+    }
    
 }

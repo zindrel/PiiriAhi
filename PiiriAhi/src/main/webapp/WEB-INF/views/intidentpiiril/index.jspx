@@ -28,7 +28,7 @@
     		   <select name="loik">
     		   		<option value ="-1" label="Kõik lõigud" >Kõik lõigud</option>
     		      <c:forEach items="${piiriloiks}" var="piiriloik">
-    		      	 <option value="${piiriloik.piiriloik_ID}" label="${piiriloik.nimetus}" onLoad="checkSelected(${piiriloik.getPiiriloik_ID()},${piiril})">${piiriloik.nimetus}</option>
+    		      	 <option value="${piiriloik.piiriloik_ID}" label="${piiriloik.nimetus}" >${piiriloik.nimetus}</option>
     		      </c:forEach>
     		   </select></td>
     		<td width="25%" style="border-style:none;background-color:transparent;" >
@@ -68,9 +68,9 @@
 
     <script type="text/javascript">
    	  Spring.addDecoration(new Spring.ElementDecoration({elementId : 'alates', widgetType : 'dijit.form.DateTextBox',
-   		widgetAttrs : {required: false, constraints: {datePattern : 'yyyy-dd-MM', required : false}, datePattern : 'yyyy-dd-MM'}}));
+   		widgetAttrs : {required: false, constraints: {datePattern : 'dd.MM.yyyy', required : false}, datePattern : 'dd.MM.yyyy'}}));
    	  Spring.addDecoration( new Spring.ElementDecoration({elementId : 'kuni', widgetType : 'dijit.form.DateTextBox', 
-   		widgetAttrs : {required: false, constraints: {datePattern : 'yyyy-dd-MM', required : false}, datePattern : 'yyyy-dd-MM'}}));
+   		widgetAttrs : {required: false, constraints: {datePattern : 'dd.MM.yyyy', required : false}, datePattern : 'dd.MM.yyyy'}}));
     </script>
 
 </div>

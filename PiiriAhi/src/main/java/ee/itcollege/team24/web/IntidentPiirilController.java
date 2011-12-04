@@ -39,27 +39,34 @@ public class IntidentPiirilController {
         return "intidentpiiril/index";
     }
     
-    @RequestMapping(method = RequestMethod.GET, params = "loik")
-    public String displayArea(@RequestParam(value = "loik", required = false) Long loik, Model uiModel) {
+    @RequestMapping(method = RequestMethod.GET, params =  { "loik", "alates", "kuni" })
+    public String displayArea(@RequestParam(value = "alates", required = false) String alates,@RequestParam(value = "kuni", required = false) String kuni,@RequestParam(value = "loik", required = false) Long loik, Model uiModel) {
+    	
     	uiModel.addAttribute("piiriloiks",Piiriloik.findAllPiiriloiks());
     	
     	List<Vahtkond> koikVahtkonnad = Vahtkond.findAllVahtkonds();
     	List<VahtkondIntsidendis> vahtkonnadIntsidendis = VahtkondIntsidendis.findAllVahtkondIntsidendises();
+    	
+    	//Vaheobjekt milles hoiame yhte kindlat vahtkonda ja tema intsidente. S66dame ette jspxile.
     	List<VahtkonnaIntsidendid_dao> vahtkonnaIntsidendid = new ArrayList<VahtkonnaIntsidendid_dao>();
     	
     	for (Vahtkond vaht : koikVahtkonnad) {
     		
-    		VahtkonnaIntsidendid_dao intsiVahtkond = new VahtkonnaIntsidendid_dao();
+    		VahtkonnaIntsidendid_dao vahtkonnaIntsdendidDAO = new VahtkonnaIntsidendid_dao();
     		
-    		intsiVahtkond.setVahtkond(vaht);
+    		vahtkonnaIntsdendidDAO.setVahtkond(vaht);
     	
-	    	for (VahtkondIntsidendis v: vahtkonnadIntsidendis) {
+	    	for (VahtkondIntsidendis vahtkondIntsidendis: vahtkonnadIntsidendis) {
 	    		
-	    		if (vaht.equals(v.getVahtkond())) {
+	    		if (vaht.equals(vahtkondIntsidendis.getVahtkond())) {
 	    			
 	    			//Lisame ainult vastava piiriloigu intsidendid voi kui -1 siis koik
-	    			if (loik.equals(new Long(-1)) || (v.getIntsident().getPiiriloik().getPiiriloik_ID().equals(loik)) ) {
-	    				intsiVahtkond.addIntsident(v.getIntsident());
+	    			if (loik.equals(new Long(-1)) || (vahtkondIntsidendis.getIntsident().getPiiriloik().getPiiriloik_ID().equals(loik)) ) {
+	    				
+	    				// Kontrollime kas jääb vavstavasse vahemikku, kui jah, siis lisame (kontroll implemented @ Intsident.java
+	    				if(vahtkondIntsidendis.getIntsident().isRelevantByDate(alates,kuni)) {
+	    					vahtkonnaIntsdendidDAO.addIntsident(vahtkondIntsidendis.getIntsident());
+	    				}
 	    			}
 	    			
 	    		}
@@ -67,13 +74,15 @@ public class IntidentPiirilController {
 	    	}
 	    	
 	    	// Kuvame ainult siis kui antud vahkonnal on sellel piiriloigul intsidente
-	    	if(intsiVahtkond.getIntsidentideArv() > 0) {
-	    		vahtkonnaIntsidendid.add(intsiVahtkond);
+	    	if(vahtkonnaIntsdendidDAO.getIntsidentideArv() > 0) {
+	    		vahtkonnaIntsidendid.add(vahtkonnaIntsdendidDAO);
 	    	}
     	}	
     	
     	uiModel.addAttribute("vahtIntsidendid", vahtkonnaIntsidendid);
     	uiModel.addAttribute("piiril", loik);
+    	uiModel.addAttribute("alates", alates);
+    	uiModel.addAttribute("kuni", kuni);
     	
         return "intidentpiiril/index";
     }
