@@ -15,7 +15,7 @@
                     <td style="border-style:none;background-color:white">${vahtkond.getNimetus()}</td>
                 </tr>
                 <tr id="vaeosa">
-                    <td style="border-style:none;background-color:white">V�eosa</td>
+                    <td style="border-style:none;background-color:white">Väeosa</td>
                     <td style="border-style:none;background-color:white">${vahtkond.getVaeosa().getNimetus()}</td>
                 </tr>
                 <tr id="button">
