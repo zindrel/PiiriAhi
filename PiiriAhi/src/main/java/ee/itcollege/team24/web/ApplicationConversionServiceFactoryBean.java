@@ -23,7 +23,7 @@ public class ApplicationConversionServiceFactoryBean extends FormattingConversio
 	
     static class IntsidentConverter implements Converter<Intsident, String> {
         public String convert(Intsident intsident) {
-            return new StringBuilder().append(intsident.getNimetus()).append(" ").append(intsident.getKood()).append(" ").append(intsident.getKommentaar()).toString();
+            return new StringBuilder().append(intsident.getKood()).append(": ").append(intsident.getNimetus()).toString();
         }
         
     }
@@ -31,7 +31,7 @@ public class ApplicationConversionServiceFactoryBean extends FormattingConversio
     
     static class VahtkondIntsidendisConverter implements Converter<VahtkondIntsidendis, String> {
         public String convert(VahtkondIntsidendis vahtkondIntsidendis) {
-            return new StringBuilder().append(vahtkondIntsidendis.getKirjeldus()).append(" ").append(vahtkondIntsidendis.getKommentaar()).toString();
+            return new StringBuilder().append(vahtkondIntsidendis.getVahtkond().getNimetus()).append(", ").append(vahtkondIntsidendis.getIntsident().getNimetus()).toString();
         }
         
     }
