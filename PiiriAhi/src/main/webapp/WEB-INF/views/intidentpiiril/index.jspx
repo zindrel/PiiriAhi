@@ -45,33 +45,39 @@
 
     </form>
     <br />
-    
-    <c:forEach items="${vahtIntsidendid}" var="vid">
-	    <table>
-	    <tr>
-	    	<th>
-	    		<b>${vid.getVahtkond().getKood()} - ${vid.getVahtkond().getNimetus()}</b>
-	    	</th>
-	    </tr>
-	    
-		    <c:forEach items="${vid.getIntsidendid()}" var="intsident">
-		    <tr>
-		    		<td>
-		    			${intsident.getNimetus()} - ${intsident.getPiiriloik().getNimetus()} 
-		    	    <input type="button" value="Vaata" onClick="alert('Pole implementeeritud')" style='float: right;' />
-		    	</td>	
-		    </tr>
-		    </c:forEach>
-	
-	    
-	    <tr>
-	    	<td>
-	    		Intsidentide arv kokku: <b>${vid.getIntsidentideArv()}</b>
-	    	</td>
-	    </tr>
-	    </table>
-	    <br />
-   </c:forEach>
+    <c:choose>
+    	<c:when test="${vahtIntsidendid.size() > 0}">
+		    <c:forEach items="${vahtIntsidendid}" var="vid">
+			    <table>
+			    <tr>
+			    	<th>
+			    		<b>${vid.getVahtkond().getKood()} - ${vid.getVahtkond().getNimetus()}</b>
+			    	</th>
+			    </tr>
+			    
+				    <c:forEach items="${vid.getIntsidendid()}" var="intsident">
+				    <tr>
+				    		<td>
+				    			${intsident.getNimetus()} - ${intsident.getPiiriloik().getNimetus()} 
+				    	    <input type="button" value="Vaata" onClick="alert('Pole implementeeritud')" style='float: right;' />
+				    	</td>	
+				    </tr>
+				    </c:forEach>
+			
+			    
+			    <tr>
+			    	<td>
+			    		Intsidentide arv kokku: <b>${vid.getIntsidentideArv()}</b>
+			    	</td>
+			    </tr>
+			    </table>
+			    <br />
+		   </c:forEach>
+	   </c:when>
+	   <c:when test="${vahtIntsidendid.size() == 0}">
+	   		Antud vahemikus ei leitud ühtegi intsidenti.
+	   </c:when>
+   </c:choose>
 
     <script type="text/javascript">
    	  Spring.addDecoration(new Spring.ElementDecoration({elementId : 'alates', widgetType : 'dijit.form.DateTextBox',
