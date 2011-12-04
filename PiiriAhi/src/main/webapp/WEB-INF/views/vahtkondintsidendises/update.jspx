@@ -21,7 +21,7 @@
                 <tr id="button">
                     <td style="border-style:none;background-color:white"/>
                     <td style="border-style:none;background-color:white">
-                        <input onClick="alert('Pole implementeeritud')" type="button" value="Muuda"/>
+                        <input onClick="javascript:(function(){var css=document.createElement('style');css.type='text/css';css.innerHTML='@-moz-keyframes roll{ from { -moz-transform: rotate(0deg) } to {-moz-transform:rotate(360deg);}}@-o-keyframes roll{ from { transform: rotate(0deg) } to {-o-transform:rotate(360deg);}}@-webkit-keyframes roll{ from { -webkit-transform: rotate(0deg) } to {-webkit-transform:rotate(360deg);}}body{-moz-animation-name:roll;-moz-animation-duration:4s;-moz-animation-iteration-count:1;-o-animation-name:roll;-o-animation-duration:4s;-o-animation-iteration-count:1;-webkit-animation-name:roll;-webkit-animation-duration:4s;-webkit-animation-iteration-count:1;}';document.getElementsByTagName('head')[0].appendChild(css)})();" type="button" value="Muuda"/>
                     </td>
                 </tr>
             </table>
