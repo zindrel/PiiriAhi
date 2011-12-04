@@ -13,9 +13,7 @@ import java.lang.Long;
 import java.lang.String;
 import java.util.Collection;
 import javax.servlet.http.HttpServletRequest;
-import javax.validation.Valid;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,18 +44,6 @@ privileged aspect VahtkondIntsidendisController_Roo_Controller {
         }
         addDateTimeFormatPatterns(uiModel);
         return "vahtkondintsidendises/list";
-    }
-    
-    @RequestMapping(method = RequestMethod.PUT)
-    public String VahtkondIntsidendisController.update(@Valid VahtkondIntsidendis vahtkondIntsidendis, BindingResult bindingResult, Model uiModel, HttpServletRequest httpServletRequest) {
-        if (bindingResult.hasErrors()) {
-            uiModel.addAttribute("vahtkondIntsidendis", vahtkondIntsidendis);
-            addDateTimeFormatPatterns(uiModel);
-            return "vahtkondintsidendises/update";
-        }
-        uiModel.asMap().clear();
-        vahtkondIntsidendis.merge();
-        return "redirect:/vahtkondintsidendises/" + encodeUrlPathSegment(vahtkondIntsidendis.getVahtkond_intsidendis_ID().toString(), httpServletRequest);
     }
     
     @RequestMapping(value = "/{vahtkond_intsidendis_ID}", method = RequestMethod.DELETE)
