@@ -1,20 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0">
+<div xmlns:field="urn:jsptagdir:/WEB-INF/tags/form/fields" xmlns:form="urn:jsptagdir:/WEB-INF/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:util="http://www.springframework.org/schema/util" version="2.0">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <jsp:output omit-xml-declaration="yes"/>
+    <h3>Intsident ${intsident.getKood()} - ${intsident.getPiiriloik().getNimetus()} - ${intsident.getNimetus()}</h3>
     <form:update id="fu_ee_itcollege_team24_entities_VahtkondIntsidendis" idField="vahtkond_intsidendis_ID" modelAttribute="vahtkondIntsidendis" path="/vahtkondintsidendises" versionField="Version" z="CK47dxkB6yFKynilLWTDQam+myo=">
-        <field:textarea field="kommentaar" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_kommentaar" z="bUuEdhVh5ARxcBSSigPrlSiK+Ks="/>
-        <field:textarea field="avaja" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_avaja" z="+WobGOz7x8USetlm65m+Oc/NbiQ="/>
-        <field:datetime dateTimePattern="${vahtkondIntsidendis_avatud_date_format}" field="avatud" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_avatud" z="VSHky5YpC2H1yZIPfqkBLL5sMSM="/>
-        <field:textarea field="muutja" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_muutja" z="p0z29a3oWWNmb/gKgisJam0zYKI="/>
-        <field:datetime dateTimePattern="${vahtkondIntsidendis_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_muudetud" z="IBt1WBDG5csubd5y2swe4i+7OnE="/>
-        <field:textarea field="sulgeja" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_sulgeja" z="Q+SetZFCCqC4JQjfP/KhXagdg5c="/>
-        <field:datetime dateTimePattern="${vahtkondIntsidendis_suletud_date_format}" field="suletud" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_suletud" z="jH9d/GbcMqqp1bW29nRVmeTa940="/>
-        <field:datetime dateTimePattern="${vahtkondIntsidendis_alates_date_format}" field="alates" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_alates" required="true" z="ARAm4ANsAMXBtw4/SUkXm17UmGc="/>
-        <field:datetime dateTimePattern="${vahtkondIntsidendis_kuni_date_format}" field="kuni" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_kuni" required="true" z="qduj9ACetQP3W2dsN5p56d0C5CA="/>
+        <div style="margin-bottom:12px;margin-left:3px">
+            <table style="border-style:none">
+                <tr id="kood">
+                    <td style="border-style:none;background-color:white;width:100px">Kood</td>
+                    <td style="border-style:none;background-color:white">${vahtkond.getKood()}</td>
+                </tr>
+                <tr id="nimetus">
+                    <td style="border-style:none;background-color:white">Nimetus</td>
+                    <td style="border-style:none;background-color:white">${vahtkond.getNimetus()}</td>
+                </tr>
+                <tr id="vaeosa">
+                    <td style="border-style:none;background-color:white">V�eosa</td>
+                    <td style="border-style:none;background-color:white">${vahtkond.getVaeosa().getNimetus()}</td>
+                </tr>
+                <tr id="button">
+                    <td style="border-style:none;background-color:white"/>
+                    <td style="border-style:none;background-color:white">
+                        <input onClick="alert('Pole implementeeritud')" type="button" value="Muuda"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <field:checkbox field="addAllPiirivalvurs" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_addAllPiirivalvurs" label="Lisa kõik vahtkonnas viibinud piirivalvurid intsidenti" z="user-managed" />
         <field:textarea field="kirjeldus" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_kirjeldus" required="true" z="amA4oYbVGi7VleTbe1UMLu/NE40="/>
-        <field:select field="vahtkond" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_vahtkond" itemValue="vahtkond_ID" items="${vahtkonds}" path="/vahtkonds" required="true" z="5M0F9i4NVTR+Ao/ASQi7ZOds9Go="/>
-        <field:select field="intsident" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_intsident" itemValue="intsident_ID" items="${intsidents}" path="/intsidents" required="true" z="lTNp6xj67s/7F9io1kPNJd/gAwc="/>
-        <field:simple field="piirivalvurIntsidendis" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_piirivalvurIntsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Piirivalvur Intsidendis" z="r5ZlAeTfbi2B9U5MyJLrnS4U/dg="/>
+        <field:textarea field="kommentaar" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_kommentaar" z="bUuEdhVh5ARxcBSSigPrlSiK+Ks="/>
+        <div style="display:none">
+            <field:select field="vahtkond" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_vahtkond" itemValue="vahtkond_ID" items="${vahtkonds}" path="/vahtkonds" required="true" z="5M0F9i4NVTR+Ao/ASQi7ZOds9Go="/>
+            <field:select field="intsident" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_intsident" itemValue="intsident_ID" items="${intsidents}" path="/intsidents" required="true" z="lTNp6xj67s/7F9io1kPNJd/gAwc="/>
+            <field:datetime dateTimePattern="${vahtkondIntsidendis_alates_date_format}" field="alates" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_alates" required="true" z="ARAm4ANsAMXBtw4/SUkXm17UmGc="/>
+            <field:datetime dateTimePattern="${vahtkondIntsidendis_kuni_date_format}" field="kuni" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_kuni" required="true" z="qduj9ACetQP3W2dsN5p56d0C5CA="/>
+            <field:simple field="piirivalvurIntsidendis" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_piirivalvurIntsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Piirivalvur Intsidendis" z="r5ZlAeTfbi2B9U5MyJLrnS4U/dg="/>
+            <field:textarea field="avaja" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_avaja" z="+WobGOz7x8USetlm65m+Oc/NbiQ="/>
+            <field:datetime dateTimePattern="${vahtkondIntsidendis_avatud_date_format}" field="avatud" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_avatud" z="VSHky5YpC2H1yZIPfqkBLL5sMSM="/>
+            <field:textarea field="muutja" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_muutja" z="p0z29a3oWWNmb/gKgisJam0zYKI="/>
+            <field:datetime dateTimePattern="${vahtkondIntsidendis_muudetud_date_format}" field="muudetud" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_muudetud" z="IBt1WBDG5csubd5y2swe4i+7OnE="/>
+            <field:textarea field="sulgeja" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_sulgeja" z="Q+SetZFCCqC4JQjfP/KhXagdg5c="/>
+            <field:datetime dateTimePattern="${vahtkondIntsidendis_suletud_date_format}" field="suletud" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_suletud" z="jH9d/GbcMqqp1bW29nRVmeTa940="/>
+        </div>
     </form:update>
 </div>

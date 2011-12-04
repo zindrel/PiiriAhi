@@ -16,6 +16,7 @@
         <field:select field="vahtkond" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_vahtkond" itemValue="vahtkond_ID" items="${vahtkonds}" path="/vahtkonds" required="true" z="5M0F9i4NVTR+Ao/ASQi7ZOds9Go="/>
         <field:select field="intsident" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_intsident" itemValue="intsident_ID" items="${intsidents}" path="/intsidents" required="true" z="lTNp6xj67s/7F9io1kPNJd/gAwc="/>
         <field:simple field="piirivalvurIntsidendis" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_piirivalvurIntsidendis" messageCode="entity_reference_not_managed" messageCodeAttribute="Piirivalvur Intsidendis" z="r5ZlAeTfbi2B9U5MyJLrnS4U/dg="/>
+        <field:checkbox field="addAllPiirivalvurs" id="c_ee_itcollege_team24_entities_VahtkondIntsidendis_addAllPiirivalvurs" z="2mAs249QmJF4Z37EKi+wxnU7OKw="/>
     </form:create>
     <form:dependency dependencies="${dependencies}" id="d_ee_itcollege_team24_entities_VahtkondIntsidendis" render="${not empty dependencies}" z="BDC/yI3pvdAfReNnNYzdkvCF45g="/>
 </div>

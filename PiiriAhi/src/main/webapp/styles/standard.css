@@ -115,6 +115,11 @@ label {
 	margin-top: 0px;
 }
 
+label[for="_addAllPiirivalvurs_id"] {
+	float:right !important;
+    width:540px !important;
+}
+
 input {
 	height:20px;
 }

@@ -8,6 +8,7 @@ import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -39,6 +40,16 @@ public class VahtkondIntsidendisController {
         addDateTimeFormatPatterns(uiModel);
         referer = httpServletRequest.getHeader("referer");
         return "vahtkondintsidendises/create";
+    }
+    
+    @RequestMapping(value = "/{vahtkond_intsidendis_ID}", params = "form", method = RequestMethod.GET)
+    public String updateForm(@PathVariable("vahtkond_intsidendis_ID") Long vahtkond_intsidendis_ID, Model uiModel) {
+    	VahtkondIntsidendis vahtkondIntsidendis = VahtkondIntsidendis.findVahtkondIntsidendis(vahtkond_intsidendis_ID);
+        uiModel.addAttribute("vahtkondIntsidendis", vahtkondIntsidendis);
+        uiModel.addAttribute("intsident", vahtkondIntsidendis.getIntsident());
+        uiModel.addAttribute("vahtkond", vahtkondIntsidendis.getVahtkond());
+        addDateTimeFormatPatterns(uiModel);
+        return "vahtkondintsidendises/update";
     }
 	
 }

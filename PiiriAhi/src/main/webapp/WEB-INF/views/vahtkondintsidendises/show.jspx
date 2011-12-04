@@ -15,5 +15,6 @@
         <field:display field="kirjeldus" id="s_ee_itcollege_team24_entities_VahtkondIntsidendis_kirjeldus" object="${vahtkondintsidendis}" z="q0ssCtLNr1yqI/GTfz/0msgkaR8="/>
         <field:display field="vahtkond" id="s_ee_itcollege_team24_entities_VahtkondIntsidendis_vahtkond" object="${vahtkondintsidendis}" z="CFvOPiYcMPzilFZg4GAFCHhwrZ4="/>
         <field:display field="intsident" id="s_ee_itcollege_team24_entities_VahtkondIntsidendis_intsident" object="${vahtkondintsidendis}" z="kJ970Il/B6U0xvYCH+52x/3l6wk="/>
+        <field:display field="addAllPiirivalvurs" id="s_ee_itcollege_team24_entities_VahtkondIntsidendis_addAllPiirivalvurs" object="${vahtkondintsidendis}" z="hqdRe7Ex3GFSPglezXjUYdEduDE="/>
     </page:show>
 </div>

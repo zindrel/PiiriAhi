@@ -61,7 +61,7 @@
                                 <td>
                                     ${vahtkond.getVahtkond().getNimetus()}
 	                                <input type="button" value="Eemalda" onClick="if(confirm('Kustutan vahtkonna ${vahtkond.getVahtkond().getNimetus()} intsidendist?')){window.location='?object=vahtkond,${vahtkond.getVahtkond_intsidendis_ID()}'}" style="float:right" />
-	                                <input type="button" value="Info" onClick="alert('Pole implementeeritud')" style="float:right" />
+	                                <input type="button" value="Info" onClick="window.location='../../vahtkondintsidendises/${vahtkond.getVahtkond_intsidendis_ID()}?form'" style="float:right" />
                                 </td>
                             </tr>
                         </c:forEach>

@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -62,7 +63,16 @@ public class VahtkondIntsidendis extends BaseHistoryEntity implements Serializab
 
 	@OneToMany(mappedBy = "vahtkondIntsidendis")
 	private Collection<PiirivalvurIntsidendis> piirivalvurIntsidendis;
+	
+	@Transient
+	private boolean addAllPiirivalvurs;
 
+	public boolean getAddAllPiirivalvurs() {
+		return addAllPiirivalvurs;
+	}
+	public void setAddAllPiirivalvurs(boolean addAllPiirivalvurs) {
+		this.addAllPiirivalvurs = addAllPiirivalvurs;
+	}
 	public VahtkondIntsidendis() {
 		super();
 	}   
