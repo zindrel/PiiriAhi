@@ -196,21 +196,39 @@ public class Intsident extends BaseHistoryEntity implements Serializable {
     public boolean isRelevantByDate(String _alates, String _kuni) {
         boolean _relevant = false;
         
+        
         if(_alates.equals("") && _kuni.equals("")) {
         	_relevant = true;
         	return _relevant;
-        } 
-        
-        SimpleDateFormat _format = new SimpleDateFormat("dd.MM.yyyy");
+        } else if (_alates.equals(""))   {
+        	Date kun = new Date();
+        	kun = this.parseDate(_kuni);
+        	Calendar kunCal = Calendar.getInstance();
+        	kunCal.setTime(kun);
+        	if (kunCal.compareTo(this.getToimumise_algus()) >= 0 ) {
+        		return true;
+        	} else {
+        		return false;
+        	}
+        	
+        } else if (_kuni.equals("")) {
+        	Date ala = new Date();
+        	ala = this.parseDate(_alates);
+        	Calendar alaCal = Calendar.getInstance();
+        	alaCal.setTime(ala);
+        	if (alaCal.compareTo(this.getToimumise_lopp()) <= 0 ) {
+        		return true;
+        	} else {
+        		return false;
+        	}
+        	
+        }
         
         Date _alatesDate = new Date();
         Date _kuniDate = new Date();
-		try {
-			_alatesDate = _format.parse(_alates);
-			_kuniDate = _format.parse(_kuni);
-		} catch (ParseException e) {
-			System.out.println("Error parsing the date");
-		}
+		
+        _alatesDate = this.parseDate(_alates);
+		_kuniDate = this.parseDate(_kuni);
 		
 		Calendar _alatesCalendar = Calendar.getInstance();
 		Calendar _kuniCalendar = Calendar.getInstance();
@@ -228,5 +246,22 @@ public class Intsident extends BaseHistoryEntity implements Serializable {
 
         return _relevant;
     }
-   
+    
+    
+    // helper method for date check
+    private Date parseDate(String _s) {
+    	
+    	SimpleDateFormat _format = new SimpleDateFormat("dd.MM.yyyy");
+    	Date retVal = new Date();
+    	
+    	try {
+			retVal = _format.parse(_s);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+    	
+    	return retVal;
+    }
+    
+ 
 }
