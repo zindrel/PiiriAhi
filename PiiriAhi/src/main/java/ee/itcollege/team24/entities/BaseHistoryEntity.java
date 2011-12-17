@@ -62,7 +62,7 @@ public class BaseHistoryEntity {
 	
 	@PreRemove
 	public void preventRemoval() {
-		//throw new SecurityException("Removal of objects from DB is prohibited!");
+		throw new SecurityException("Removal of objects from DB is prohibited!");
 	}
 	
 	private void setOpen(String user, Calendar date) {
