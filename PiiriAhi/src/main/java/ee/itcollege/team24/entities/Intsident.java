@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +14,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Query;
 import javax.persistence.Table;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
@@ -261,6 +263,14 @@ public class Intsident extends BaseHistoryEntity implements Serializable {
 		}
     	
     	return retVal;
+    }
+    
+    
+    @SuppressWarnings("unchecked")
+	public static List<Intsident> findAllIntsidents() {
+    	Query q = entityManager().createQuery("SELECT o FROM Intsident o WHERE o.suletud=:d", Intsident.class);
+        q.setParameter("d", GetSurrogateDate());         
+        return q.getResultList();
     }
     
  

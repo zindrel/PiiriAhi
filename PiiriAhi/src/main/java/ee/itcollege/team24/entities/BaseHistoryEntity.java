@@ -19,6 +19,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 @MappedSuperclass
 public class BaseHistoryEntity {
 	
+	
 	@Size(max = 150)
 	private String kommentaar;
 	
@@ -61,7 +62,7 @@ public class BaseHistoryEntity {
 	
 	@PreRemove
 	public void preventRemoval() {
-		throw new SecurityException("Removal of objects from DB is prohibited!");
+		//throw new SecurityException("Removal of objects from DB is prohibited!");
 	}
 	
 	private void setOpen(String user, Calendar date) {
@@ -75,12 +76,7 @@ public class BaseHistoryEntity {
 	}
 	
 	private void setTemporaryClosedDate() {
-		Calendar tempDate = Calendar.getInstance();
-		tempDate.clear();
-		tempDate.set(Calendar.YEAR, 9999);
-		tempDate.set(Calendar.MONTH, Calendar.DECEMBER);
-		tempDate.set(Calendar.DAY_OF_MONTH, 31);
-		this.suletud = tempDate;
+		this.suletud = GetSurrogateDate();
 	}
 	
 	public void close() {
@@ -88,6 +84,16 @@ public class BaseHistoryEntity {
 		String currentUser = SecurityContextHolder.getContext().getAuthentication().getName();
 		this.suletud = now;
 		this.sulgeja = currentUser;
+	}
+	
+	public static Calendar GetSurrogateDate(){
+		Calendar tempDate = Calendar.getInstance();
+		tempDate.clear();
+		tempDate.set(Calendar.YEAR, 9999);
+		tempDate.set(Calendar.MONTH, Calendar.DECEMBER);
+		tempDate.set(Calendar.DAY_OF_MONTH, 31);
+		
+		return tempDate;
 	}
 	
 	

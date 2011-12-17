@@ -77,10 +77,6 @@ privileged aspect Intsident_Roo_Entity {
         return entityManager().createQuery("SELECT COUNT(o) FROM Intsident o", Long.class).getSingleResult();
     }
     
-    public static List<Intsident> Intsident.findAllIntsidents() {
-        return entityManager().createQuery("SELECT o FROM Intsident o", Intsident.class).getResultList();
-    }
-    
     public static Intsident Intsident.findIntsident(Long intsident_ID) {
         if (intsident_ID == null) return null;
         return entityManager().find(Intsident.class, intsident_ID);
