@@ -110,5 +110,9 @@ public class PiirivalvurIntsidendis extends BaseHistoryEntity implements Seriali
 	public void setVahtkondIntsidendis(VahtkondIntsidendis param) {
 	    this.vahtkondIntsidendis = param;
 	}
+	public static PiirivalvurIntsidendis findPiirivalvurIntsidendis(long parseLong) {
+		// TODO Auto-generated method stub
+		return null;
+	}
    
 }

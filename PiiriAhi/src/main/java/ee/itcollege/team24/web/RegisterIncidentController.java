@@ -7,6 +7,7 @@ import org.springframework.roo.addon.web.mvc.controller.RooWebScaffold;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,6 +29,12 @@ public class RegisterIncidentController {
         if (bindingResult.hasErrors()) {
             uiModel.addAttribute("intsident", intsident);
             addDateTimeFormatPatterns(uiModel);
+            return "registerincident/create";
+        }
+        if(intsident.getToimumise_algus().after(intsident.getToimumise_lopp())){
+            uiModel.addAttribute("intsident", intsident);
+            addDateTimeFormatPatterns(uiModel);
+            bindingResult.addError(new ObjectError("toimumise_lopp","Intsidendi toimumise lõpp peab olema hiljem kui algus!"));
             return "registerincident/create";
         }
         uiModel.asMap().clear();
