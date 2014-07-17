@@ -194,41 +194,25 @@ public class Intsident extends BaseHistoryEntity implements Serializable {
 	
 	// Kontrollime, kas intsident toimus soovitud vahemikus
     public boolean isRelevantByDate(String _alates, String _kuni) {
-        boolean _relevant = false;
+        if (_alates.equals("") && _kuni.equals("")) 
+        	return true;
         
-        
-        if(_alates.equals("") && _kuni.equals("")) {
-        	_relevant = true;
-        	return _relevant;
-        } else if (_alates.equals(""))   {
-        	Date kun = new Date();
-        	kun = this.parseDate(_kuni);
+        if (_alates.equals("")) {
+        	Date kun = this.parseDate(_kuni);
         	Calendar kunCal = Calendar.getInstance();
         	kunCal.setTime(kun);
-        	if (kunCal.compareTo(this.getToimumise_algus()) >= 0 ) {
-        		return true;
-        	} else {
-        		return false;
-        	}
+        	return (kunCal.compareTo(this.getToimumise_algus()) >= 0 );
+        }
         	
-        } else if (_kuni.equals("")) {
-        	Date ala = new Date();
-        	ala = this.parseDate(_alates);
+        if (_kuni.equals("")) {
+        	Date ala = this.parseDate(_alates);
         	Calendar alaCal = Calendar.getInstance();
         	alaCal.setTime(ala);
-        	if (alaCal.compareTo(this.getToimumise_lopp()) <= 0 ) {
-        		return true;
-        	} else {
-        		return false;
-        	}
-        	
+        	return (alaCal.compareTo(this.getToimumise_lopp()) <= 0 );
         }
         
-        Date _alatesDate = new Date();
-        Date _kuniDate = new Date();
-		
-        _alatesDate = this.parseDate(_alates);
-		_kuniDate = this.parseDate(_kuni);
+        Date _alatesDate = this.parseDate(_alates);
+        Date _kuniDate = this.parseDate(_kuni);
 		
 		Calendar _alatesCalendar = Calendar.getInstance();
 		Calendar _kuniCalendar = Calendar.getInstance();
@@ -236,15 +220,9 @@ public class Intsident extends BaseHistoryEntity implements Serializable {
 		_kuniCalendar.setTime(_kuniDate);
 		
 		//näitame kui osa intsidentist jääb soovitud vahemikku
-		if(_alatesCalendar.compareTo(this.getToimumise_lopp()) <= 0 && 
+		return (_alatesCalendar.compareTo(this.getToimumise_lopp()) <= 0 && 
 		   _kuniCalendar.compareTo(this.getToimumise_algus()) >= 0 &&
-		   _alatesCalendar.compareTo(_kuniCalendar) <= 0
-		  ) 
-		{
-			_relevant = true;
-		}
-
-        return _relevant;
+		   _alatesCalendar.compareTo(_kuniCalendar) <= 0); 
     }
     
     
