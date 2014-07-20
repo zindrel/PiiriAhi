@@ -37,3 +37,5 @@ field string --fieldName sulgeja --notNull
 field date --fieldName suletud --type java.util.Calendar --notNull
 web mvc all --package ~.web
 web mvc all --package ~.web
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log opened at 2011-12-13 04:05:39
+// Spring Roo 1.1.5.RELEASE [rev d3a68c3] log closed at 2011-12-13 04:06:38
