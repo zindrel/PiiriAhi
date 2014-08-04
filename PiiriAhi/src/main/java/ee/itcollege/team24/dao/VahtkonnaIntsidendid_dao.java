@@ -3,6 +3,7 @@ package ee.itcollege.team24.dao;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import ee.itcollege.team24.entities.BaseHistoryEntity;
 import ee.itcollege.team24.entities.Intsident;
 import ee.itcollege.team24.entities.Vahtkond;
 
@@ -36,8 +37,10 @@ public class VahtkonnaIntsidendid_dao {
 	} 
 	
 	public void addIntsident(Intsident ints) {
-		this.intsidendid.add(ints);
-		this.intsidentideArv++;
+		if(ints.getSuletud().equals(BaseHistoryEntity.GetSurrogateDate())){
+		   this.intsidendid.add(ints);
+		   this.intsidentideArv++;
+		}
 	}
 
 	public int getIntsidentideArv() {
